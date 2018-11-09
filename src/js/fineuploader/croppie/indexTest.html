@@ -1,0 +1,165 @@
+<?php
+/**************************************************************************************
+Fichier :        indexTest.html
+Auteur :         Olivier Lemay Dostie
+Fonctionallité : Fichier démo des fonctionalité JavaScript du framework Croppie.
+Date :           -
+=======================================================================================
+Vérification :
+Date        Nom                     Approuvé
+=======================================================================================
+Historique de modification :
+Date        Nom                     Description
+2018-05-04  Olivier Lemay Dostie    Ajout
+**************************************************************************************/
+
+if(isset($_POST['imagebase64'])){
+    $data = $_POST['imagebase64'];
+
+    list($type, $data) = explode(';', $data);
+    list(, $data)      = explode(',', $data);
+    $data = base64_decode($data);
+
+    file_put_contents('images/logo.png', $data);
+}
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <style>
+        #page {
+            background: #FFF;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        #demo-basic {
+            width: 200px;
+            height: 300px;
+        }
+    </style>
+    <link href="croppie.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="croppie.js"></script>
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $( document ).ready(function() {
+            var $uploadCrop;
+
+            function readFile(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $uploadCrop.croppie('bind', {
+                            url: e.target.result
+                        });
+                        $('#upload-demo').addClass('ready');
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            $uploadCrop = $('#upload-demo').croppie({
+                viewport: {
+                    width: 200,
+                    height: 200,
+                    type: 'circle'
+                },
+                boundary: {
+                    width: 300,
+                    height: 300
+                }
+            });
+
+            $('#upload').on('change', function () { readFile(this); });
+            $('.upload-result').on('click', function (ev) {
+                $uploadCrop.croppie('result', {
+                    type: 'canvas',
+                    size: 'original'
+                }).then(function (resp) {
+                    $('#imagebase64').val(resp);
+                    $('#form').submit();
+                });
+            });
+
+        });
+        function uploadFile() {
+            var blobFile = $('#filechooser').files[0];
+            var formData = new FormData();
+            formData.append("fileToUpload", blobFile);
+
+            $.ajax({
+                url: "upload.php",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    alert("Success! : "+response);
+                },
+                error: function(jqXHR, textStatus, errorMessage) {
+                    console.log(errorMessage); // Optional
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<input type="file" id="filechooser">
+<form action="test-image.php" id="form" method="post">
+    <input type="file" id="upload" value="Choose a file">
+    <div id="upload-demo"></div>
+    <input type="hidden" id="imagebase64" name="imagebase64">
+    <a href="#" class="upload-result">Send</a>
+</form>
+<img id="toCrop" src="logo.png" alt="Logo to crop"/><br>
+<button onclick="see()">See</button><br>
+<img id="result" src="" alt="Logo to go"/><br>
+<div id="page">
+    <div id="demo-basic">
+    </div>
+</div>
+
+<br><br>
+<ul>
+    <li><a href="../../login.php">Login</a></li>
+    <li><a href="../../logout.php">Logout</a></li>
+    <li><a href="../../manageUsers.php">Manage Users</a></li>
+    <li><a href="../../manageUserType.php">Manage user types</a></li>
+
+    <li><a href="../../UIWCoachManager.php">Manage Coach</a></li>
+    <li><a href="../../UIWAthleteManager.php">Manage Athlete</a></li>
+
+    <li><a href="../../UIWDrillManager.php">Manage drill</a></li>
+    <li><a href="../../UIWEvaluationManager.php">Manage Evaluation</a></li>
+    <li><a href="../../UIWGroupManager.php">Manage group</a></li>
+    <li><a href="../../UIWCourseManager.php">Manage course</a></li>
+    <li><a href="../../UIWDrillManager.php">Manage drill</a></li>
+
+    <li><a href="../../manageCap.php">Manage caps</a></li>
+</ul>
+
+
+<script>
+    $(function() {
+        var basic = $('#demo-basic').croppie({
+            viewport: {
+                width: 150,
+                height: 200
+            }
+        });
+        basic.croppie('bind', {
+            url: 'https://i.imgur.com/xD9rzSt.jpg',
+            points: [77, 469, 280, 739]
+        });
+    });
+    function see() {
+        document.getElementById('result').attributes.src = uploadCrop.croppie().src;
+    }
+
+</script>
+
+</body>
+</html>

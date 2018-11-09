@@ -1,0 +1,37 @@
+<!--/**********************************************************************************
+Fichier :       tables.css
+Auteur :        Francis Forest
+Fonctionnalité : Fichier de style CSS pour les tableaux de l'application Web TrackPark.
+Date :          26 avril 2018
+=======================================================================================
+Vérification :
+Date        Nom                     Approuvé
+2018-05-06  Olivier Lemay Dostie    Oui
+=======================================================================================
+Historique de modification :
+Date        Nom                     Description
+2018-04-26	Francis Forest          Création
+***********************************************************************************/-->
+
+table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}

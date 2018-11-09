@@ -1,0 +1,424 @@
+<!--/**********************************************************************************
+Fichier :       stylesheet.css
+Auteur :        -
+Fonctionnalité : Fichier de style CSS pour réinitialiser les styles sur
+ * tout les navigateurs (CSS reset).
+Date :          4 mai 2018
+=======================================================================================
+Vérification :
+Date        Nom                     Approuvé
+2018-05-06  Olivier Lemay Dostie    Oui
+=======================================================================================
+Historique de modification :
+Date        Nom                     Description
+2018-05-04	Francis Forest          Ajout
+***********************************************************************************/-->
+
+/*
+CSS Reset
+*/
+
+html, body, div, span, applet, object, iframe,
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/****************
+* CSS principal *
+****************/
+
+/******************************
+* Positionnement et affichage *
+******************************/
+
+.floatLeft {
+	float: left;
+}
+
+.block {
+	display: block;
+}
+
+.fixed {
+	position: fixed;
+}
+
+.logoContainer {
+	overflow: hidden;
+}
+
+.minWidth175 {
+	min-width: 175px;
+}
+
+.height100 {
+	height: 100vh;
+}
+
+.padding30 {
+	padding: 30px;
+}
+
+.inlineBlock {
+	display: inline-block;
+}
+
+.marginAuto {
+	margin: auto;
+}
+
+/*******
+* Menu *
+*******/
+
+.sideMenu {
+	background-color: #fafafa;
+}
+
+.topMenu {
+	background-color: #2ECC71;
+}
+
+.sideMenuButton {
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	color: black;
+	text-decoration: none;
+	font-weight: bold;
+	font-family: arial, serif;
+	display: block;
+
+	/* Animation */
+	background: linear-gradient(to right, #2ECC71 50%, #fafafa 50%);
+	background-size: 200% 100%;
+	background-position:right bottom;
+	transition:all 0.6s ease;
+}
+
+.sideMenuButton:hover {
+	background-position:left bottom;
+	color: white;
+}
+
+.indexMenu a {
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	color: black;
+	text-decoration: none;
+	font-weight: bold;
+	font-family: arial, serif;
+	display: block;
+
+	/* Animation */
+	background: linear-gradient(to right, #2ECC71 50%, #fafafa 50%);
+	background-size: 200% 100%;
+	background-position:right bottom;
+	transition:all 0.6s ease;
+}
+
+.indexMenu a:hover {
+	background-position:left bottom;
+	color: white;
+}
+
+.activeMenu {
+	background-position:left bottom;
+	color: #fafafa;
+}
+
+.logo {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: 100px;
+}
+
+.title {
+	color: #fafafa;
+	font-weight: bold;
+	/*font-size: 2.8vw;*/
+	line-height: 100px;
+	padding-left: 30px;
+
+}
+
+/********************
+* Contenu principal *
+********************/
+
+body {
+	background-color: #fafafa;
+	font-family: arial;
+}
+
+.mainContent {
+	padding-left: 30px;
+	padding-top: 30px;
+}
+
+html,body {
+	height:100%;
+}
+
+/**********
+* Boutons *
+**********/
+
+.buttonAdd {
+	height: 50px;
+	margin-top: 25px;
+	background-color: #fafafa;
+	color: #2ECC71;
+	font-weight: bold;
+	font-size: 1em;
+
+	transition: transform .2s;
+}
+
+.buttonAdd:hover {
+	transform: scale(1.1);
+	transition: transform .2s;
+}
+
+.buttonImport {
+	height: 50px;
+	margin-top: 25px;
+
+	background-color: #fafafa;
+	color: #2ECC71;
+	font-weight: bold;
+	font-size: 1em;
+}
+
+.buttonGreen {
+	background-color: #2ECC71;
+	font-size: 1em;
+	font-weight: bold;
+	color: #fafafa;
+	border: 1px solid #ffffff;
+	display: block;
+
+	transition: transform .2s;
+}
+
+.buttonGreen:hover {
+	transform: scale(1.1);
+	transition: transform .2s;
+}
+
+.buttonWhite {
+	background-color: #fafafa;
+	font-size: 1em;
+	font-weight: bold;
+	color: #2ECC71;
+	border: 1px solid #2ECC71;
+	display: block;
+
+	transition: transform .2s;
+}
+
+.buttonWhite:hover {
+	transform: scale(1.1);
+	transition: transform .2s;
+}
+
+.saveButton {
+	height: 50px;
+}
+
+
+/***********
+* Tableaux *
+***********/
+
+tr {
+	-webkit-transition: background-color 300ms ease-out;
+	-ms-transition: background-color 300ms ease-out;
+	transition: background-color 300ms ease-out;
+}
+
+tr:hover {
+	background: #B9F6CA;
+	-webkit-transition: background-color 500ms ease-in;
+	-ms-transition: background-color 500ms ease-in;
+	transition: background-color 500ms ease-in;
+}
+td {
+	height: 25px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+th {
+	font-weight: bold;
+	color: #2ECC71;
+	text-align: left;
+}
+
+table {
+	table-layout: auto;
+	width: 100%;
+}
+
+.minWidthTable {
+	min-width: 500px;
+}
+
+/*****************
+* Fenêtre modale *
+*****************/
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+	padding-top: 60px;
+}
+
+.modal-content {
+	background-color: #fefefe;
+	margin: 5% auto 15% auto;
+	border: 1px solid #888;
+	width: 60%;
+	min-height: 500px;
+	min-width: 500px;
+	border: solid 5px #2ECC71;
+
+}
+
+label {
+	display: inline-block;
+	width: 200px;
+	margin-left: auto;
+}
+input, select {
+	display: inline-block;
+	width: 200px;
+	margin: auto;
+}
+
+h3 {
+	color: #2ECC71;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+/*************
+* Animations *
+*************/
+.animate {
+	-webkit-animation: animatezoom 1.2s;
+	animation: animatezoom 1.2s
+}
+
+@-webkit-keyframes animatezoom {
+	from {-webkit-transform: scale(0)}
+	to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+	from {transform: scale(0)}
+	to {transform: scale(1)}
+}
+
+/*************
+* Responsive *
+*************/
+
+/* For mobile */
+.colm1 {width: 8.33%;}
+.colm2 {width: 16.66%;}
+.colm3 {width: 25%;}
+.colm4 {width: 33.33%;}
+.colm5 {width: 41.66%;}
+.colm6 {width: 50%;}
+.colm7 {width: 58.33%;}
+.colm8 {width: 66.66%;}
+.colm9 {width: 75%;}
+.colm10 {width: 83.33%;}
+.colm11 {width: 91.66%;}
+.colm12 {width: 100%;}
+
+@media only screen and (min-width: 768px) {
+/* For tablets: */
+.colt1 {width: 8.33%;}
+.colt2 {width: 16.66%;}
+.colt3 {width: 25%;}
+.colt4 {width: 33.33%;}
+.colt5 {width: 41.66%;}
+.colt6 {width: 50%;}
+.colt7 {width: 58.33%;}
+.colt8 {width: 66.66%;}
+.colt9 {width: 75%;}
+.colt10 {width: 83.33%;}
+.colt11 {width: 91.66%;}
+.colt12 {width: 100%;}
+}
+
+@media only screen and (min-width: 1300px) {
+/* For desktop: */
+.col1 {width: 8.33%;}
+.col2 {width: 16.66%;}
+.col3 {width: 25%;}
+.col4 {width: 33.33%;}
+.col5 {width: 41.66%;}
+.col6 {width: 50%;}
+.col7 {width: 58.33%;}
+.col8 {width: 66.66%;}
+.col9 {width: 75%;}
+.col10 {width: 83.33%;}
+.col11 {width: 91.66%;}
+.col12 {width: 100%;}
+}
