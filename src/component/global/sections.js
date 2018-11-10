@@ -22,7 +22,7 @@ export const sections =[
     {
         id: 5,
         href: "../evaluation/manager.php",
-        name: "Evaluations"
+        name: "Évaluations"
     },
     {
         id: 6,
