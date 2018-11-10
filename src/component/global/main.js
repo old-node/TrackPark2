@@ -9,7 +9,7 @@ export function text1(props) {
 }
 
 // Affiche le contenu principal de la page
-function Content(props) {
+export function Content(props) {
     let content = [];
     if (props.section === 0 || props.section > sections.length) {
         content = "404";

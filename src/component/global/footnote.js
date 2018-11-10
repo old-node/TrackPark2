@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../css/stylesheet.css';
-import {sections} from './navigation';
-import {text1} from './main';
+//import sections from './navigation';
+import text1 from './main';
 
 
 function Footer(props) {

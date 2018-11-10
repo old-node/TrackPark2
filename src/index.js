@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/index.css';
-import App from './js/App';
 import Menu, {Header} from './component/global/navigation';
 import Content, {Info, Popup} from './component/global/main';
 import Footer, {Toast} from './component/global/footnote';
