@@ -118,6 +118,9 @@ table {
 .sideMenu {
 	background-color: #fafafa;
 }
+.sideMenu ul {
+	padding-left: 0;
+}
 
 .topMenu {
 	background-color: #2ECC71;

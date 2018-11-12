@@ -1,20 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom'
+import { BrowserRouter } from 'react-router-dom'
 import './css/index.css';
-import Menu, {Header} from './component/global/navigation';
-import Content, {Info, Popup} from './component/global/main';
-import Footer, {Toast} from './component/global/footnote';
-import * as serviceWorker from './js/serviceWorker';
+import App from './components/app';
+//import * as serviceWorker from './serviceWorker'; 
 
-ReactDOM.render(<Menu section="default"/>, document.getElementById('menu'));
-ReactDOM.render(<Header title="Gestion des " value="default"/>, document.getElementById('header'));
-ReactDOM.render(<Content section="2"/>, document.getElementById('content'));
-ReactDOM.render(<Info text="Info"/>, document.getElementById('info'));
-ReactDOM.render(<Popup text="Popup"/>, document.getElementById('popup'));
-ReactDOM.render(<Footer text="Footer"/>, document.getElementById('footer'));
-ReactDOM.render(<Toast text="Toast"/>, document.getElementById('toast'));
+render((
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+), document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+//serviceWorker.unregister();
