@@ -140,6 +140,8 @@ export const home = {
     path: "/",
 }
 
+
+
 export const contact = {
     id: 11,
     name: "À propos",
@@ -159,7 +161,27 @@ export const section_switch = {
     href: "../section.switch",
     path: "/s"
 }
+export const park = {
+    id: 58,
+        name: "Carte des parcs",
+        component: Park,
+        className: "park",
+        exact: true,
+        href: "../park",
+        path: "/s/parkgroup",
+        tableName: "",
+}
 
+export const parkgroup = {
+    id: 58,
+        name: "Carte des parcs",
+        component: ParkGroup,
+        className: "parkgroup",
+        exact: true,
+        href: "../parkgroup",
+        path: "/s/parkgroup",
+        tableName: "",
+}
 export const sections_group = [
     // Ajouter une balise pour nomer les éléments comme dans sessions?
     {
@@ -236,14 +258,15 @@ export const sections_group = [
     {
         id: 58,
         name: "Carte des parcs",
-        component: ParkGroup,
-        className: "park",
+        component: parkgroup,
+        className: "parkgroup",
         exact: true,
-        href: "../park",
-        path: "/s/park",
+        href: "../parkgroup",
+        path: "/s/parkgroup",
         tableName: "",
     }
 ]
+
 
 export const sections_group_admin = [
     {
