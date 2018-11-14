@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import logo from '../../images/logo.png'
 import { sections_group } from '../../constants'
 import { makeMenuLink } from '../../functions'
+import { Link } from 'react-router-dom'
 require('../../css/stylesheet.css')
 require('../../css/navigation/menu.css')
 
@@ -19,7 +20,7 @@ export default class Menu extends Component {
         <h3>
             Menu Component
         </h3>
-        <img className="logo" src={logo} alt="logo" />
+        <Link to='/'><img className="logo" src={logo} alt="logo" /></Link>
         <ul>
           { buttonList }
         </ul>
