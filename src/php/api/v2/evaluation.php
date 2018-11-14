@@ -1,0 +1,58 @@
+<?php
+require '../../database/SQLConnector.php';
+require '../../database/SQLResultToJson.php';
+require '../../util/RequestUtil.php';
+
+$conn = SQLConnector::createConn();
+
+if (isGet()) {
+    if (isset($_GET['id'])) {
+        $stm = $conn->prepare("SELECT * FROM evaluation WHERE id = ?");
+        $stm->bind_param("i", $_GET['id']);
+
+    } else if (isset($_GET['athlete'])) {
+        $stm = $conn->prepare("SELECT * FROM evaluation WHERE athlete = ?");
+        $stm->bind_param("i", $_GET['athlete']);
+
+    } else if (isset($_GET['coach'])) {
+        $stm = $conn->prepare("SELECT * FROM evaluation WHERE coach = ?");
+        $stm->bind_param("i", $_GET['coach']);
+
+    } else {
+        $stm = $conn->prepare("SELECT * FROM evaluation");
+    }
+
+    $stm->execute();
+    $result = $stm->get_result();
+    header('Content-Type: application/json');
+    echo convertToJson($result);
+
+} else if (isPost()) {
+    $data = json_decode(file_get_contents('php://input'), true);
+    if (isset($data['id'])) {
+        if (isset($data['state']) && isset($data['numerical_value'])) {
+            $stm = $conn->prepare("UPDATE evaluation SET result_state = ?, numerical_value = ?");
+            $stm->bind_param("ii", $data['state'], $data['numerical_value']);
+            $stm->execute();
+        } else if (isset($data['numerical_value'])) {
+            $stm = $conn->prepare("UPDATE evaluation SET numerical_value = ?");
+            $stm->bind_param("i", $data['numerical_value']);
+            $stm->execute();
+        } else if (isset($data['state'])) {
+            $stm = $conn->prepare("UPDATE evaluation SET result_state = ?");
+            $stm->bind_param("i", $data['state']);
+            $stm->execute();
+        }
+
+        $stm = $conn->prepare("SELECT * FROM evaluation WHERE id = ?");
+        $stm->bind_param("i", $data['id']);
+        $stm->execute();
+        $result = $stm->get_result();
+        header('Content-Type: application/json');
+        echo convertToJson($result);
+    } else {
+        http_response_code(400);
+    }
+}
+
+
