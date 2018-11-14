@@ -12,17 +12,14 @@ export default class Frame extends Component {
 
   render(props) {
     return (
-      
-        <Switch>
-          <Route exact path="/" component={home.component}/>
-          <Route path="/contact" component={contact.component}/>
-
           <div id="frame" className="frame">
-        <h3>
-            Frame Component
-        </h3>
-        </div>
-        </Switch>
+            <h3>
+                Frame Component
+            </h3>
+            <Switch>
+              <Route exact path="/" component={home.component}/>
+            </Switch>
+          </div>
       
     );
   }
