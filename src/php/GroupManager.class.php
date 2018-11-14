@@ -176,13 +176,6 @@ class GroupManager
         $g->setCourses($courses);
     }
 
-    /** update les infos du groupe dans la DB
-<<<<<<< HEAD
-     * @param $g Group
-=======
-     * @param Group $g groupe
->>>>>>> 7929a7befde659b1a61468014cb83aed33f82b66
-     */
    public static function addGroup($g)
     {
         $name = $g->getName();
@@ -198,7 +191,7 @@ class GroupManager
 
 		$conn->close();
 		$conn = SQLConnector::createConn();
-		$stat = $conn->prepare("INSERT INTO ta_group_coach (access_type, athlete_group) VALUES (1, ?);";
+		$stat = $conn->prepare("INSERT INTO ta_group_coach (access_type, athlete_group) VALUES (1, ?);");
 		$stat->bind_param("i",$id);
 		$stat->execute();
 		$conn->close();
@@ -259,10 +252,7 @@ class GroupManager
         return $id;
     }
 
-    /** ajoute un groupe à la DB
-     * @param Group $g Groupe
-     * @return int
-     */
+    /* OUTDATED
     public static function addGroup($g)
     {
         $name = $g->getName();
@@ -274,7 +264,7 @@ class GroupManager
         $stat->execute();
 
         return $stat->insert_id;
-    }
+    }*/
 
     public static function getAthletesInGroup($group)
     {

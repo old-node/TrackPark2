@@ -97,7 +97,6 @@ fabric.properties
 
 
 # End of https://www.gitignore.io/api/phpstorm
-SQLConnector.class.php
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
