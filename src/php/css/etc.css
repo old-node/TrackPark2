@@ -1,0 +1,19 @@
+<!--/**********************************************************************************
+Fichier :       etc.css
+Auteur :        Francis Forest
+Fonctionnalité : Fichier de style CSS pour d'autres types d'affichages.
+Date :          4 mai 2018
+=======================================================================================
+Vérification :
+Date        Nom                     Approuvé
+2018-05-06  Olivier Lemay Dostie    Oui
+=======================================================================================
+Historique de modification :
+Date        Nom                     Description
+2018-05-04	Francis Forest          Création
+***********************************************************************************/-->
+
+.bottom {
+    position: fixed;
+    bottom: 0;
+}
