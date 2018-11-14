@@ -5,11 +5,15 @@ import Info from './info';
 import Popup from './popup';
 
 export default class Content extends Component {
+  
+
   render(props) {
+  
+   
     return (
       <main id="content" className="content">
         <h2>
-            Content Component
+           Hello {this.props.value}
         </h2>
         <Frame />
         <Info />
