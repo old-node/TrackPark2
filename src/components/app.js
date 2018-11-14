@@ -6,10 +6,9 @@ import Footnote from './footnote/footnote'
 //require('../css/app.css')
 
 const App = () => (
-  
   <div>
     <Navigation />
-    <Content value="test"/>
+    <Content value='test' />
     <Footnote />
   </div>
 )
