@@ -17,12 +17,28 @@ Date		Nom						Description
 
 function isPost()
 {
-    return $_SERVER['REQUEST_METHOD'] === 'POST';
+    return isMethod('POST');
 }
 
 function isGet()
 {
-    return $_SERVER['REQUEST_METHOD'] === 'GET';
+    return isMethod('GET');
+}
+
+function isPut() {
+    return isMethod('PUT');
+}
+
+function isDelete() {
+    return isMethod('DELETE');
+}
+
+function isPatch() {
+    return isMethod('PATCH');
+}
+
+function isMethod($verb) {
+    return $_SERVER['REQUEST_METHOD'] === $verb;
 }
 
 function redirectToRoot()
