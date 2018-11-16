@@ -8,7 +8,7 @@ import Footnote from './footnote/footnote'
 const App = () => (
   <div>
     <Navigation />
-    <Content />
+    <Content value='test' />
     <Footnote />
   </div>
 )
