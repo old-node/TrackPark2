@@ -17,9 +17,6 @@ export default class Menu extends Component {
     });
     return (
       <nav id="menu" className="menu sideMenu col2 colt2 colm12 floatLeft">
-        <h3>
-            Menu Component
-        </h3>
         <Link to='/'><img className="logo" src={logo} alt="logo" /></Link>
         <ul>
           { buttonList }

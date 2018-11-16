@@ -12,7 +12,7 @@ import AthleteList from '../sections/athlete.list';
 export default class Content extends Component {
   render(props) {
     return (
-      <main id="content" className="content">
+      <main id="content" className="content col10 colt10 colm12 floatLeft">
         <Info />
         <Popup />
 
