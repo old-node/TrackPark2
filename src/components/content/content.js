@@ -5,21 +5,27 @@ import Info from './info';
 import Popup from './popup';
 import { Switch } from 'react-router-dom'
 import { Route } from 'react-router-dom'
-import  ParkGroup  from '../sections/park.group'
+
+import ParkGroup  from '../sections/park.group';
+import AthleteList from '../sections/athlete.list';
+
 export default class Content extends Component {
   render(props) {
     return (
       <main id="content" className="content">
-        <h2>
-            Content Component
-        </h2>
-        <Frame />
         <Info />
         <Popup />
 
-         <Switch>
-              <Route exact path="/park" component={ParkGroup.component}/>
-            </Switch>
+
+        <Switch>
+          <Route exact path="/athlete" component={AthleteList} />
+        </Switch>
+
+        <Switch>
+              <Route exact path="/parkgroup" component={ParkGroup}/>
+        </Switch>
+
+
       </main>
     );
   }

@@ -3,6 +3,9 @@ import '../../css/content/frame.css'
 import { Switch } from 'react-router-dom'
 import { home, contact } from '../../constants';
 import { parkgroup } from '../../constants';
+
+import AthleteList from '../sections/athlete.list';
+
 import { park } from '../../constants';
 import { Route } from 'react-router-dom'
 
@@ -23,13 +26,17 @@ export default class Frame extends Component {
             </Switch>
 
             <Switch>
+              <Route exact path="/athlete" component={AthleteList}/>
+            </Switch>
+
+            <Switch>
               <Route exact path="/parkgroup" component={parkgroup.component}/>
             </Switch>
             <Switch>
               <Route exact path="/park" component={park.component}/>
             </Switch>
           </div>
-      
+
     );
   }
 }
