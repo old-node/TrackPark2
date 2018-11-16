@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 
 export function makeMenuLink(section, active) {
+
+  //External link
+  if(section.href.match("^(http|https)://")) {
+    return(<li><a class="sideMenuButton" href={section.href}>{section.name}</a></li>)
+  }
+
   if (section.name === active) {
     return(<li><Link className="sideMenuButton active" to={section.href}>{section.name}</Link></li>);
   } else {
