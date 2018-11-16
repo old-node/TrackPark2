@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../../css/navigation/header.css';
+import '../../css/sections/park.css';
 import {Table } from 'semantic-ui-react'
 import { withRouter } from 'react-router-dom';
 
@@ -45,7 +45,7 @@ class ParkGroup extends Component {
      )
 
     const ParkGroup = () => (
-      <Table celled id="tableParc">
+      <Table celled className="park-table" id="tableParc">
        {TableName()}
        {TableBody()}
        { map()}

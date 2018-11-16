@@ -17,27 +17,12 @@ import Contact from './components/contact';
 
 import SectionSwitch from './components/sections/section.switch'
 
-import CoachGroup from './components/sections/coach.group';
-import Coach from './components/sections/coach';
 import AthleteGroup from './components/sections/athlete.group';
 import Athlete from './components/sections/athlete';
-import DrillGroup from './components/sections/drill.group';
-import Drill from './components/sections/drill';
-import EvaluationGroup from './components/sections/evaluation.group';
-import Evaluation from './components/sections/evaluation';
-import GroupGroup from './components/sections/group.group';
-import Group from './components/sections/group';
-import CourseGroup from './components/sections/course.group';
-import Course from './components/sections/course';
-import CapGroup from './components/sections/cap.group';
-import Cap from './components/sections/cap';
+
 import ParkGroup from './components/sections/park.group';
 import Park from './components/sections/park';
 
-import UserTypeGroup from './components/sections/usertype.group';
-import UserType from './components/sections/usertype';
-import UserGroup from './components/sections/user.group';
-import User from './components/sections/user';
 
 //import  from './components/sections/';
 
@@ -187,7 +172,7 @@ export const sections_group = [
     {
         id: 51,
         name: "Évaluateurs",
-        component: CoachGroup,
+        component: null, //External
         className: "coach",
         exact: true,
         href: "http://localhost/UIWCoachManager.php",
@@ -207,7 +192,7 @@ export const sections_group = [
     {
         id: 53,
         name: "Exercices",
-        component: DrillGroup,
+        component: null, //External
         className: "drill",
         exact: true,
         href: "http://localhost/UIWDrillManager.php",
@@ -217,7 +202,7 @@ export const sections_group = [
     {
         id: 54,
         name: "Évaluations",
-        component: EvaluationGroup,
+        component: null, //External
         className: "evaluation",
         exact: true,
         href: "../evaluation",
@@ -228,7 +213,7 @@ export const sections_group = [
         /* TODO: Revoir la liste pour ajouter les groupes requis avec un id */
         id: 55,
         name: "Groupes",
-        component: GroupGroup,
+        component: null, //TODO
         className: "group",
         exact: true,
         href: "../group",
@@ -238,7 +223,7 @@ export const sections_group = [
     {
         id: 56,
         name: "Parcours",
-        component: CourseGroup,
+        component: null, //External
         className: "course",
         exact: true,
         href: "http://localhost/UIWCourseManager.php",
@@ -248,7 +233,7 @@ export const sections_group = [
     {
         id: 57,
         name: "Casquettes",
-        component: CapGroup,
+        component: null, //External
         className: "cap",
         exact: true,
         href: "http://localhost/manageCap.php",
@@ -272,7 +257,7 @@ export const sections_group_admin = [
     {
         id: 60,
         name: "Types des utilisateurs",
-        component: UserTypeGroup,
+        component: null, //External
         className: "usertype",
         exact: true,
         href: "http://localhost/manageUserType.php",
@@ -282,7 +267,7 @@ export const sections_group_admin = [
     {
         id: 61,
         name: "Utilisateurs",
-        component: UserGroup,
+        component: null, //External
         className: "user",
         exact: true,
         href: "http://localhost/manageUsers.php",
@@ -295,7 +280,7 @@ export const sections = [
     {
         id: 71,
         name: "Évaluateur ", //{:number}
-        component: Coach,
+        component: null, //TODO
         className: "coach",
         exact: false,
         href: "../coach",
@@ -315,7 +300,7 @@ export const sections = [
     {
         id: 73,
         name: "Exercice ",
-        component: Drill,
+        component: null, //Todo
         className: "drill",
         exact: false,
         href: "../drill",
@@ -325,7 +310,7 @@ export const sections = [
     {
         id: 74,
         name: "Évaluation ",
-        component: Evaluation,
+        component: null, //Todo
         className: "evaluation",
         exact: false,
         href: "../evaluation",
@@ -335,7 +320,7 @@ export const sections = [
     {
         id: 75,
         name: "Groupe ",
-        component: Group,
+        component: null, //Todo
         className: "group",
         exact: false,
         href: "../group",
@@ -345,7 +330,7 @@ export const sections = [
     {
         id: 76,
         name: "Parcour ",
-        component: Course,
+        component: null, //External
         className: "course",
         exact: false,
         href: "../course",
@@ -355,7 +340,7 @@ export const sections = [
     {
         id: 77,
         name: "Casquette ",
-        component: Cap,
+        component: null, //External
         className: "cap",
         exact: false,
         href: "../cap",
@@ -378,7 +363,7 @@ export const sections_admin = [
     {
         id: 80,
         name: "Types des utilisateurs",
-        component: UserType,
+        component: null, //External
         className: "usertype",
         exact: true,
         href: "../usertype",
@@ -388,7 +373,7 @@ export const sections_admin = [
     {
         id: 81,
         name: "Utilisateurs",
-        component: User,
+        component: null, //External
         className: "user",
         exact: true,
         href: "../user",
