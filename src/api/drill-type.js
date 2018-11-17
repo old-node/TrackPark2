@@ -6,7 +6,7 @@ const DrillTypeAPI = {
     return APIRequestHandler.query(Endpoints.DRILL_TYPE);
   },
   get: async function(id) {
-    return APIRequestHandler.query(`${Endpoints.ATHLETE_CATEGORY}?id=${id}`);
+    return APIRequestHandler.query(`${Endpoints.DRILL_TYPE}?id=${id}`);
   }
 };
 

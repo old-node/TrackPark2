@@ -6,7 +6,7 @@ const CapAPI = {
     return APIRequestHandler.query(Endpoints.CAP);
   },
   get: async function(code) {
-    return APIRequestHandler.query(`${Endpoints.ATHLETE_CATEGORY}?code=${code}`);
+    return APIRequestHandler.query(`${Endpoints.CAP}?code=${code}`);
   }
 };
 

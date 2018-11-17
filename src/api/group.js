@@ -6,10 +6,10 @@ const GroupAPI = {
     return APIRequestHandler.query(Endpoints.GROUP);
   },
   get: async function(id) {
-    return APIRequestHandler.query(`${Endpoints.ATHLETE_CATEGORY}?id=${id}`);
+    return APIRequestHandler.query(`${Endpoints.GROUP}?id=${id}`);
   },
   ofCoach: async function(id) {
-    return APIRequestHandler.query(`${Endpoints.ATHLETE_CATEGORY}?coach=${id}`);
+    return APIRequestHandler.query(`${Endpoints.GROUP}?coach=${id}`);
   },
   addRight: async function(group, coach, type) { //TODO: test this
     let body = {

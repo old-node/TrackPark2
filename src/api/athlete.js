@@ -6,13 +6,13 @@ const AthleteAPI = {
     return APIRequestHandler.query(Endpoints.ATHLETE);
   },
   get: async function(id) {
-    return APIRequestHandler.query(`${Endpoints.ATHLETE_CATEGORY}?id=${id}`);
+    return APIRequestHandler.query(`${Endpoints.ATHLETE}?id=${id}`);
   },
   withCoach: async function(id) {
-    return APIRequestHandler.query(`${Endpoints.ATHLETE_CATEGORY}?coach=${id}`);
+    return APIRequestHandler.query(`${Endpoints.ATHLETE}?coach=${id}`);
   },
   inGroup: async function(id) {
-    return APIRequestHandler.query(`${Endpoints.ATHLETE_CATEGORY}?group=${id}`);
+    return APIRequestHandler.query(`${Endpoints.ATHLETE}?group=${id}`);
   }
 };
 
