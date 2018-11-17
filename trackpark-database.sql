@@ -202,7 +202,6 @@ CREATE TABLE `coach` (
 --
 
 INSERT INTO `coach` (`id`, `address`, `gender`, `first_name`, `name`, `birthday`, `email`, `phone_number`, `profile_image_url`, `profile_info`, `comments`, `availabilities`, `holidays`, `banned`, `inactive`, `creation_date`) VALUES
-(0, 0, 0, 'Prénom', 'Nom de famille', NULL, NULL, NULL, 'default_image_url (to define)', NULL, NULL, NULL, NULL, 1, 1, NULL),
 (1, 1, 9, 'Carole', 'Trépanier', '19880218', 'test.a@gmail.com', '8195551234#123', 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973461_1280.png', 'Mon profil est le meilleur.', 'Évalue les athlètes constament à la hause.', 'Tout les jours sauf les vendredi et samedi.', 'Durant l\'été.', 0, 0, '2018-04-'),
 (2, 2, 0, 'Martin', 'Hamilton', '19890506', 'test.b@gmail.com', '018195551234', 'https://www.stori.si/wp-content/uploads/2015/09/blank_avatar-450x450.jpg', 'Dorénavant, je vais devoir vendre mes gants plus chèr. Ils seront à 12$ l\'unité.', 'Ses gants font furreur.', 'Tout les jours sauf la première semaine de chaque mois.', 'Du 23 au 28 mai.', 0, 0, '2018-04-');
 
@@ -578,7 +577,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `user_type`, `coach`, `username`, `password_hash`) VALUES
-(2, 1, NULL, 'admin', '$2y$10$juVGbqwxOfDgoyOSFw2ckOWQcrNMYOO6BWhGHWMQHT0.VzCbnaRJm'),
+(2, 1, 2, 'admin', '$2y$10$juVGbqwxOfDgoyOSFw2ckOWQcrNMYOO6BWhGHWMQHT0.VzCbnaRJm'),
 (3, 2, 1, 'Bob1', 'notarealhash.gonnabug.everything');
 
 -- --------------------------------------------------------
@@ -606,6 +605,14 @@ INSERT INTO `user_type` (`id`, `name`, `description`, `permission_level`) VALUES
 --
 -- Indexes for dumped tables
 --
+
+CREATE TABLE `session` (
+    `user_id` int (11) NOT NULL,
+    `token` varchar(32) NOT NULL
+)
+
+ALTER TABLE `session`
+  ADD PRIMARY KEY (`user_id`,`token`),
 
 --
 -- Indexes for table `access_type`

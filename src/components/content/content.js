@@ -8,6 +8,7 @@ import { Route } from 'react-router-dom'
 
 import ParkGroup  from '../sections/park.group';
 import AthleteList from '../sections/athlete.list';
+import Login from '../../auth/login';
 
 export default class Content extends Component {
   render(props) {
@@ -16,6 +17,9 @@ export default class Content extends Component {
         <Info />
         <Popup />
 
+        <Switch>
+            <Route exact path="/login" component={Login}></Route>
+        </Switch>
 
         <Switch>
           <Route exact path="/athlete" component={AthleteList} />
@@ -24,8 +28,6 @@ export default class Content extends Component {
         <Switch>
               <Route exact path="/parkgroup" component={ParkGroup}/>
         </Switch>
-
-
       </main>
     );
   }

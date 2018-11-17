@@ -1,11 +1,12 @@
+import APIRequestHandler from "./APIRequestHandler";
+import Endpoints from "./Endpoints";
+
 const AthleteAPI = {
   all: async function() {
-    return fetch("http://localhost/api/v2/athlete.php").then(res => res.json());
+    return APIRequestHandler.query(Endpoints.ATHLETE, true);
   },
   get: async function(id) {
-    const response = await fetch("http://localhost/athlete.php?id=" + id);
-    //const json = await response.json();
-    return await response.json();
+    return APIRequestHandler.query(Endpoints.ATHLETE + `?id=${id}`);
   }
 };
 

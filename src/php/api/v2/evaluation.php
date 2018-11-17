@@ -1,7 +1,13 @@
 <?php
-require '../../database/SQLConnector.php';
-require '../../database/SQLResultToJson.php';
-require '../../util/RequestUtil.php';
+require_once '../../database/SQLConnector.php';
+require_once '../../database/SQLResultToJson.php';
+require_once '../../util/RequestUtil.php';
+
+require_once 'verifyToken.php';
+if(!verifyToken()) {
+    http_response_code(401); //Unauthorized
+    return;
+}
 
 $conn = SQLConnector::createConn();
 

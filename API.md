@@ -1,5 +1,41 @@
 # TrackPark API v2
 
+## Authentication
+
+Pour s'identifier avec l'API
+
+**Method**: POST
+
+**URL**: `/v2/auth.php`
+
+**Body**
+- "username" -> string, obligatoire
+- "password" -> string, obligatoire
+
+Exemple
+```json
+{
+    "username": "admin",
+    "password": "admin"
+}
+```
+
+Si l'identification réussi, un objet json est retourné
+```json
+{
+    "id" : <int>, //Votre id d'utilisateur
+    "token" <string>, //Votre token pour s'identifier à l'API, GARDER LE!
+    "coach": <int> //Votre ID de coach
+}
+
+Si le nom d'utilisateur ou le mot de passe est incorrect, vous receverez un erreur 400.
+
+## Authenfication à travers l'API
+
+Pour s'identifier pour une request GET, passer votre token dans l'url `?token=yourtokenhere`
+
+Pour s'identifier pour une request POST, assurer vous d'avoir un champs `"token": "yourtokenhere"` dans l'objet que vous passez
+
 ## Athlete
 
 Données sur les athlètes

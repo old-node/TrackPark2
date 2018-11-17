@@ -1,17 +1,28 @@
-import React from 'react'
-import Navigation from './navigation/navigation'
-import Content from './content/content'
-import Footnote from './footnote/footnote'
+import React, { Component } from "react";
+import Navigation from "./navigation/navigation";
+import Content from "./content/content";
+import Footnote from "./footnote/footnote";
+import AuthCheckHack from "../auth/auth";
+
 //import logo from './logo.svg'
 //require('../css/app.css')
 
-const App = () => (
-  <div>
-    <Navigation />
-    <Content value='test' />
-    <Footnote />
-  </div>
-)
+class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div>
+        <AuthCheckHack />
+        <Navigation />
+        <Content value="test" />
+        <Footnote />
+      </div>
+    );
+  }
+}
 
 export default App;
 
