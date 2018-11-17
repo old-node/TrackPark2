@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Table } from "semantic-ui-react";
 import { withRouter } from "react-router-dom";
+
 import AthleteAPI from "../../api/athlete";
 
 class AthleteList extends Component {

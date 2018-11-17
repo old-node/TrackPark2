@@ -3,10 +3,16 @@ import Endpoints from "./Endpoints";
 
 const AthleteAPI = {
   all: async function() {
-    return APIRequestHandler.query(Endpoints.ATHLETE, true);
+    return APIRequestHandler.query(Endpoints.ATHLETE);
   },
   get: async function(id) {
     return APIRequestHandler.query(Endpoints.ATHLETE + `?id=${id}`);
+  },
+  withCoach: async function(id) {
+    return APIRequestHandler.query(Endpoints.ATHLETE + `?coach=${id}`);
+  },
+  inGroup: async function(id) {
+    return APIRequestHandler.query(Endpoints.ATHLETE + `?group=${id}`);
   }
 };
 

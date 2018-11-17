@@ -4,7 +4,7 @@ class APIRequestHandler {
    * @param {string} url the url to query
    * @param {boolean} auth indicate if the token should be passed in the headers
    */
-  static query(url, auth) {
+  static query(url, auth = true) {
 
     if (auth) {
         if(url.includes('?')) {
@@ -23,7 +23,7 @@ class APIRequestHandler {
    * @param {json} body Json objet to post
    * @param {boolean} auth indicate if the token should be passed in the headers
    */
-  static post(url, body, auth) {
+  static post(url, body, auth = true) {
     if (auth) {
         body['token'] = sessionStorage.getItem('token');
     }
