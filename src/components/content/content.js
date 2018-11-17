@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../../css/content/content.css';
-import Frame from './frame';
 import Info from './info';
 import Popup from './popup';
 import { Switch } from 'react-router-dom'

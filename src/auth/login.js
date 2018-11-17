@@ -4,10 +4,6 @@ import AuthManager from './AuthManager';
 
 
 class Login extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   loginClick() {
     let username = document.getElementById('username').value;
     let password = document.getElementById('password').value;

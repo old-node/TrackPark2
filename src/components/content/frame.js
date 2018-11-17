@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import '../../css/content/frame.css'
 import { Switch } from 'react-router-dom'
-import { home, contact } from '../../constants';
+import { home } from '../../constants';
 import { parkgroup } from '../../constants';
 
 import AthleteList from '../sections/athlete.list';

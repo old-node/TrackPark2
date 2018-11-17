@@ -39,7 +39,7 @@ class ParkGroup extends Component {
         <Table.Row>
           <td id="class" colSpan="2">
         <div >
-         <iframe src={path}  width="600" height="450" ></iframe>
+         <iframe src={path}  width="600" height="450" title="map" ></iframe>
        </div></td>
        </Table.Row>
      )

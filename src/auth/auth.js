@@ -4,10 +4,6 @@ import AuthManager from "./AuthManager";
 import "../css/login.css";
 
 class AuthCheckHack extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentWillMount() {
     if (!AuthManager.isLoggedIn() && !window.location.href.includes("login")) {
       window.location.replace("login");
