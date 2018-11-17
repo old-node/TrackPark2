@@ -3,6 +3,8 @@ import { Table } from "semantic-ui-react";
 import { withRouter } from "react-router-dom";
 import AthleteAPI from "../../api/athlete";
 
+import GroupAPI from "../../api/group";
+
 class AthleteList extends Component {
   constructor(props) {
     super(props);

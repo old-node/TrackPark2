@@ -13,6 +13,20 @@ const EvaluationAPI = {
   },
   ofCoach: async function(id) {
     return APIRequestHandler.query(Endpoints.EVALUATION + `?coach=${id}`);
+  },
+  update: async function(id, options) { //TODO: test this
+    let body = {
+        id: id
+    }
+
+    if(options.state !== undefined) {
+        body.state = options.state;
+    }
+
+    if(options.value !== undefined) {
+        body.numerical_value = options.value;
+    }
+    return APIRequestHandler.post(Endpoints.EVALUATION, body);
   }
 };
 

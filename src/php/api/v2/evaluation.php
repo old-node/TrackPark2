@@ -37,16 +37,16 @@ if (isGet()) {
     $data = json_decode(file_get_contents('php://input'), true);
     if (isset($data['id'])) {
         if (isset($data['state']) && isset($data['numerical_value'])) {
-            $stm = $conn->prepare("UPDATE evaluation SET result_state = ?, numerical_value = ?");
-            $stm->bind_param("ii", $data['state'], $data['numerical_value']);
+            $stm = $conn->prepare("UPDATE evaluation SET result_state = ?, numerical_value = ? WHERE id = ?");
+            $stm->bind_param("iii", $data['state'], $data['numerical_value'], $data['id']);
             $stm->execute();
         } else if (isset($data['numerical_value'])) {
-            $stm = $conn->prepare("UPDATE evaluation SET numerical_value = ?");
-            $stm->bind_param("i", $data['numerical_value']);
+            $stm = $conn->prepare("UPDATE evaluation SET numerical_value = ? WHERE id = ?");
+            $stm->bind_param("ii", $data['numerical_value'], $data['id']);
             $stm->execute();
         } else if (isset($data['state'])) {
-            $stm = $conn->prepare("UPDATE evaluation SET result_state = ?");
-            $stm->bind_param("i", $data['state']);
+            $stm = $conn->prepare("UPDATE evaluation SET result_state = ? WHERE id = ?");
+            $stm->bind_param("ii", $data['state'], $data['id']);
             $stm->execute();
         }
 

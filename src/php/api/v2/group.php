@@ -53,9 +53,11 @@ if(isGet()) {
                 $stm->bind_param("iii", $data['type'], $data['group'], $data['coach']);
                 $stm->execute();
                 http_response_code(200);
+                echo '{"result":"success"}';
                 return;
             } else {
                 http_response_code(400);
+                echo '{"result":"failed"}';
                 return;
             }
         }
