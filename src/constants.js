@@ -7,7 +7,7 @@ import Footnote from './components/footnote/footnote';
 
 import NotFound from './components/notfound';
 
-import Login from './components/login';
+import Login from './auth/login';
 import Register from './components/register';
 import Forgot from './components/forgot';
 import Logout from './components/logout';
