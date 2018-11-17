@@ -6,7 +6,7 @@ const CoachAPI = {
     return APIRequestHandler.query(Endpoints.COACH);
   },
   get: async function(id) {
-    return APIRequestHandler.query(Endpoints.COACH + `?id=${id}`);
+    return APIRequestHandler.query(`${Endpoints.ATHLETE_CATEGORY}?id=${id}`);
   }
 };
 

@@ -6,13 +6,13 @@ const EvaluationAPI = {
     return APIRequestHandler.query(Endpoints.EVALUATION);
   },
   get: async function(id) {
-    return APIRequestHandler.query(Endpoints.EVALUATION + `?id=${id}`);
+    return APIRequestHandler.query(`${Endpoints.ATHLETE_CATEGORY}?id=${id}`);
   },
   ofAthlete: async function(id) {
-    return APIRequestHandler.query(Endpoints.EVALUATION + `?athlete=${id}`);
+    return APIRequestHandler.query(`${Endpoints.ATHLETE_CATEGORY}?athlete=${id}`);
   },
   ofCoach: async function(id) {
-    return APIRequestHandler.query(Endpoints.EVALUATION + `?coach=${id}`);
+    return APIRequestHandler.query(`${Endpoints.ATHLETE_CATEGORY}?coach=${id}`);
   },
   update: async function(id, options) { //TODO: test this
     let body = {

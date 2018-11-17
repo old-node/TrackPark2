@@ -6,7 +6,7 @@ const CourseTypeAPI = {
     return APIRequestHandler.query(Endpoints.COURSE_TYPE);
   },
   get: async function(id) {
-    return APIRequestHandler.query(Endpoints.COURSE_TYPE + `?id=${id}`);
+    return APIRequestHandler.query(`${Endpoints.ATHLETE_CATEGORY}?id=${id}`);
   }
 };
 
