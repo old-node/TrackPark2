@@ -13,7 +13,6 @@ class Login extends Component {
     let password = document.getElementById('password').value;
     AuthManager.auth(username, password)
     .then(() => {
-        console.log(AuthManager.isLoggedIn());
         window.location.replace('/')
     });
   }

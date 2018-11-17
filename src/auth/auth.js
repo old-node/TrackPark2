@@ -9,8 +9,6 @@ class AuthCheckHack extends Component {
   }
 
   componentWillMount() {
-    console.log(AuthManager.coach_id);
-    console.log(AuthManager.isLoggedIn());
     if (!AuthManager.isLoggedIn() && !window.location.href.includes("login")) {
       window.location.replace("login");
     }
