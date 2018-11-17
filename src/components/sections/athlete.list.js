@@ -16,8 +16,6 @@ class AthleteList extends Component {
   }
 
   componentDidMount() {
-
-    AthleteAPI.get(1).then(console.log);
     AthleteAPI.all().then(
       result => {
         this.setState({
