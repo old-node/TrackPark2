@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Table, Button, Icon } from "semantic-ui-react";
+import { Table, Button, Icon, TableRow } from "semantic-ui-react";
 import { withRouter, Link } from "react-router-dom";
 
 import AthleteTable from "./tables/athlete";
@@ -78,22 +78,54 @@ class EvaluationDetail extends Component {
       return (
         <div>
           <h1>
-            Évaluation de {athlete.first_name} {athlete.name} - {evaluation.date}
+            Évaluation de {athlete.first_name} {athlete.name} -{" "}
+            {evaluation.date}
           </h1>
-            <h2>Éxercice</h2>
-            Nom: {drill.name}<br />
-            Objectif: {drill.goal}<br />
-            Nombre d'essai alloués: {drill.allowed_tries}<br/>
-            Objectif pour réussir: {drill.success_treshhold}<br/>
-            Résultat pour rater: {drill.failure_treshhold}<br/>
-            Cap: {drill.cap}<br/>
-
-            <h2>Résultat</h2>
-            État: {evaluation.result_state === ResultStates.FAILEd ? "Raté" : evaluation.result_state === ResultStates.TODO ? "À faire" : "Passé" }<br />
-            Résultat: {evaluation.numerical_value}<br />
-
-            <h2>Coach</h2>
-            <CoachTable coachs={coach} />
+          <h2>Éxercice</h2>
+          <Table celled id="drill-table">
+            <Table.Header>
+              <Table.Row>
+                <Table.HeaderCell>Nom</Table.HeaderCell>
+                <Table.HeaderCell>Objectif</Table.HeaderCell>
+                <Table.HeaderCell>Essaies alloués</Table.HeaderCell>
+                <Table.HeaderCell>Objectif réussite</Table.HeaderCell>
+                <Table.HeaderCell>Casquette</Table.HeaderCell>
+              </Table.Row>
+            </Table.Header>
+            <Table.Body>
+              <Table.Row key={drill.id}>
+                <Table.Cell>{drill.name}</Table.Cell>
+                <Table.Cell>{drill.goal}</Table.Cell>
+                <Table.Cell>{drill.allowed_tries}</Table.Cell>
+                <Table.Cell>{drill.success_treshold}</Table.Cell>
+                <Table.Cell>{drill.cap}</Table.Cell>
+              </Table.Row>
+            </Table.Body>
+          </Table>
+          <h2>Résultat</h2>
+          <Table celled id="result-table">
+            <Table.Header>
+              <Table.Row>
+                <Table.HeaderCell>État</Table.HeaderCell>
+                <Table.HeaderCell>Résultat</Table.HeaderCell>
+              </Table.Row>
+            </Table.Header>
+            <Table.Body>
+              <Table.Row negative={evaluation.result_state === ResultStates.FAILEd} positive={evaluation.result_state === ResultStates.PASSED} key={evaluation.id}>
+                <Table.Cell>
+                  {" "}
+                  {evaluation.result_state === ResultStates.FAILEd
+                    ? "Raté"
+                    : evaluation.result_state === ResultStates.TODO
+                    ? "À faire"
+                    : "Passé"}
+                </Table.Cell>
+                <Table.Cell>{evaluation.numerical_value}</Table.Cell>
+              </Table.Row>
+            </Table.Body>
+          </Table>
+          <h2>Coach</h2>
+          <CoachTable coachs={coach} />
         </div>
       );
     }
