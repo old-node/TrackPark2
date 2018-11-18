@@ -6,7 +6,7 @@ input {
     text-align: center;
 }
 
-button {
+.green-button {
     background-color: #2ECC71;
     color: white;
     padding: 14px 20px;
@@ -16,6 +16,6 @@ button {
     width: 100%;
 }
 
-button:hover {
+.green-button:hover {
     opacity: 0.8;
 }

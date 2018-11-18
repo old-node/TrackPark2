@@ -22,7 +22,7 @@ class Login extends Component {
             <label for="password"><b>Mot de passe</b></label><br />
             <input id='password' type="password" placeholder="Mot de passe" name="password" required /><br />
 
-            <button onClick={this.loginClick}>Connexion</button>
+            <button class="green-button" onClick={this.loginClick}>Connexion</button>
         </div>
     );
   }

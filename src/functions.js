@@ -6,11 +6,11 @@ export function makeMenuLink(section, active) {
 
   //External link
   if(section.href.match("^(http|https)://")) {
-    return(<li><a class="sideMenuButton" href={section.href}>{section.name}</a></li>)
+    return(<li><a className="sideMenuButton" href={section.href}>{section.name}</a></li>)
   }
 
   if (section.name === active) {
-    return(<li><Link className="sideMenuButton active" to={section.href}>{section.name}</Link></li>);
+    return(<li key={section.id}><Link className="sideMenuButton active" to={section.href}>{section.name}</Link></li>);
   } else {
     return(<li key={section.id}><Link key={section.id} className="sideMenuButton" to={section.href}>{section.name}</Link></li>);
   }

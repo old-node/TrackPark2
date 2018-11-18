@@ -13,7 +13,7 @@ class App extends Component {
       <div>
         <AuthCheckHack />
         <Navigation />
-        <Content value="test" />
+        <Content />
         <Footnote />
       </div>
     );
