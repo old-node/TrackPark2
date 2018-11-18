@@ -8,7 +8,9 @@ import { Route } from 'react-router-dom'
 import ParkGroup  from '../sections/park.group';
 import AthleteList from '../sections/athlete.list';
 import GroupList from '../sections/group.list';
+import GroupDetail from '../sections/group.detail';
 import Login from '../../auth/login';
+import groupDetail from '../sections/group.detail';
 
 export default class Content extends Component {
   render(props) {
@@ -27,6 +29,10 @@ export default class Content extends Component {
 
         <Switch>
           <Route exact path="/group" component={GroupList} />
+        </Switch>
+
+        <Switch>
+            <Route exact path="/group/:id" component={GroupDetail} />
         </Switch>
 
         <Switch>

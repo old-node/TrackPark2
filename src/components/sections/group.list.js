@@ -17,7 +17,7 @@ class GroupList extends Component {
   }
 
   async componentDidMount() {
-    GroupAPI.all(AuthManager.getCoachId()).then(
+    GroupAPI.all().then(
       result => {
         this.setState({
           isLoaded: true,
@@ -53,7 +53,7 @@ class GroupList extends Component {
                 <Table.Cell>{group.name}</Table.Cell>
                 <Table.Cell>{group.description}</Table.Cell>
                 <Table.Cell>
-                  <Button color="green" icon="right arrow" />
+                  <Link to={`/group/${group.id}`}><Button color="green" icon="right arrow" /></Link>
                 </Table.Cell>
               </Table.Row>
             ))}

@@ -4,7 +4,7 @@ const Enpoints = {
   ATHLETE: BASE + "athlete.php",
   ATHLETE_CATEGORY: BASE + "athlete_category.php",
   CAP: BASE + "cap.php",
-  COACH: BASE + "coach",
+  COACH: BASE + "coach.php",
   COURSE_TYPE: BASE + "course_type.php",
   DRILL: BASE + "drill.php",
   EVALUATION: BASE + "evaluation.php",

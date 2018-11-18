@@ -7,6 +7,9 @@ const CoachAPI = {
   },
   get: async function(id) {
     return APIRequestHandler.query(`${Endpoints.COACH}?id=${id}`);
+  },
+  forGroup: async function(id) {
+    return APIRequestHandler.query(`${Endpoints.COACH}?group=${id}`);
   }
 };
 

@@ -17,7 +17,6 @@ class AthleteList extends Component {
   }
 
   async componentDidMount() {
-
     AthleteAPI.withCoach(AuthManager.getCoachId()).then(
       result => {
         this.setState({
