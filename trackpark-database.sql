@@ -333,8 +333,10 @@ CREATE TABLE `evaluation` (
 INSERT INTO `evaluation` (`id`, `field`, `coach`, `drill`, `athlete`, `period`, `date`, `numerical_value`, `result_message`, `result_state`, `comment`, `obsolete`) VALUES
 (0, 0, 0, 0, 0, 0, NULL, NULL, NULL, 0, NULL, 1),
 (1, 1, 2, 1, 1, 1, '2018-04-29', 3.5, 'Échec de l\'épreuve par manque de temps.', 3, 'L\'athlète a besoin de plus d\'entrainement.', 0),
-(2, 2, 1, 2, 2, 2, '2018-04-30', 10, 'Aucune balle n\'a été ratée.', 2, 'L\'athlète a réussi de battre son record.', 0);
-
+(2, 2, 1, 2, 2, 2, '2018-04-30', 10, 'Aucune balle n\'a été ratée.', 2, 'L\'athlète a réussi de battre son record.', 0),
+(3, 2, 1, 3, 1, 2, '2018-04-30', 8, 'Seulement deux raté, ca passe', 2, 'L\'athlète a réussi de battre son record.', 0),
+(4, 2, 1, 4, 1, 2, '2018-04-30', 5, 'Ouf', 3, 'L\'athlète doit travailler la force de son lancer', 0),
+(5, 2, 1, 3, 2, 2, '2018-04-30', 0, 'Aucune balle n\'a été réussie.', 3, 'l\'athlète est un poisson??.', 0);
 -- --------------------------------------------------------
 
 --
