@@ -332,8 +332,8 @@ CREATE TABLE `evaluation` (
 
 INSERT INTO `evaluation` (`id`, `field`, `coach`, `drill`, `athlete`, `period`, `date`, `numerical_value`, `result_message`, `result_state`, `comment`, `obsolete`) VALUES
 (0, 0, 0, 0, 0, 0, NULL, NULL, NULL, 0, NULL, 1),
-(1, 1, 2, 1, 1, 1, '2018-04-29', 3.5, 'Échec de l\'épreuve par manque de temps.', 0, 'L\'athlète a besoin de plus d\'entrainement.', 0),
-(2, 2, 1, 2, 2, 2, '2018-04-30', 10, 'Aucune balle n\'a été ratée.', 1, 'L\'athlète a réussi de battre son record.', 0);
+(1, 1, 2, 1, 1, 1, '2018-04-29', 3.5, 'Échec de l\'épreuve par manque de temps.', 3, 'L\'athlète a besoin de plus d\'entrainement.', 0),
+(2, 2, 1, 2, 2, 2, '2018-04-30', 10, 'Aucune balle n\'a été ratée.', 2, 'L\'athlète a réussi de battre son record.', 0);
 
 -- --------------------------------------------------------
 
@@ -578,7 +578,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `user_type`, `coach`, `username`, `password_hash`) VALUES
 (2, 1, 2, 'admin', '$2y$10$juVGbqwxOfDgoyOSFw2ckOWQcrNMYOO6BWhGHWMQHT0.VzCbnaRJm'),
-(3, 2, 1, 'Bob1', 'notarealhash.gonnabug.everything');
+(3, 2, 1, 'coach', '$2y$10$EG8x3q9pH9kl8MspoH1PZOtuLM.YonD.RxGNimCGsNeskFayvyMsG');
 
 -- --------------------------------------------------------
 

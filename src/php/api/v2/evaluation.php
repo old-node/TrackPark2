@@ -10,22 +10,23 @@ if(!verifyToken()) {
 }
 
 $conn = SQLConnector::createConn();
-
+$query = "SELECT evaluation.*, d.name AS 'drill_name' FROM evaluation JOIN drill d ON evaluation.drill = d.id";
 if (isGet()) {
+
     if (isset($_GET['id'])) {
-        $stm = $conn->prepare("SELECT * FROM evaluation WHERE id = ?");
+        $stm = $conn->prepare($query . " WHERE evaluation.id = ?");
         $stm->bind_param("i", $_GET['id']);
 
     } else if (isset($_GET['athlete'])) {
-        $stm = $conn->prepare("SELECT * FROM evaluation WHERE athlete = ?");
+        $stm = $conn->prepare($query . " WHERE athlete = ?");
         $stm->bind_param("i", $_GET['athlete']);
 
     } else if (isset($_GET['coach'])) {
-        $stm = $conn->prepare("SELECT * FROM evaluation WHERE coach = ?");
+        $stm = $conn->prepare($query . " WHERE coach = ?");
         $stm->bind_param("i", $_GET['coach']);
 
     } else {
-        $stm = $conn->prepare("SELECT * FROM evaluation");
+        $stm = $conn->prepare($query);
     }
 
     $stm->execute();
@@ -50,7 +51,7 @@ if (isGet()) {
             $stm->execute();
         }
 
-        $stm = $conn->prepare("SELECT * FROM evaluation WHERE id = ?");
+        $stm = $conn->prepare( $query . " WHERE evaluation.id = ?");
         $stm->bind_param("i", $data['id']);
         $stm->execute();
         $result = $stm->get_result();

@@ -25,11 +25,15 @@ if(isGet()) {
       WHERE coach = ?
     ");
         $stm->bind_param("i", $_GET['coach']);
-
+    } else if(isset($_GET['athlete'])) {
+        $stm = $conn->prepare("
+            SELECT distinct athlete_group.* FROM athlete_group JOIN ta_group_athlete ON athlete_group.id = ta_group_athlete.athlete_group WHERE ta_group_athlete.athlete = ?
+        ");
+        $stm->bind_param("i", $_GET['athlete']);
     } else {
         $stm = $conn->prepare("
         SELECT * FROM athlete_group
-    ");
+        ");
     }
 
     $stm->execute();

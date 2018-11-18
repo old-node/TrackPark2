@@ -12,7 +12,7 @@ class AuthManager {
       .then(res => {
         sessionStorage.setItem("token", res.token);
         sessionStorage.setItem("user_id", res.id);
-        sessionStorage.setItem("coahc_id", res.coach);
+        sessionStorage.setItem("coach_id", res.coach);
         this.token = res.token;
         this.user_id = res.id;
         this.coach_id = res.coach;

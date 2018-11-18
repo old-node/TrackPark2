@@ -1,48 +1,46 @@
 import React, { Component } from "react";
-import { Table, Button, Icon } from "semantic-ui-react";
+import { Table, Button } from "semantic-ui-react";
 import { withRouter, Link } from "react-router-dom";
-
-import AthleteTable from "./tables/athlete";
-import CoachTable from "./tables/coach";
+import GroupTable from "./tables/groups";
+import EvaluationTable from "./tables/evaluation";
 
 import GroupAPI from "../../api/group";
 import AthleteAPI from "../../api/athlete";
-import CoachAPI from "../../api/coach";
+import EvaluationAPI from "../../api/evaluation";
 
-class GroupDetail extends Component {
+class AthleteDetail extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       error: null,
-      isLoaded: false,
-      group: null
+      isLoaded: false
     };
   }
 
   async componentDidMount() {
-    let groupId = this.props.match.params.id;
+    let athleteId = this.props.match.params.id;
 
     Promise.all([
-      GroupAPI.get(groupId).then(
+      GroupAPI.ofAthlete(athleteId).then(
         result => {
-          this.state.group = result[0];
+          this.state.groups = result;
         },
         error => {
           this.state.error = error;
         }
       ),
-      AthleteAPI.inGroup(groupId).then(
+      AthleteAPI.get(athleteId).then(
         result => {
-          this.state.athletes = result;
+          this.state.athlete = result[0];
         },
         error => {
           this.state.error = error;
         }
       ),
-      CoachAPI.forGroup(groupId).then(
+      EvaluationAPI.ofAthlete(athleteId).then(
         result => {
-          this.state.coachs = result;
+          this.state.evaluations = result;
         },
         error => {
           this.state.error = error;
@@ -55,7 +53,7 @@ class GroupDetail extends Component {
   }
 
   render() {
-    const { error, isLoaded, group, athletes, coachs } = this.state;
+    const { error, isLoaded, groups, athlete, evaluations } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -63,18 +61,20 @@ class GroupDetail extends Component {
     } else {
       return (
         <div>
-          <h1>{group.name}</h1>
-          <h2>{group.description}</h2>
+          <h1>
+            {athlete.first_name} {athlete.name}
+          </h1>
+          <h2>{athlete.profile_info}</h2>
 
-          <h3>Évaluateurs</h3>
-          <CoachTable coachs={coachs} />
+          <h3>Groupes</h3>
+          <GroupTable groups={groups} />
 
-          <h3>Athletes</h3>
-          <AthleteTable athletes={athletes} />
+          <h3>Évaluations</h3>
+          <EvaluationTable evaluations={evaluations}/>
         </div>
       );
     }
   }
 }
 
-export default withRouter(GroupDetail);
+export default withRouter(AthleteDetail);

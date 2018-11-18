@@ -11,6 +11,9 @@ const GroupAPI = {
   ofCoach: async function(id) {
     return APIRequestHandler.query(`${Endpoints.GROUP}?coach=${id}`);
   },
+  ofAthlete: async function(id) {
+    return APIRequestHandler.query(`${Endpoints.GROUP}?athlete=${id}`);
+  },
   addRight: async function(group, coach, type) { //TODO: test this
     let body = {
         action: "addRight",

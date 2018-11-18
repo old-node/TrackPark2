@@ -1,29 +1,27 @@
 import React, { Component } from "react";
-import { Table, Button } from "semantic-ui-react";
 import { withRouter, Link } from "react-router-dom";
 
-import AthleteTable from "./tables/athlete";
-
-import AthleteAPI from "../../api/athlete";
+import EvaluationAPI from "../../api/evaluation";
+import EvaluationTable from "./tables/evaluation";
 import AuthManager from "../../auth/AuthManager";
 
-class AthleteList extends Component {
+class EvaluationList extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       error: null,
       isLoaded: false,
-      athletes: []
+      evaluations: []
     };
   }
 
   async componentDidMount() {
-    AthleteAPI.withCoach(AuthManager.getCoachId()).then(
+    EvaluationAPI.ofCoach(AuthManager.getCoachId()).then(
       result => {
         this.setState({
           isLoaded: true,
-          athletes: result
+          evaluations: result
         });
       },
       error => {
@@ -34,19 +32,16 @@ class AthleteList extends Component {
       }
     );
   }
-
   render() {
-    const { error, isLoaded, athletes } = this.state;
+    const { error, isLoaded, evaluations } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
-      return (
-        <AthleteTable athletes={athletes} />
-      );
+      return <EvaluationTable evaluations={evaluations} />;
     }
   }
 }
 
-export default withRouter(AthleteList);
+export default withRouter(EvaluationList);

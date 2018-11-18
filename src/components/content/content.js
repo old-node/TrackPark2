@@ -5,12 +5,14 @@ import Popup from './popup';
 import { Switch } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 
+import EvaluationList from "../sections/evaluation.list"
 import ParkGroup  from '../sections/park.group';
 import AthleteList from '../sections/athlete.list';
 import GroupList from '../sections/group.list';
 import GroupDetail from '../sections/group.detail';
 import Login from '../../auth/login';
-import groupDetail from '../sections/group.detail';
+import AthleteDetail from '../sections/athlete.detail';
+import evaluationDetail from '../sections/evaluation.detail';
 
 export default class Content extends Component {
   render(props) {
@@ -25,14 +27,17 @@ export default class Content extends Component {
 
         <Switch>
           <Route exact path="/athlete" component={AthleteList} />
-        </Switch>
-
-        <Switch>
-          <Route exact path="/group" component={GroupList} />
+          <Route exact path="/athlete/:id" component={AthleteDetail} />
         </Switch>
 
         <Switch>
             <Route exact path="/group/:id" component={GroupDetail} />
+            <Route exact path="/group" component={GroupList} />
+        </Switch>
+
+        <Switch>
+            <Route exact path="/evaluation/:id" component={evaluationDetail} />
+            <Route exact path="/evaluation" component={EvaluationList} />
         </Switch>
 
         <Switch>
