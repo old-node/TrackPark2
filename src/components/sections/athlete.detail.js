@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Table, Button, Image } from "semantic-ui-react";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 import GroupTable from "./tables/groups";
 import EvaluationTable from "./tables/evaluation";

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Table, Button, Icon } from "semantic-ui-react";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 import AthleteTable from "./tables/athlete";
 import CoachTable from "./tables/coach";

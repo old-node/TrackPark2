@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { Table, Button } from "semantic-ui-react";
-import { withRouter, Link } from "react-router-dom";
-import athlete from "./athlete";
+import { Table } from "semantic-ui-react";
+import { withRouter } from "react-router-dom";
 
 class GroupTable extends Component {
   openGroup(id) {

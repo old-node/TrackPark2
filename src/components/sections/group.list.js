@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 import GroupAPI from "../../api/group";
-import AuthManager from "../../auth/AuthManager";
 import GroupTable from "./tables/groups";
 
 class GroupList extends Component {

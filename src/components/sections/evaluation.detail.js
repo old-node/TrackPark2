@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import { Table, Button, Icon, TableRow } from "semantic-ui-react";
-import { withRouter, Link } from "react-router-dom";
+import { Table } from "semantic-ui-react";
+import { withRouter } from "react-router-dom";
 
-import AthleteTable from "./tables/athlete";
 import CoachTable from "./tables/coach";
 
-import GroupAPI from "../../api/group";
 import AthleteAPI from "../../api/athlete";
 import CoachAPI from "../../api/coach";
 import EvaluationAPI from "../../api/evaluation";

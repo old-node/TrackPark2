@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Table, Button } from "semantic-ui-react";
-import { withRouter, Link } from "react-router-dom";
+import { Table } from "semantic-ui-react";
+import { withRouter } from "react-router-dom";
 
 class coachTable extends Component {
   render() {
