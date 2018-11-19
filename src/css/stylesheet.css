@@ -111,6 +111,16 @@ table {
 	margin: auto;
 }
 
+.infoList li {
+    list-style-type: none;
+    margin: 0 0 10px 0;
+    font-size: 13pt;
+}
+
+.infoBox {
+    padding-left: 16px;
+}
+
 /*******
 * Menu *
 *******/
@@ -281,17 +291,22 @@ html,body {
 ***********/
 
 tr {
-	-webkit-transition: background-color 300ms ease-out;
-	-ms-transition: background-color 300ms ease-out;
-	transition: background-color 300ms ease-out;
+	-webkit-transition: background-color 150ms ease-out;
+	-ms-transition: background-color 150ms ease-out;
+	transition: background-color 150ms ease-out;
 }
 
 tr:hover {
 	background: #B9F6CA;
-	-webkit-transition: background-color 500ms ease-in;
-	-ms-transition: background-color 500ms ease-in;
-	transition: background-color 500ms ease-in;
+	-webkit-transition: background-color 150ms ease-in;
+	-ms-transition: background-color 150ms ease-in;
+	transition: background-color 150ms ease-in;
 }
+
+.clickableTable tr {
+    cursor: pointer;
+}
+
 td {
 	height: 25px;
 	padding-bottom: 10px;

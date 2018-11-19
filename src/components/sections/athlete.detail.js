@@ -1,8 +1,11 @@
 import React, { Component } from "react";
-import { Table, Button } from "semantic-ui-react";
+import { Table, Button, Image } from "semantic-ui-react";
 import { withRouter, Link } from "react-router-dom";
+
 import GroupTable from "./tables/groups";
 import EvaluationTable from "./tables/evaluation";
+
+import AthleteInfo from "./info/athlete.info";
 
 import GroupAPI from "../../api/group";
 import AthleteAPI from "../../api/athlete";
@@ -61,16 +64,13 @@ class AthleteDetail extends Component {
     } else {
       return (
         <div>
-          <h1>
-            {athlete.first_name} {athlete.name}
-          </h1>
-          <h2>{athlete.profile_info}</h2>
+          <AthleteInfo athlete={athlete} />
 
           <h3>Groupes</h3>
           <GroupTable groups={groups} />
 
           <h3>Évaluations</h3>
-          <EvaluationTable evaluations={evaluations}/>
+          <EvaluationTable evaluations={evaluations} />
         </div>
       );
     }

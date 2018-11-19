@@ -28,8 +28,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -40,7 +40,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -77,6 +77,10 @@ table {
 
 .floatLeft {
 	float: left;
+}
+
+.floatRight {
+	float: right;
 }
 
 .block {
@@ -287,8 +291,13 @@ tr:hover {
 	background: #B9F6CA;
 	-webkit-transition: background-color 500ms ease-in;
 	-ms-transition: background-color 500ms ease-in;
-	transition: background-color 500ms ease-in;
+    transition: background-color 500ms ease-in;
 }
+
+.clickableTable tr:hover {
+    cursor: pointer;
+}
+
 td {
 	height: 25px;
 	padding-bottom: 10px;

@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 import { Table, Button } from "semantic-ui-react";
 import { withRouter, Link } from "react-router-dom";
+import athlete from "./athlete";
 
 class GroupTable extends Component {
+  openGroup(id) {
+    window.location.replace(`/group/${id}`);
+  }
   render() {
     const groups = this.props.groups;
     return (
-      <Table celled id="group-table">
+      <Table className="clickableTable" celled id="group-table">
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>Nom</Table.HeaderCell>
@@ -15,14 +19,9 @@ class GroupTable extends Component {
         </Table.Header>
         <Table.Body>
           {groups.map(group => (
-            <Table.Row key={group.id}>
+            <Table.Row onClick={() => this.openGroup(group.id)} key={group.id}>
               <Table.Cell>{group.name}</Table.Cell>
               <Table.Cell>{group.description}</Table.Cell>
-              <Table.Cell>
-                <Link to={`/group/${group.id}`}>
-                  <Button color="green" icon="right arrow" />
-                </Link>
-              </Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>
