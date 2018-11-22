@@ -22,6 +22,7 @@ class EvaluationDetail extends Component {
   }
 
   async componentDidMount() {
+    //Querries to the API to get all the information needed
     let evaluationId = this.props.match.params.id;
 
     EvaluationAPI.get(evaluationId)

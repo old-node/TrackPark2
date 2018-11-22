@@ -17,6 +17,7 @@ import evaluationDetail from '../sections/evaluation.detail';
 
 /**
  * The main "window" of the app
+ * Contains all the routes to each "pages"
  */
 export default class Content extends Component {
   render(props) {

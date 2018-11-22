@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { Table } from "semantic-ui-react";
 import { withRouter } from "react-router-dom";
 
+/**
+ * Tableau d'information sur un coach
+ */
 class coachTable extends Component {
   render() {
     const coachs = this.props.coachs;

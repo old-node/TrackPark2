@@ -2,9 +2,12 @@ import React, { Component } from "react";
 import { Image } from "semantic-ui-react";
 import { withRouter } from "react-router-dom";
 
+/**
+ * Informations détaillés sur un athlete
+ */
 class AthleteInfo extends Component {
   render() {
-    const athlete = this.props.athlete;
+    const athlete = this.props.athlete; //Informations de l'athlètes
     return (
       <div className="col12 colt12 colm12 floatLeft">
         <Image

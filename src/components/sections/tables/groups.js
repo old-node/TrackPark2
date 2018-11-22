@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { Table } from "semantic-ui-react";
 import { withRouter } from "react-router-dom";
 
+/**
+ * Tableau d'information sur une liste de groupe
+ */
 class GroupTable extends Component {
   openGroup(id) {
     window.location.replace(`/group/${id}`);

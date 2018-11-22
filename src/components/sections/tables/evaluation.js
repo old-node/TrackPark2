@@ -4,6 +4,9 @@ import { withRouter } from "react-router-dom";
 
 import ResultStates from "../../../api/ResultStates";
 
+/**
+ * Tableau d'information sur une liste d'évaluation'
+ */
 class evaluationTable extends Component {
   openEvaluation(id) {
     window.location.replace(`/evaluation/${id}`);

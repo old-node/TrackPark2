@@ -13,11 +13,6 @@ import Register from './components/register';
 
 import Home from './components/home';
 
-import SectionSwitch from './components/sections/section.switch'
-
-import AthleteGroup from './components/sections/athlete.group';
-import Athlete from './components/sections/athlete';
-
 import ParkGroup from './components/sections/park.group';
 import Park from './components/sections/park';
 
@@ -134,7 +129,7 @@ export const home = {
 export const section_switch = {
   id: 50,
   name: "Liste des ", //{:s}
-  component: SectionSwitch,
+  component: null,
   className: "groupSwitch",
   exact: true,
   href: "../section.switch",
@@ -176,7 +171,7 @@ export const sections_group = [
   {
     id: 52,
     name: "Athlètes",
-    component: AthleteGroup,
+    component: null,
     className: "athlete",
     exact: true,
     href: "../athlete",
@@ -284,7 +279,7 @@ export const sections = [
   {
     id: 72,
     name: "Athlète ",
-    component: Athlete,
+    component: null,
     className: "athlete",
     exact: false,
     href: "../athlete",

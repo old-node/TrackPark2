@@ -10,6 +10,9 @@ import GroupAPI from "../../api/group";
 import AthleteAPI from "../../api/athlete";
 import EvaluationAPI from "../../api/evaluation";
 
+/**
+ * Informations sur l'athlète, les groupes dont il fait partie et ses évaluations
+ */
 class AthleteDetail extends Component {
   constructor(props) {
     super(props);
@@ -21,6 +24,8 @@ class AthleteDetail extends Component {
   }
 
   async componentDidMount() {
+
+    //Querries to the API to get all the data needed
     let athleteId = this.props.match.params.id;
 
     Promise.all([

@@ -8,13 +8,18 @@ require('../../css/navigation/menu.css')
 
 export default class Menu extends Component {
   render(props) {
+
+    //Si aucun onglet actif n'est défini
     if (props === undefined) {
       props = { active: "" }
     }
+
+    //Création des boutons vers les différentes sections
     let buttonList = [];
     sections_group.forEach(element => {
       buttonList.push(makeMenuLink(element, props.section));
     });
+
     return (
       <nav id="menu" className="menu sideMenu col2 colt2 colm12 floatLeft">
         <Link to='/'><img className="logo" src={logo} alt="logo" /></Link>
