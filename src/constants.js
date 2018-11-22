@@ -9,11 +9,9 @@ import NotFound from './components/notfound';
 
 import Login from './auth/login';
 import Register from './components/register';
-import Forgot from './components/forgot';
-import Logout from './components/logout';
+/*import Logout from './components/logout';*/
 
 import Home from './components/home';
-import Contact from './components/contact';
 
 import SectionSwitch from './components/sections/section.switch'
 
@@ -103,7 +101,7 @@ export const sessions = [
     forgot: {
       id: 92,
       name: "Réinitialiser le mot de passe",
-      component: Forgot,
+      component: null,
       className: "forgot",
       exact: true,
       href: "../forgot",
@@ -114,7 +112,7 @@ export const sessions = [
     logout: {
       id: 93,
       name: "Déconnexion",
-      component: Logout,
+      component: null,
       className: "logout",
       exact: true,
       href: "../logout",
@@ -131,18 +129,6 @@ export const home = {
   exact: true,
   href: "../home",
   path: "/",
-}
-
-
-
-export const contact = {
-  id: 11,
-  name: "À propos",
-  component: Contact,
-  className: "contact",
-  exact: true,
-  href: "../contact",
-  path: "/contact",
 }
 
 export const section_switch = {

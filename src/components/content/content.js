@@ -5,6 +5,7 @@ import Popup from './popup';
 import { Switch } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 
+import home from "../home";
 import EvaluationList from "../sections/evaluation.list"
 import ParkGroup from '../sections/park.group';
 import AthleteList from '../sections/athlete.list';
@@ -14,12 +15,19 @@ import Login from '../../auth/login';
 import AthleteDetail from '../sections/athlete.detail';
 import evaluationDetail from '../sections/evaluation.detail';
 
+/**
+ * The main "window" of the app
+ */
 export default class Content extends Component {
   render(props) {
     return (
       <main id="content" className="content col10 colt10 colm12 floatLeft">
         <Info />
         <Popup />
+
+        <Switch>
+          <Route exact path="/" component={home}></Route>
+        </Switch>
 
         <Switch>
           <Route exact path="/login" component={Login}></Route>
