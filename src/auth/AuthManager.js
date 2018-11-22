@@ -1,47 +1,44 @@
 class AuthManager {
-    token = null;
-    user_id = null;
-    coach_id = null;
+  token = null;
+  user_id = null;
+  coach_id = null;
 
-    /**
-     * Log user in
-     * @param {string} username
-     * @param {string} password
-     */
-    auth(username, password) {
-        return fetch("http://localhost/api/v2/auth.php", {
-            method: "POST",
-            body: JSON.stringify({ username: username, password: password })
-        })
-            .then(res => res.json())
-            .then(res => {
-                sessionStorage.setItem("token", res.token);
-                sessionStorage.setItem("user_id", res.id);
-                sessionStorage.setItem("coach_id", res.coach);
-                this.token = res.token;
-                this.user_id = res.id;
-                this.coach_id = res.coach;
-            })
-            .catch(err => {
-                console.log(err);
-            });
-    }
+  /**
+   * Log user in
+   * @param {string} username
+   * @param {string} password
+   */
+  auth(username, password) {
+    return fetch("http://localhost/api/v2/auth.php", {
+      method: "POST",
+      body: JSON.stringify({ username: username, password: password })
+    })
+      .then(res => res.json())
+      .then(res => {
+        sessionStorage.setItem("token", res.token);
+        sessionStorage.setItem("user_id", res.id);
+        sessionStorage.setItem("coach_id", res.coach);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
 
-    isLoggedIn() {
-        return sessionStorage.getItem("token") !== null;
-    }
+  isLoggedIn() {
+    return sessionStorage.getItem("token") !== null;
+  }
 
-    getUserId() {
-        return sessionStorage.getItem("user_id");
-    }
+  getUserId() {
+    return sessionStorage.getItem("user_id");
+  }
 
-    getCoachId() {
-        return sessionStorage.getItem("coach_id");
-    }
+  getCoachId() {
+    return sessionStorage.getItem("coach_id");
+  }
 
-    getToken() {
-        return sessionStorage.getItem("token");
-    }
+  getToken() {
+    return sessionStorage.getItem("token");
+  }
 }
 
 const instance = new AuthManager();

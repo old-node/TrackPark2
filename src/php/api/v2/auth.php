@@ -22,7 +22,7 @@ if(isPost()) {
             $token = generateToken();
             insertSession($id, $token);
             header('Content-Type: application/json');
-            echo "{\"id\": {$id},\"token\": \"{$find}\",\"coach\": {$coach}}";
+            echo "{\"id\": {$id},\"token\": \"{$token}\",\"coach\": {$coach}}";
             return;
         }
     }
