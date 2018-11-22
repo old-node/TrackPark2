@@ -611,10 +611,10 @@ INSERT INTO `user_type` (`id`, `name`, `description`, `permission_level`) VALUES
 CREATE TABLE `session` (
     `user_id` int (11) NOT NULL,
     `token` varchar(32) NOT NULL
-)
+);
 
 ALTER TABLE `session`
-  ADD PRIMARY KEY (`user_id`,`token`),
+  ADD PRIMARY KEY (`user_id`,`token`);
 
 --
 -- Indexes for table `access_type`
