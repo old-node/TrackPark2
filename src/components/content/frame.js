@@ -7,7 +7,7 @@ import { parkgroup } from '../../constants';
 import AthleteList from '../sections/athlete.list';
 
 import { park } from '../../constants';
-import { Route } from 'react-router-dom'
+import { Route } from 'react-router-dom';
 
 export default class Frame extends Component {
   constructor(props) {

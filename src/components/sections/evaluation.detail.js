@@ -9,6 +9,7 @@ import CoachAPI from "../../api/coach";
 import EvaluationAPI from "../../api/evaluation";
 import DrillAPI from "../../api/drill";
 import ResultStates from "../../api/ResultStates";
+import EvaluationButtons from "./evaluation.buttons.js";
 
 class EvaluationDetail extends Component {
   constructor(props) {
@@ -125,6 +126,7 @@ class EvaluationDetail extends Component {
           </Table>
           <h2>Coach</h2>
           <CoachTable coachs={coach} />
+          <EvaluationButtons evaluation={evaluation} drill={drill} />
         </div>
       );
     }
