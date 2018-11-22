@@ -1,3 +1,4 @@
+DROP DATABASE `trackpark`;
 CREATE DATABASE `trackpark`;
 USE `trackpark`;
 

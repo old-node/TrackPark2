@@ -8,17 +8,17 @@ import "../css/login.css";
  */
 class AuthCheckHack extends Component {
 
-    componentWillMount() {
+  componentWillMount() {
 
-        //Redirect to login if user isn't logged in
-        if (!AuthManager.isLoggedIn() && !window.location.href.includes("login")) {
-            window.location.replace("login");
-        }
+    //Redirect to login if user isn't logged in
+    if (!AuthManager.isLoggedIn() && !window.location.href.includes("login")) {
+      window.location.replace("login");
     }
+  }
 
-    render() {
-        return <div />;
-    }
+  render() {
+    return <div />;
+  }
 }
 
 export default withRouter(AuthCheckHack);
