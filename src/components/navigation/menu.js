@@ -9,7 +9,7 @@ require('../../css/navigation/menu.css')
 export default class Menu extends Component {
   render(props) {
     if (props === undefined) {
-      props = {active: ""}
+      props = { active: "" }
     }
     let buttonList = [];
     sections_group.forEach(element => {
@@ -19,7 +19,7 @@ export default class Menu extends Component {
       <nav id="menu" className="menu sideMenu col2 colt2 colm12 floatLeft">
         <Link to='/'><img className="logo" src={logo} alt="logo" /></Link>
         <ul>
-          { buttonList }
+          {buttonList}
         </ul>
       </nav>
     );

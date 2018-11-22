@@ -6,7 +6,7 @@ import { Switch } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 
 import EvaluationList from "../sections/evaluation.list"
-import ParkGroup  from '../sections/park.group';
+import ParkGroup from '../sections/park.group';
 import AthleteList from '../sections/athlete.list';
 import GroupList from '../sections/group.list';
 import GroupDetail from '../sections/group.detail';
@@ -22,7 +22,7 @@ export default class Content extends Component {
         <Popup />
 
         <Switch>
-            <Route exact path="/login" component={Login}></Route>
+          <Route exact path="/login" component={Login}></Route>
         </Switch>
 
         <Switch>
@@ -31,17 +31,17 @@ export default class Content extends Component {
         </Switch>
 
         <Switch>
-            <Route exact path="/group/:id" component={GroupDetail} />
-            <Route exact path="/group" component={GroupList} />
+          <Route exact path="/group/:id" component={GroupDetail} />
+          <Route exact path="/group" component={GroupList} />
         </Switch>
 
         <Switch>
-            <Route exact path="/evaluation/:id" component={evaluationDetail} />
-            <Route exact path="/evaluation" component={EvaluationList} />
+          <Route exact path="/evaluation/:id" component={evaluationDetail} />
+          <Route exact path="/evaluation" component={EvaluationList} />
         </Switch>
 
         <Switch>
-              <Route exact path="/parkgroup" component={ParkGroup}/>
+          <Route exact path="/parkgroup" component={ParkGroup} />
         </Switch>
       </main>
     );

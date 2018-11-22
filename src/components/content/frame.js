@@ -17,25 +17,25 @@ export default class Frame extends Component {
 
   render(props) {
     return (
-          <div id="frame" className="frame">
-            <h3>
-                Frame Component
-            </h3>
-            <Switch>
-              <Route exact path="/" component={home.component}/>
-            </Switch>
+      <div id="frame" className="frame">
+        <h3>
+          Frame Component
+        </h3>
+        <Switch>
+          <Route exact path="/" component={home.component} />
+        </Switch>
 
-            <Switch>
-              <Route exact path="/athlete" component={AthleteList}/>
-            </Switch>
+        <Switch>
+          <Route exact path="/athlete" component={AthleteList} />
+        </Switch>
 
-            <Switch>
-              <Route exact path="/parkgroup" component={parkgroup.component}/>
-            </Switch>
-            <Switch>
-              <Route exact path="/park" component={park.component}/>
-            </Switch>
-          </div>
+        <Switch>
+          <Route exact path="/parkgroup" component={parkgroup.component} />
+        </Switch>
+        <Switch>
+          <Route exact path="/park" component={park.component} />
+        </Switch>
+      </div>
 
     );
   }

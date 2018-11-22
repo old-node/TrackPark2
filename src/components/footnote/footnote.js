@@ -8,7 +8,7 @@ export default class Footnote extends Component {
     return (
       <div id="footnote" className="footnote col12 colt12 colm12 floatLeft">
         <h2>
-            Footnote Component
+          Footnote Component
         </h2>
         <Footer />
         <Toast />

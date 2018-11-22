@@ -28,10 +28,10 @@ sections_admin.forEach(element => {
 
 const SectionSwitch = () => (
   <div id="switch_section" className="switch_section">
-    { routes_group }
-    { this.state.admin && routes_group_admin }
-    { routes }
-    { this.state.admin && routes_admin }
+    {routes_group}
+    {this.state.admin && routes_group_admin}
+    {routes}
+    {this.state.admin && routes_admin}
   </div>
 )
 

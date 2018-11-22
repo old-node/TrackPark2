@@ -7,8 +7,8 @@ import { makeRoute } from '../../functions'
 // depending on the full pathname
 const AthleteSwitch = () => (
   <Switch>
-    { makeRoute(sections_group[1].component) }
-    { makeRoute(sections[1].component) }
+    {makeRoute(sections_group[1].component)}
+    {makeRoute(sections[1].component)}
   </Switch>
 )
 

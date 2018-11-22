@@ -5,29 +5,29 @@ import { Route } from 'react-router-dom'
 export function makeMenuLink(section, active) {
 
   //External link
-  if(section.href.match("^(http|https)://")) {
-    return(<li><a className="sideMenuButton" href={section.href}>{section.name}</a></li>)
+  if (section.href.match("^(http|https)://")) {
+    return (<li><a className="sideMenuButton" href={section.href}>{section.name}</a></li>)
   }
 
   if (section.name === active) {
-    return(<li key={section.id}><Link className="sideMenuButton active" to={section.href}>{section.name}</Link></li>);
+    return (<li key={section.id}><Link className="sideMenuButton active" to={section.href}>{section.name}</Link></li>);
   } else {
-    return(<li key={section.id}><Link key={section.id} className="sideMenuButton" to={section.href}>{section.name}</Link></li>);
+    return (<li key={section.id}><Link key={section.id} className="sideMenuButton" to={section.href}>{section.name}</Link></li>);
   }
 }
 
 export function makeInfoLink(section, number) {
-  return(<li key={section.id}><Link to={section.href+number}>{section.name}</Link></li>);
+  return (<li key={section.id}><Link to={section.href + number}>{section.name}</Link></li>);
 }
 
 export function makeRoute(section) {
   if (section === undefined) {
-    return(<Route />)
+    return (<Route />)
   }
   if (section.exact) {
-    return(<Route exact path={section.path} component={section.component}/>)
+    return (<Route exact path={section.path} component={section.component} />)
   } else {
-    return(<Route path={section.path} component={section.component}/>)
+    return (<Route path={section.path} component={section.component} />)
   }
 }
 

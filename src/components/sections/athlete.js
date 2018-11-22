@@ -27,7 +27,7 @@ const athlete = (props) => {
   )
   if (!athlete) {
     //return <div>Sorry, but the athlete was not found</div>
-    return <NotFound message="L'athlète n'a pas pu être trouvé."/>
+    return <NotFound message="L'athlète n'a pas pu être trouvé." />
   }
   return (
     <div>

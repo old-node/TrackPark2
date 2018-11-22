@@ -34,8 +34,8 @@ class evaluationTable extends Component {
                 {evaluation.result_state === ResultStates.FAILEd
                   ? "Raté"
                   : evaluation.result_state === ResultStates.TODO
-                  ? "À faire"
-                  : "Passé"}
+                    ? "À faire"
+                    : "Passé"}
               </Table.Cell>
               <Table.Cell>{evaluation.result_message}</Table.Cell>
               <Table.Cell>{evaluation.date}</Table.Cell>

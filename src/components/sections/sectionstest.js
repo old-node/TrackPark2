@@ -15,12 +15,12 @@ class Test extends React.Component {
       return <Redirect to='/course' />
     }
   }
-  render () {
+  render() {
     return (
-       <div>
+      <div>
         {this.renderRedirect()}
         <button onClick={this.setRedirect}>Redirect</button>
-       </div>
+      </div>
     )
   }
-}export default Test
+} export default Test

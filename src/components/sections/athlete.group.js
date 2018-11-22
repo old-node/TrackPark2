@@ -25,7 +25,7 @@ const GroupAthlete = () => (
         //<Link to={`/roster/${a.number}`}>{a.name}</Link>
         AthleteAPI.all().map(a => (
           <li key={a.number}>
-            { makeInfoLink(athlete, a.number) }
+            {makeInfoLink(athlete, a.number)}
           </li>
         ))
       }
