@@ -10,7 +10,7 @@ class EvaluationButtons extends Component {
         this.state = {
             error: null,
             isLoaded: false,
-            success: 0,
+            success: this.props.evaluation.numerical_value,
             tries: 0,
             evaluation: this.props.evaluation,
             drill: this.props.drill,
@@ -45,7 +45,7 @@ class EvaluationButtons extends Component {
             tries: newTries
         }, () => {
             
-            EvaluationAPI.update(this.state.evaluation.id, {value: this.state.success, state: this.state.state});
+            EvaluationAPI.update(this.state.evaluation.id, {value: this.state.success});
         })
 
         if (this.isOver()) {
@@ -61,7 +61,6 @@ class EvaluationButtons extends Component {
                 state: newState      
             }, () => {
                 EvaluationAPI.update(this.state.evaluation.id, {value: this.state.success, state: newState})
-                this.render()
             }) 
         }
     }
