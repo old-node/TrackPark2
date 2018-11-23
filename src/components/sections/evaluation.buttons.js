@@ -63,7 +63,6 @@ class EvaluationButtons extends Component {
             }) 
 
             await EvaluationAPI.update(this.state.evaluation.id, {value: this.state.success, state: newState});
-            console.log("saved in over")
         }
     }
 
