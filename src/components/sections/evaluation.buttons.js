@@ -20,10 +20,11 @@ class EvaluationButtons extends Component {
         this.addSuccess = this.addSuccess.bind(this);
         this.addTries = this.addTries.bind(this);
         this.isOver = this.isOver.bind(this);
+        this.isSuccess = this.isSuccess.bind(this);
     }
 
     addSuccess = function() {
-        if (this.isOver()) {
+        if (this.state.state !== ResultStates.TODO) {
             return;
         }
         let newSuccess = this.state.success + 1;
@@ -34,7 +35,7 @@ class EvaluationButtons extends Component {
     } 
 
     addTries() {
-        if (this.isOver()) {
+        if (this.state.state !== ResultStates.TODO) {
             return;
         }
 
@@ -43,35 +44,34 @@ class EvaluationButtons extends Component {
         this.setState({
             tries: newTries
         }, () => {
-            console.log("Success : " + this.state.success);
-            console.log("Tries   : " + this.state.tries);
-            console.log("Total   : " + this.state.total);
-            console.log("ID      : " + this.state.evaluation.id);
-            console.log("State   : " + this.state.state);
-            console.log(this.state.drill);
-            console.log(this.state.evaluation);
-            console.log(this.state);
-
+            
             EvaluationAPI.update(this.state.evaluation.id, {value: this.state.success, state: this.state.state});
-
         })
+
+        if (this.isOver()) {
+            let newState = null;
+            
+            if (this.isSuccess()) {
+                newState = ResultStates.PASSED;
+            } else {
+                newState = ResultStates.FAILEd;
+            }
+            
+            this.setState({
+                state: newState      
+            }, () => {
+                EvaluationAPI.update(this.state.evaluation.id, {value: this.state.success, state: newState})
+                this.render()
+            }) 
+        }
     }
 
     isOver() {
-        if (this.state.state !== ResultStates.TODO) {
-            return true;
-        }
+        return this.state.tries >= this.state.drill.allowed_tries;
+    }
 
-        if (this.state.tries >= this.state.drill.allowed_tries) {
-            // Show Success or Failure
-            this.setState({
-                state: ResultStates.PASSED
-            }, EvaluationAPI.update(this.state.evaluation.id, {value: this.state.success, state: this.state.state}))
-            
-            return true;
-        }
-
-        return false;
+    isSuccess() {
+        return this.state.success >= this.state.drill.success_treshold;
     }
 
     render() {
