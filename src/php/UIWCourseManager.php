@@ -51,8 +51,9 @@ function makeButtonDelete($id)
 
 function writeTable()
 {
-    echo "<table>";
-    echo "<tr>" . makeCellTH("Nom") . makeCellTH("Type") . makeCellTH("") . makeCellTH("") . "</tr>";
+    echo "<table class='ui celled table clickableTable'>";
+    echo "<thead> <tr>" . makeCellTH("Nom") . makeCellTH("Type") . makeCellTH("") . makeCellTH("") . "</tr> </thead>";
+    
     foreach (CourseManager::loadCourses() as $c)
     {
         echo "<tr>";
@@ -86,7 +87,9 @@ function updateCourse()
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="./css/stylesheet.css">
     <title>TrackPark - Parcours</title>
-
+    <link rel="shortcut icon" href="../../public/favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.css">
+  
     <script src="js/util.js"></script>
     <script>
 
@@ -255,7 +258,7 @@ function updateCourse()
     <div>
     <?php include('sideMenu.html') ?>
 
-        <div class="topMenu col12 colt12 colm12 floatLeft">
+        <div class="topMenu col12 colt12 colm12 afterMenu">
             <div class="col2 colt2 colm12 floatLeft"> &nbsp; </div>
             <div class="col10 colt10 colm12 floatLeft">
                 <div class="title col6 colt6 colm6 floatLeft">
@@ -264,9 +267,9 @@ function updateCourse()
                 <div class="floatLeft col2 colt2 colm3">
                     <?php makeAddCourseButton(); ?>
                 </div>
-                <div class="floatLeft col4 colt4 colm3">
+                <!--<div class="floatLeft col4 colt4 colm3">
                     <button class="buttonImport">Importer des données</button>
-                </div>
+                </div>-->
 
             </div>
         </div>
@@ -275,7 +278,7 @@ function updateCourse()
             &nbsp;
         </div>
 
-        <div class="mainContent floatLeft col10 colt10 colm12">
+        <div class="mainContent afterMenu col10 colt10 colm12">
             <?php writeTable(); ?>
         </div>
     </div>

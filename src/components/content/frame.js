@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import '../../css/content/frame.css'
 import { Switch } from 'react-router-dom'
-import { home } from '../../constants';
+//import { home } from '../../constants';
 import { parkgroup } from '../../constants';
 
 import AthleteList from '../sections/athlete.list';
@@ -22,7 +22,7 @@ export default class Frame extends Component {
           Frame Component
         </h3>
         <Switch>
-          <Route exact path="/" component={home.component} />
+          <Route exact path="/" component={parkgroup.component} />
         </Switch>
 
         <Switch>

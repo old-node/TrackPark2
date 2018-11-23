@@ -51,8 +51,8 @@ function makeButtonDelete($id)
 
 function writeTable()
 {
-    echo "<table>";
-    echo "<tr>" . makeCell("Coach ID") . makeCell("Drill ID") . makeCell("Athlete ID") . makeCell("Period ID") . makeCell("Date") . makeCell("Numerical Value") . makeCell("ResultMessage") . makeCell("Result State") . makeCell("Commentary") . makeCell("Modifier") . makeCell("Suprimer") . "</tr>";
+    echo "<table class='ui celled table clickableTable'>";
+    echo "<thead> <tr>" . makeCell("Coach ID") . makeCell("Drill ID") . makeCell("Athlete ID") . makeCell("Period ID") . makeCell("Date") . makeCell("Numerical Value") . makeCell("ResultMessage") . makeCell("Result State") . makeCell("Commentary") . makeCell("Modifier") . makeCell("Suprimer") . "</tr> </thead>";
 
     foreach (EvaluationManager::loadEvaluations() as $e)
     {
@@ -86,7 +86,9 @@ function makeAddEvaluationButton()
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="./css/stylesheet.css">
     <title>TrackPark - Évaluations</title>
-
+    <link rel="shortcut icon" href="../../public/favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.css">
+  
     <script src="js/util.js"></script>
     <script>
 
@@ -196,12 +198,12 @@ function makeAddEvaluationButton()
         <div class="floatLeft col2 colt2 colm6">
             <?php makeAddEvaluationButton(); ?>
         </div>
-        <div class="floatLeft col4 colt4 colm6">
+        <!--<div class="floatLeft col4 colt4 colm6">
             <button class="buttonImport">Importer des données</button>
-        </div>
+        </div>-->
     </div>
 
-    <div class="mainContent floatLeft col10 colt10 colm12">
+    <div class="mainContent afterMenu col10 colt10 colm12">
         <?php writeTable(); ?>
     </div>
 </div>

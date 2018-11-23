@@ -79,6 +79,10 @@ table {
 	float: left;
 }
 
+.afterMenu {
+	float: inline-end;
+}
+
 .floatRight {
 	float: right;
 }
@@ -304,11 +308,11 @@ td {
 	padding-top: 10px;
 }
 
-th {
+/*th {
 	font-weight: bold;
 	color: #2ECC71;
 	text-align: left;
-}
+}*/
 
 table {
 	table-layout: auto;
@@ -364,6 +368,10 @@ h3 {
 	font-size: 20px;
 }
 
+#tableCap {
+	padding-left: 60px;
+}
+
 /*************
 * Animations *
 *************/
@@ -414,6 +422,10 @@ h3 {
 .colt10 {width: 83.33%;}
 .colt11 {width: 91.66%;}
 .colt12 {width: 100%;}
+
+#tableCap {
+	padding-left: 0;
+}
 }
 
 @media only screen and (min-width: 1300px) {

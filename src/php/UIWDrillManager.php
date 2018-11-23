@@ -64,8 +64,8 @@ function writeTitle($title)
 
 function writeTable()
 {
-    echo "<table>";
-    echo "<tr>" . makeCell("Nom") . makeCell("Objectif") . makeCell("Nombre d'essais") . makeCell("Temps alloué") . makeCell("Nombre pour réussir") . makeCell("Nombre pour échouer") .  makeCell(" ") . makeCell(" ") . "</tr>";
+    echo "<table class='ui celled table clickableTable'>";
+    echo "<thead> <tr>" . makeCell("Nom") . makeCell("Objectif") . makeCell("Nombre d'essais") . makeCell("Temps alloué") . makeCell("Nombre pour réussir") . makeCell("Nombre pour échouer") .  makeCell(" ") . makeCell(" ") . "</tr> </thead>";
 
     foreach (DrillManager::loadDrills() as $d)
     {
@@ -98,7 +98,9 @@ function updateDrill()
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="./css/stylesheet.css">
     <title>TrackPark - Épreuves</title>
-
+    <link rel="shortcut icon" href="../../public/favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.css">
+  
     <script src="js/util.js"></script>
     <script>
 
@@ -219,19 +221,19 @@ function updateDrill()
 <div>
 <?php include('sideMenu.html') ?>
 
-    <div class="topMenu floatLeft col10 colt10 colm12">
+    <div class="topMenu afterMenu col10 colt10 colm12">
         <div class="title col6 colt6 colm12 floatLeft">
             <h1 > Gestion des Drills </h1>
         </div>
         <div class="floatLeft col2 colt2 colm6">
             <?php makeAddDrillButton(); ?>
         </div>
-        <div class="floatLeft col4 colt4 colm6">
+        <!--<div class="floatLeft col4 colt4 colm6">
             <button class="buttonImport">Importer des données</button>
-        </div>
+        </div>-->
     </div>
 
-    <div class="mainContent floatLeft col10 colt10 colm12">
+    <div class="mainContent afterMenu col10 colt10 colm12">
         <?php writeTable(); ?>
     </div>
 </div>

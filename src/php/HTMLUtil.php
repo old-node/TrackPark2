@@ -36,7 +36,7 @@ function centerText($text) {
 
 function makeCell($text)
 {
-    return "<td>" . $text . "</td>";
+    return "<td class='marginAuto'>" . $text . "</td>";
 }
 
 function makeCellTH($text)
@@ -59,3 +59,4 @@ function makeButtonDeleteCustom($link, $id)
     return "<button class='buttonWhite marginAuto' value={$id} onclick='$.post( \"{$link}\", {id:\"{$id}\"});location.reload();'>Supprimer</button>";
     //TODO faire en sorte que name soit conditionnel à la page en ajoutant le paramètre $what pour le concatenner après 'idDelete' ou tout simplement enlever 'Course'
 }
+

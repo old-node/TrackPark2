@@ -43,8 +43,8 @@ function makeButtonDeleteCode($link, $id)
 
 function writeTable()
 {
-    echo "<table>";
-    echo "<tr>" . makeCellTH("Nom") . makeCellTH("Description") . makeCellTH("Couleur") . "</tr>";
+    echo "<table class='ui celled table clickableTable'>";
+    echo "<thead> <tr>" . makeCellTH("Nom") . makeCellTH("Description") . makeCellTH("Couleur") . makeCellTH("") . makeCellTH(""). "</tr> </thead>";
 
     foreach (Cap::getAllCaps() as $c)
     {
@@ -68,6 +68,7 @@ function writeTable()
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TrackPark - Casquettes</title>
     <link rel="stylesheet" type="text/css" href="./css/stylesheet.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.css">
     <script
             src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -79,19 +80,19 @@ function writeTable()
 <div>
 <?php include('sideMenu.html') ?>
 
-    <div class="topMenu floatLeft col10 colt10 colm12">
+    <div class="topMenu afterMenu col10 colt10 colm12">
         <div class="title col6 colt6 colm12 floatLeft">
             <h1 > Gestion des casquettes </h1>
         </div>
         <div class="floatLeft col2 colt2 colm6">
             <button class='buttonAdd' value='1' name='addUser' onclick='location.href="addCap.php";'>Ajouter une casquette</button>
         </div>
-        <div class="floatLeft col4 colt4 colm6">
+        <!--<div class="floatLeft col4 colt4 colm6">
             <button class="buttonImport">Importer des données</button>
-        </div>
+        </div>-->
     </div>
 
-    <div class="mainContent floatLeft col10 colt10 colm12">
+    <div class="mainContent afterMenu col10 colt10 colm12" style="width='50%'">
         <?php writeTable(); ?>
     </div>
 </div>

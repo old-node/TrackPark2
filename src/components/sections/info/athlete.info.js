@@ -6,6 +6,11 @@ import { withRouter } from "react-router-dom";
  * Informations détaillés sur un athlete
  */
 class AthleteInfo extends Component {
+  constructor(props) {
+    super(props)
+  }
+  
+  
   render() {
     const athlete = this.props.athlete; //Informations de l'athlètes
     return (

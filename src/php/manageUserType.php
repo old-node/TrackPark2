@@ -44,6 +44,7 @@ $types = UserType::getAllTypes();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TrackPark - Type d'utilisateur</title>
     <link rel="stylesheet" type="text/css" href="./css/stylesheet.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.css">
     <script
             src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -53,7 +54,7 @@ $types = UserType::getAllTypes();
 <body>
 <?php include('sideMenu.html') ?>
 
-<div class="topMenu floatLeft col10 colt10 colm12">
+<div class="topMenu afterMenu col10 colt10 colm12">
     <div class="title col6 colt6 colm12 floatLeft">
         <h1 > Gestion des type d'utilisateurs </h1>
     </div>
@@ -62,8 +63,9 @@ $types = UserType::getAllTypes();
     </div>
 </div>
 
-<div class="mainContent floatLeft col10 colt10 colm12">
-    <table>
+<div class="mainContent afterMenu col10 colt10 colm12">
+    <table class='ui celled table clickableTable'>
+    <thead>
         <tr>
             <th>ID</th>
             <th>Nom</th>
@@ -72,6 +74,7 @@ $types = UserType::getAllTypes();
             <th></th>
             <th></th>
         </tr>
+    </thead>
         <?php
         foreach ($types as $type) {
             echo '<tr>';

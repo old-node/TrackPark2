@@ -5,7 +5,7 @@ import Popup from './popup';
 import { Switch } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 
-import home from "../home";
+//import home from "../home";
 import EvaluationList from "../sections/evaluation.list"
 import ParkGroup from '../sections/park.group';
 import AthleteList from '../sections/athlete.list';
@@ -20,14 +20,25 @@ import evaluationDetail from '../sections/evaluation.detail';
  * Contains all the routes to each "pages"
  */
 export default class Content extends Component {
-  render(props) {
+  constructor(props) {
+    super(props)
+  }
+
+  render() {
+    const section = this.props.section;
     return (
-      <main id="content" className="content col10 colt10 colm12 floatLeft">
+      <div id="content" className="content col10 colt10 colm12 floatLeft">
         <Info />
         <Popup />
 
         <Switch>
-          <Route exact path="/" component={home}></Route>
+          <Route exact
+            path={section.path}
+            component={section.component} />
+        </Switch>
+
+        <Switch>
+          <Route exact path="/" component={Login}></Route>
         </Switch>
 
         <Switch>
@@ -52,7 +63,7 @@ export default class Content extends Component {
         <Switch>
           <Route exact path="/parkgroup" component={ParkGroup} />
         </Switch>
-      </main>
+      </div>
     );
   }
 }

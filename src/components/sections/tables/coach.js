@@ -6,6 +6,11 @@ import { withRouter } from "react-router-dom";
  * Tableau d'information sur un coach
  */
 class coachTable extends Component {
+  constructor(props) {
+    super(props)
+  }
+  
+  
   render() {
     const coachs = this.props.coachs;
     return (

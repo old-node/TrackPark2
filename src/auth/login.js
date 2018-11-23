@@ -19,12 +19,12 @@ class Login extends Component {
     let password = document.getElementById('password').value;
     AuthManager.auth(username, password)
       .then(() => {
-        window.location.replace('/')
+        window.location.replace('http://localhost:3000/parkgroup')
       });
   }
 
   handleKeyPress(event) {
-    if (event.key = 'Enter') {
+    if (event.key === 'Enter') {
       this.loginClick();
     }
   }

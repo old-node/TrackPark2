@@ -1,13 +1,35 @@
-<div class="sideMenu col2 colt2 colm12 floatLeft fixed">
-    <img class="logo" src="./images/logo.png">
-    <a class="sideMenuButton" href="./manageUsers.php">Utilisateurs</a>
-    <a class="sideMenuButton" href="UIWCoachManager.php">Évaluateurs</a>
-    <a class="sideMenuButton activeMenu" href="http://localhost:3000/athlete">Athlètes</a>
-    <a class="sideMenuButton" href="./UIWDrillManager.php">Épreuves</a>
-    <a class="sideMenuButton" href="http://localhost:3000/evaluation">Évaluations</a>
-    <a class="sideMenuButton" href="http://localhost:3000/group">Groupes</a>
-    <a class="sideMenuButton" href="./UIWCourseManager.php">Parcours</a>
-    <a class="sideMenuButton" href="./manageCap.php">Casquettes</a>
-    <a class="sideMenuButton" href="./map.php">Carte des parcs</a>
-    <a class="sideMenuButton" href="./logout.php">Déconnexion</a>
+<div class="sideMenu col2 colt2 colm12 floatLeft fixed" onload="setHref()" >
+    <a id="logo" href="http://localhost:3000/"><img class="logo" src="./images/logo.png"></a>
+    <a id="user" class="sideMenuButton" href="./manageUsers.php">Utilisateurs</a>
+    <a id="coach" class="sideMenuButton" href="UIWCoachManager.php">Évaluateurs</a>
+    <a id="athlete" class="sideMenuButton" href="http://localhost:3000/athlete">Athlètes</a>
+    <a id="drill" class="sideMenuButton" href="./UIWDrillManager.php">Épreuves</a>
+    <a id="evaluation" class="sideMenuButton" href="http://localhost:3000/evaluation">Évaluations</a>
+    <a id="group" class="sideMenuButton" href="http://localhost:3000/group">Groupes</a>
+    <a id="course" class="sideMenuButton" href="./UIWCourseManager.php">Parcours</a>
+    <a id="cap" class="sideMenuButton" href="./manageCap.php">Casquettes</a>
+    <a id="park" class="sideMenuButton" href="http://localhost:3000/parkgroup">Carte des parcs</a>
+    <a id="session" class="sideMenuButton" href="http://localhost:3000/login">Connexion</a>
 </div>
+<script>
+    let activeID = "session" // TODO: Get the current section
+    let activeButton = document.getElementById(activeID)
+    activeButton.classList.add("active")
+    
+    let admin = flase // TODO: Get the session value and fix the display
+    let session = document.getElementById("session")
+    let logo = document.getElementById("logo")
+    if (admin) {
+        session.href = "./logout.php"
+        session.innerHTML = "Déconnexion"
+    } else {
+        document.getElementById("user").style.visibility = hidden
+        document.getElementById("drill").style.visibility = hidden
+        document.getElementById("course").style.visibility = hidden
+        document.getElementById("cap").style.visibility = hidden
+        
+        session.href = "http://localhost:3000/login"
+        session.innerHTML = "Connexion"
+        logo.href = "http://localhost:3000/login"
+    }
+</script>

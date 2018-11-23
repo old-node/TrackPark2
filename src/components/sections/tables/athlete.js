@@ -6,6 +6,11 @@ import { withRouter } from "react-router-dom";
  * Tableau d'information sur une liste d'athlete
  */
 class AthleteTable extends Component {
+  constructor(props) {
+    super(props)
+  }
+  
+  
   openAthlete(id) {
     window.location.replace(`/athlete/${id}`);
   }

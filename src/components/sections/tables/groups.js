@@ -6,6 +6,10 @@ import { withRouter } from "react-router-dom";
  * Tableau d'information sur une liste de groupe
  */
 class GroupTable extends Component {
+  constructor(props) {
+    super(props)
+  }
+  
   openGroup(id) {
     window.location.replace(`/group/${id}`);
   }

@@ -28,7 +28,8 @@ export const templates = [
     className: "app",
     exact: true,
     href: "../app",
-    path: ""
+    path: "",
+    admin: null,
   },
   {
     id: 1,
@@ -37,7 +38,8 @@ export const templates = [
     className: "navigation",
     exact: true,
     href: "../navigation",
-    path: ""
+    path: "",
+    admin: null,
   },
   {
     id: 2,
@@ -46,7 +48,8 @@ export const templates = [
     className: "content",
     exact: true,
     href: "../content",
-    path: ""
+    path: "",
+    admin: null,
   },
   {
     id: 3,
@@ -55,7 +58,8 @@ export const templates = [
     className: "footnote",
     exact: true,
     href: "../footnote",
-    path: ""
+    path: "",
+    admin: null,
   },
 ]
 
@@ -67,6 +71,7 @@ export const notfound = {
   href: "../notfound",
   className: "404",
   path: "*",
+  admin: false,
 }
 
 export const sessions = [
@@ -77,8 +82,9 @@ export const sessions = [
       component: Login,
       className: "login",
       exact: true,
-      href: "../login",
-      path: "/account/login",
+      href: "/login",
+      path: "/login",
+      admin: false,
     }
   },
   {
@@ -88,8 +94,9 @@ export const sessions = [
       component: Register,
       className: "register",
       exact: true,
-      href: "../register",
-      path: "/account/register",
+      href: "/register",
+      path: "/register",
+      admin: false,
     }
   },
   {
@@ -99,8 +106,9 @@ export const sessions = [
       component: null,
       className: "forgot",
       exact: true,
-      href: "../forgot",
-      path: "/account/forgot",
+      href: "/forgot",
+      path: "/forgot",
+      admin: false,
     }
   },
   {
@@ -110,8 +118,9 @@ export const sessions = [
       component: null,
       className: "logout",
       exact: true,
-      href: "../logout",
-      path: "/account/logout",
+      href: "./logout.php",
+      path: "/logout",
+      admin: false,
     }
   }
 ]
@@ -124,6 +133,7 @@ export const home = {
   exact: true,
   href: "../home",
   path: "/",
+  admin: false,
 }
 
 export const section_switch = {
@@ -133,7 +143,8 @@ export const section_switch = {
   className: "groupSwitch",
   exact: true,
   href: "../section.switch",
-  path: "/s"
+  path: "/s",
+  admin: null,
 }
 export const park = {
   id: 58,
@@ -144,6 +155,7 @@ export const park = {
   href: "../park",
   path: "/s/parkgroup",
   tableName: "",
+  admin: false,
 }
 
 export const parkgroup = {
@@ -155,6 +167,7 @@ export const parkgroup = {
   href: "../parkgroup",
   path: "/s/parkgroup",
   tableName: "",
+  admin: false,
 }
 export const sections_group = [
   // Ajouter une balise pour nomer les éléments comme dans sessions?
@@ -167,6 +180,7 @@ export const sections_group = [
     href: "http://localhost/UIWCoachManager.php",
     path: "/s/coach",
     tableName: "",
+    admin: false,
   },
   {
     id: 52,
@@ -177,6 +191,7 @@ export const sections_group = [
     href: "../athlete",
     path: "/s/athlete",
     tableName: "",
+    admin: false,
   },
   {
     id: 53,
@@ -187,6 +202,7 @@ export const sections_group = [
     href: "http://localhost/UIWDrillManager.php",
     path: "/s/drill",
     tableName: "",
+    admin: true,
   },
   {
     id: 54,
@@ -197,6 +213,7 @@ export const sections_group = [
     href: "../evaluation",
     path: "/s/evaluation",
     tableName: "",
+    admin: false,
   },
   {
     /* TODO: Revoir la liste pour ajouter les groupes requis avec un id */
@@ -208,6 +225,7 @@ export const sections_group = [
     href: "../group",
     path: "/s/group",
     tableName: "",
+    admin: false,
   },
   {
     id: 56,
@@ -218,6 +236,7 @@ export const sections_group = [
     href: "http://localhost/UIWCourseManager.php",
     path: "/s/course",
     tableName: "",
+    admin: true,
   },
   {
     id: 57,
@@ -228,6 +247,7 @@ export const sections_group = [
     href: "http://localhost/manageCap.php",
     path: "/s/cap",
     tableName: "",
+    admin: true,
   },
   {
     id: 58,
@@ -238,6 +258,7 @@ export const sections_group = [
     href: "../parkgroup",
     path: "/s/parkgroup",
     tableName: "",
+    admin: false,
   }
 ]
 
@@ -252,6 +273,7 @@ export const sections_group_admin = [
     href: "http://localhost/manageUserType.php",
     path: "/s/usertype",
     tableName: "",
+    admin: true,
   },
   {
     id: 61,
@@ -262,6 +284,7 @@ export const sections_group_admin = [
     href: "http://localhost/manageUsers.php",
     path: "/s/user",
     tableName: "",
+    admin: true,
   },
 ]
 
@@ -275,6 +298,7 @@ export const sections = [
     href: "../coach",
     path: "/s/coach/:number",
     groupID: 51,
+    admin: false,
   },
   {
     id: 72,
@@ -285,7 +309,8 @@ export const sections = [
     href: "../athlete",
     path: "/s/athlete/:number",
     groupID: 52,
-  },
+    admin: false,
+  },/*
   {
     id: 73,
     name: "Exercice ",
@@ -295,7 +320,8 @@ export const sections = [
     href: "../drill",
     path: "/s/drill/:number",
     groupID: 53,
-  },
+    admin: false,
+  },*/
   {
     id: 74,
     name: "Évaluation ",
@@ -305,6 +331,7 @@ export const sections = [
     href: "../evaluation",
     path: "/s/evaluation/:number",
     groupID: 54,
+    admin: false,
   },
   {
     id: 75,
@@ -315,6 +342,7 @@ export const sections = [
     href: "../group",
     path: "/s/group/:number",
     groupID: 55,
+    admin: false,
   },
   {
     id: 76,
@@ -325,6 +353,7 @@ export const sections = [
     href: "../course",
     path: "/s/course/:number",
     groupID: 56,
+    admin: true,
   },
   {
     id: 77,
@@ -335,6 +364,7 @@ export const sections = [
     href: "../cap",
     path: "/s/cap/:number",
     groupID: 57,
+    admin: true,
   },
   {
     id: 78,
@@ -345,6 +375,7 @@ export const sections = [
     href: "../park",
     path: "/s/park/:number",
     groupID: 58,
+    admin: false,
   }
 ]
 
@@ -358,6 +389,7 @@ export const sections_admin = [
     href: "../usertype",
     path: "/s/usertype/:number",
     groupID: 60,
+    admin: true,
   },
   {
     id: 81,
@@ -368,6 +400,7 @@ export const sections_admin = [
     href: "../user",
     path: "/s/user/:number",
     groupID: 61,
+    admin: true,
   },
 ]
 

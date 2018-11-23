@@ -30,8 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === "POST")
 
 function writeTable()
 {
-  echo "<table>";
-  echo "<tr>" . makeCellTH("Nom") . makeCellTH("Courriel") . "</tr>";
+  echo "<table class='ui celled table clickableTable'>";
+  echo "<thead> <tr>" . makeCellTH("Nom") . makeCellTH("Courriel") . "</tr> </thead>";
 
   foreach (CoachManager::getPersons() as $c)
   {
@@ -69,7 +69,10 @@ function updateCoach()
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="./css/stylesheet.css">
   <title>TrackPark - Évaluateurs</title>
-
+  
+  <link rel="shortcut icon" href="../../public/logo.ico">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.css">
+  
   <script src="js/util.js"></script>
   <script>
 
@@ -192,10 +195,12 @@ function updateCoach()
 </head>
 
 <body>
+
+<div id="reactMenu"></div>
 <div>
 <?php include('sideMenu.html') ?>
 
-  <div class="topMenu col12 colt12 colm12 floatLeft">
+  <div class="topMenu col12 colt12 colm12 afterMenu">
     <div class="col2 colt2 colm12 floatLeft"> &nbsp; </div>
     <div class="col10 colt10 colm12 floatLeft">
       <div class="title col6 colt6 colm6 floatLeft">
@@ -204,9 +209,9 @@ function updateCoach()
       <div class="floatLeft col2 colt2 colm12">
           <?php makeAddCoachButton(); ?>
       </div>
-      <div class="floatLeft col4 colt4 colm12">
+      <!--<div class="floatLeft col4 colt4 colm12">
         <button class="buttonImport">Importer des données</button>
-      </div>
+      </div>-->
     </div>
   </div>
 
@@ -214,7 +219,7 @@ function updateCoach()
     &nbsp;
   </div>
 
-  <div class="mainContent floatLeft col10 colt10 colm12">
+  <div class="mainContent afterMenu col10 colt10 colm12">
       <?php writeTable(); ?>
   </div>
 </div>
@@ -223,6 +228,7 @@ function updateCoach()
   <div class="modal-content animate padding30" id="infoCoach">
   </div>
 </div>
+
 
 </body>
 </html>
