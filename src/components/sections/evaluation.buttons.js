@@ -23,30 +23,31 @@ class EvaluationButtons extends Component {
         this.isSuccess = this.isSuccess.bind(this);
     }
 
-    addSuccess = function() {
+    addSuccess = async function() {
         if (this.state.state !== ResultStates.TODO) {
             return;
         }
         let newSuccess = this.state.success + 1;
 
-        this.setState({
+        await this.setState({
             success: newSuccess
-        }, () => this.addTries())
+        })
+
+        this.addTries()
     } 
 
-    addTries() {
+    addTries = async function() {
         if (this.state.state !== ResultStates.TODO) {
             return;
         }
 
         let newTries = this.state.tries + 1;
 
-        this.setState({
+        await this.setState({
             tries: newTries
-        }, () => {
-            
-            EvaluationAPI.update(this.state.evaluation.id, {value: this.state.success});
-        })
+        });
+
+        await EvaluationAPI.update(this.state.evaluation.id, {value: this.state.success});
 
         if (this.isOver()) {
             let newState = null;
@@ -57,11 +58,12 @@ class EvaluationButtons extends Component {
                 newState = ResultStates.FAILEd;
             }
             
-            this.setState({
+            await this.setState({
                 state: newState      
-            }, () => {
-                EvaluationAPI.update(this.state.evaluation.id, {value: this.state.success, state: newState})
             }) 
+
+            await EvaluationAPI.update(this.state.evaluation.id, {value: this.state.success, state: newState});
+            console.log("saved in over")
         }
     }
 
