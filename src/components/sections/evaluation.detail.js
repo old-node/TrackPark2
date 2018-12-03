@@ -27,45 +27,22 @@ class EvaluationDetail extends Component {
     let evaluationId = this.props.match.params.id;
 
     EvaluationAPI.get(evaluationId)
-      .then(
-        result => {
-          this.state.evaluation = result[0];
-        },
-        error => {
-          this.state.error = error;
-        }
-      )
+      .then(result => this.setState({ evaluation: result[0] }))
       .then(() =>
         Promise.all([
           DrillAPI.get(this.state.evaluation.drill).then(
-            result => {
-              this.state.drill = result[0];
-            },
-            error => {
-              this.state.error = error;
-            }
+            result => this.setState({ drill: result[0] })
           ),
           AthleteAPI.get(this.state.evaluation.athlete).then(
-            result => {
-              this.state.athlete = result[0];
-            },
-            error => {
-              this.state.error = error;
-            }
+            result => this.setState({ athlete: result[0] })
           ),
           CoachAPI.get(this.state.evaluation.coach).then(
-            result => {
-              this.state.coach = result;
-            },
-            error => {
-              this.state.error = error;
-            }
+            result => this.setState({ coach: result })
           )
         ]).then(() => {
-          this.state.isLoaded = true;
-          this.forceUpdate();
+          this.setState({ isLoaded: true });
         })
-      );
+      ).catch((error) => this.setState({ error: error }));
   }
 
   render() {
