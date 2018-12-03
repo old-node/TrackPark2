@@ -3,12 +3,13 @@ import { Table } from "semantic-ui-react";
 import { withRouter } from "react-router-dom";
 
 import CoachTable from "./tables/coach";
+import DrillTable from "./tables/drill";
+import ResultTable from "./tables/result";
 
 import AthleteAPI from "../../api/athlete";
 import CoachAPI from "../../api/coach";
 import EvaluationAPI from "../../api/evaluation";
 import DrillAPI from "../../api/drill";
-import ResultStates from "../../api/ResultStates";
 
 class EvaluationDetail extends Component {
   constructor(props) {
@@ -81,48 +82,11 @@ class EvaluationDetail extends Component {
             {evaluation.date}
           </h1>
           <h2>Éxercice</h2>
-          <Table celled id="drill-table">
-            <Table.Header>
-              <Table.Row>
-                <Table.HeaderCell>Nom</Table.HeaderCell>
-                <Table.HeaderCell>Objectif</Table.HeaderCell>
-                <Table.HeaderCell>Essaies alloués</Table.HeaderCell>
-                <Table.HeaderCell>Objectif réussite</Table.HeaderCell>
-                <Table.HeaderCell>Casquette</Table.HeaderCell>
-              </Table.Row>
-            </Table.Header>
-            <Table.Body>
-              <Table.Row key={drill.id}>
-                <Table.Cell>{drill.name}</Table.Cell>
-                <Table.Cell>{drill.goal}</Table.Cell>
-                <Table.Cell>{drill.allowed_tries}</Table.Cell>
-                <Table.Cell>{drill.success_treshold}</Table.Cell>
-                <Table.Cell>{drill.cap}</Table.Cell>
-              </Table.Row>
-            </Table.Body>
-          </Table>
+          <DrillTable drills={[drill]}></DrillTable>
+
           <h2>Résultat</h2>
-          <Table celled id="result-table">
-            <Table.Header>
-              <Table.Row>
-                <Table.HeaderCell>État</Table.HeaderCell>
-                <Table.HeaderCell>Résultat</Table.HeaderCell>
-              </Table.Row>
-            </Table.Header>
-            <Table.Body>
-              <Table.Row negative={evaluation.result_state === ResultStates.FAILEd} positive={evaluation.result_state === ResultStates.PASSED} key={evaluation.id}>
-                <Table.Cell>
-                  {" "}
-                  {evaluation.result_state === ResultStates.FAILEd
-                    ? "Raté"
-                    : evaluation.result_state === ResultStates.TODO
-                      ? "À faire"
-                      : "Passé"}
-                </Table.Cell>
-                <Table.Cell>{evaluation.numerical_value}</Table.Cell>
-              </Table.Row>
-            </Table.Body>
-          </Table>
+          <ResultTable evaluations={[evaluation]}></ResultTable>
+
           <h2>Coach</h2>
           <CoachTable coachs={coach} />
         </div>
