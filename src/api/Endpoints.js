@@ -14,6 +14,7 @@ const Enpoints = {
   GROUP: BASE + "group.php",
   DRILL_TYPE: BASE + "drill_type.php",
   COURSE: BASE + "course.php",
+  PARC: BASE + "park.php",
   AUTH: BASE + "auth.php"
 };
 
