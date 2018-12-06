@@ -24,33 +24,17 @@ class GroupDetail extends Component {
 
     Promise.all([
       GroupAPI.get(groupId).then(
-        result => {
-          this.state.group = result[0];
-        },
-        error => {
-          this.state.error = error;
-        }
+        result => this.setState({ group: result[0] })
       ),
       AthleteAPI.inGroup(groupId).then(
-        result => {
-          this.state.athletes = result;
-        },
-        error => {
-          this.state.error = error;
-        }
+        result => this.setState({ athletes: result })
       ),
       CoachAPI.forGroup(groupId).then(
-        result => {
-          this.state.coachs = result;
-        },
-        error => {
-          this.state.error = error;
-        }
+        result => this.setState({ coachs: result })
       )
     ]).then(() => {
-      this.state.isLoaded = true;
-      this.forceUpdate();
-    });
+      this.setState({ isLoaded: true });
+    }).catch((error) => this.setState({ error: error }));
   }
 
   render() {

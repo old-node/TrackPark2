@@ -12,10 +12,10 @@ class AthleteInfo extends Component {
       <div className="col12 colt12 colm12 floatLeft">
         <Image
           circular={true}
-          className="col3 colt12 colm12 floatLeft"
+          className="col3 colt3 colm12 floatLeft"
           src={athlete.profile_image_url}
         />
-        <div className="col9 colt12 colm12 infoBox">
+        <div className="col9 colt9 colm12 infoBox">
           <h1>
             {athlete.first_name} {athlete.name}
           </h1>
