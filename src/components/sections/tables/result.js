@@ -19,7 +19,8 @@ class ResultTable extends Component {
         </Table.Header>
         <Table.Body>
           {evaluations.map(evaluation => (
-              <Table.Row key={evaluation.id} negative={evaluation.result_state === ResultStates.FAILEd} positive={evaluation.result_state === ResultStates.PASSED} key={evaluation.id}>
+              <Table.Row key={evaluation.id} negative={evaluation.result_state === ResultStates.FAILEd}
+              positive={evaluation.result_state === ResultStates.PASSED}>
               <Table.Cell>
                 {" "}
                 {evaluation.result_state === ResultStates.FAILEd

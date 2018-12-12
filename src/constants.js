@@ -342,8 +342,8 @@ export const sections = [
     component: Park,
     className: "park",
     exact: false,
-    href: "../park",
-    path: "/s/park/:number",
+    href: "/parkgroup",
+    path: "/parkgroup",
     groupID: 58,
   }
 ]
