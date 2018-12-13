@@ -6,7 +6,7 @@ const posts = [
   { id: 1, name: 'Parc Julien', address: '234 rue de la chapelle, sherbrooke, qc j0b 4g0' }
 
 ];
-export default class Park extends Component {
+export default class Parc extends Component {
   render(props) {
     return (
       <main id="content" className="content">

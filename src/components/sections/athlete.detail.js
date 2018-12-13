@@ -30,32 +30,18 @@ class AthleteDetail extends Component {
 
     Promise.all([
       GroupAPI.ofAthlete(athleteId).then(
-        result => {
-          this.state.groups = result;
-        },
-        error => {
-          this.state.error = error;
-        }
+        result => this.setState({ groups: result })
       ),
       AthleteAPI.get(athleteId).then(
-        result => {
-          this.state.athlete = result[0];
-        },
-        error => {
-          this.state.error = error;
-        }
+        result => this.setState({ athlete: result[0] })
       ),
       EvaluationAPI.ofAthlete(athleteId).then(
-        result => {
-          this.state.evaluations = result;
-        },
-        error => {
-          this.state.error = error;
-        }
+        result => this.setState({ evaluations: result })
       )
     ]).then(() => {
-      this.state.isLoaded = true;
-      this.forceUpdate();
+      this.setState({ isLoaded: true });
+    }).catch((error) => {
+      this.setState({ error: error });
     });
   }
 

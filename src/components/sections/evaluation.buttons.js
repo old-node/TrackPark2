@@ -79,8 +79,8 @@ class EvaluationButtons extends Component {
             <div>
                 <span id='success'>Success : {this.state.success}</span>
                 <span id='total'>Total : {this.state.drill.allowed_tries}</span>
-                <button onClick={this.addSuccess}>Success</button>
-                <button onClick={this.addTries}>Fail</button>
+                <button className='ui button' onClick={this.addSuccess}>Succ&egrave;s</button>
+                <button className='ui button' onClick={this.addTries}>Rat&eacute;</button>
             </div>
         )
     }

@@ -8,7 +8,7 @@ import AuthManager from "../../auth/AuthManager";
 
 class ParcList extends Component {
   constructor(props) {
-    super(props);
+     super(props);
 
     this.state = {
       error: null,
@@ -43,11 +43,9 @@ class ParcList extends Component {
     } else {
       return (
         <ParcTable parcs={parcs} />
-       
-      );
-      
+        );
     }
   }
 }
-  
+
 export default withRouter(ParcList);
