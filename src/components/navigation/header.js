@@ -8,7 +8,7 @@ export default class Header extends Component {
     }
 
     return (
-      <header id="header" className="header topMenu col10 colt10 colm12 floatLeft">
+      <header id="header" className="header topMenu col12 colt12 colm12 floatLeft">
         <h3>
           {this.props.title}
         </h3>
