@@ -33,6 +33,7 @@ class EvaluationList extends Component {
       }
     );
   }
+  
   render() {
     const { error, isLoaded, evaluations } = this.state;
     if (error) {

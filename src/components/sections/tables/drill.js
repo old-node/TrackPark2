@@ -13,7 +13,7 @@ class DrillTable extends Component {
   render() {
     const drills = this.props.drills;
     return (
-      <Table celled id="drill-table">
+      <Table celled id="drill-table" className="unstackable">
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>Nom</Table.HeaderCell>
