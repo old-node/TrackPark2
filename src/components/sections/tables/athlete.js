@@ -1,6 +1,6 @@
 /**************************************************************************************
 Fichier :       athlete.js
-Auteur :        Olivier Lemay Dostie
+Auteur :        Antoine Gagnon
 Fonctionnalité : Tableau contenant une liste d'athlètes.
 Date :          22 novembre 2018
 =======================================================================================

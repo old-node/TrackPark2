@@ -1,7 +1,22 @@
+/**************************************************************************************
+Fichier :       functions.js
+Auteur :        Olivier Lemay Dostie
+Fonctionnalité : Fonctions utilitaire pour toute l'application.
+Date :          22 novembre 2018
+=======================================================================================
+Vérification :
+Date        Nom                     Approuvé
+=======================================================================================
+Historique de modification :
+Date        Nom                     Description
+2018-12-14	Olivier Lemay Dostie    Ajout des description
+**************************************************************************************/
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 
+// Création d'un liens pour le menu
 export function makeMenuLink(section, active, setActive) {
   let classActive = ""
   if (section.name === active) {
@@ -20,10 +35,14 @@ export function makeMenuLink(section, active, setActive) {
   }
 }
 
+// Création d'un lien dans le menu mobile
 export function makeInfoLink(section, number) {
-  return (<li key={section.id} onClick={toggleMenu}><Link to={section.href + number}>{section.name}</Link></li>);
+  return (<li key={section.id} onClick={toggleMenu}>
+      <Link to={section.href + number}>{section.name}</Link>
+    </li>);
 }
 
+// Création d'une Route pour une section
 export function makeRoute(section) {
   if (section === undefined) {
     return (<Route />)
@@ -35,6 +54,7 @@ export function makeRoute(section) {
   }
 }
 
+// Basculement du menu dans le mode mobile
 export async function toggleMenu() {
   let topnav = document.getElementById("myTopnav");
   if (topnav && topnav.className === "topnav") {

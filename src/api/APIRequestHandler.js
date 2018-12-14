@@ -1,3 +1,17 @@
+/**************************************************************************************
+Fichier :       APIRequestHandler.js
+Auteur :        Antoine Gagnon
+Fonctionnalité : Gestionnaire des APIs.
+Date :          22 novembre 2018
+=======================================================================================
+Vérification :
+Date        Nom                     Approuvé
+=======================================================================================
+Historique de modification :
+Date        Nom                     Description
+2018-12-14	Olivier Lemay Dostie    Ajout des description
+**************************************************************************************/
+
 /**
  * Classe qui permet de faire des requêtes à l'API
  */

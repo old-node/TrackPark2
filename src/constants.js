@@ -1,3 +1,17 @@
+/**************************************************************************************
+Fichier :       constants.js
+Auteur :        Olivier Lemay Dostie
+Fonctionnalité : Constantes globale de l'application. Sections publiques et privées.
+Date :          22 novembre 2018
+=======================================================================================
+Vérification :
+Date        Nom                     Approuvé
+=======================================================================================
+Historique de modification :
+Date        Nom                     Description
+2018-12-14	Olivier Lemay Dostie    Ajout des description
+**************************************************************************************/
+
 /*
 import App from './components/app';
 import Navigation from './components/navigation/navigation';
@@ -24,7 +38,7 @@ export const templates = [
   {
     id: 0,
     name: "TrackPark2",
-    component: null,//App,
+    component: Home,
     className: "app",
     exact: true,
     href: "../app",
@@ -122,8 +136,8 @@ export const home = {
   component: Home,
   className: "home",
   exact: true,
-  href: "../parkgroup",
-  path: "/parkgroup",
+  href: "../home",
+  path: "/",
 }
 
 export const section_switch = {

@@ -1,3 +1,17 @@
+/**************************************************************************************
+Fichier :       evaluation.list.js
+Auteur :        Francis Forest
+Fonctionnalité : Liste des évaluations.
+Date :          22 novembre 2018
+=======================================================================================
+Vérification :
+Date        Nom                     Approuvé
+=======================================================================================
+Historique de modification :
+Date        Nom                     Description
+2018-12-14	Olivier Lemay Dostie    Ajout des description
+**************************************************************************************/
+
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 
