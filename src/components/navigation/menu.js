@@ -9,22 +9,29 @@ require('../../css/navigation/menu.css')
 export default class Menu extends Component {
   constructor(props) {
     super(props);
-    this.myFunction = this.myFunction.bind(this);
+    this.openMenu = this.openMenu.bind(this);
   }
-  myFunction = function() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      x.className += " responsive";
+
+  openMenu = function() {
+    var topnav = document.getElementById("myTopnav");
+    if (topnav.className === "topnav") {
+      topnav.className += " responsive";
     } else {
-      x.className = "topnav";
+      topnav.className = "topnav";
+    }
+
+    let menuTitle = document.getElementById("menuTitle");
+    if (menuTitle.className === "menuTitle") {
+      menuTitle.className += " hidden";
+    } else {
+      menuTitle.className = "menuTitle";
     }
   }
 
   render(props) {
-
     //Si aucun onglet actif n'est défini
     if (props === undefined) {
-      props = { active: "" }
+      props = { active: "Accueil" }
     }
 
     //Création des boutons vers les différentes sections
@@ -36,10 +43,11 @@ export default class Menu extends Component {
     return (
       <nav id="myTopnav" className="topnav">
         <Link to='/'><img className="logo" src={logo} alt="logo" /></Link>
+        <h3 id="menuTitle" className="menuTitle">{props.active}</h3>
         <ul className="noPaddingStart">
           {buttonList}
         </ul>
-        <a href="javascript:void(0);" className="icon" onClick={this.myFunction}>
+        <a href="#" className="icon" onClick={this.openMenu}>
           <i className="fa fa-bars"></i>
         </a>
       </nav>
