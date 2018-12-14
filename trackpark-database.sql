@@ -922,14 +922,6 @@ ALTER TABLE `drill`
   ADD CONSTRAINT `drill_ibfk_1` FOREIGN KEY (`drill_type`) REFERENCES `drill_type` (`id`),
   ADD CONSTRAINT `drill_ibfk_2` FOREIGN KEY (`cap`) REFERENCES `cap` (`code`);
 
---
--- Constraints for table `evaluation`
---
-ALTER TABLE `evaluation`
-  ADD CONSTRAINT `drill_fk3` FOREIGN KEY (`drill`) REFERENCES `drill` (`id`),
-  ADD CONSTRAINT `evaluation_ibfk_3` FOREIGN KEY (`athlete`) REFERENCES `athlete` (`id`),
-  ADD CONSTRAINT `evaluation_ibfk_4` FOREIGN KEY (`coach`) REFERENCES `coach` (`id`),
-  ADD CONSTRAINT `evaluation_ibfk_5` FOREIGN KEY (`field`) REFERENCES `address` (`id`);
 
 --
 -- Constraints for table `layout`
