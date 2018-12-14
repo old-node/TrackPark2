@@ -22,7 +22,7 @@ class ParcTable extends Component {
           
           {parcs.map(parc => (
       
-            <Table.Row key={parc.id} onClick={() => this.openParc(parc.id)}>
+            <Table.Row key={parc.id}>
               <Table.Cell>{parc.name}</Table.Cell>
               <Table.Cell>  <div id='googlemap'><a href={"https://www.google.com/maps/search/?api=1&query="+ parc.address.replace(" ", "+") }  target="_blank" rel="noopener noreferrer" alt="Lien vers Google Map">{parc.address} </a> </div></Table.Cell>
             </Table.Row>
