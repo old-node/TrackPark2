@@ -9,13 +9,12 @@ class coachTable extends Component {
   render() {
     const coachs = this.props.coachs;
     return (
-      <Table celled id="coach-table" className="clickableTable">
+      <Table celled id="coach-table" className="clickableTable unstackable">
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell className="tblNom">Nom</Table.HeaderCell>
             <Table.HeaderCell className="tblPrenom">Prenom</Table.HeaderCell>
             <Table.HeaderCell className="tblTel">Tel</Table.HeaderCell>
-            <Table.HeaderCell className="tblDispo">Disponibilité</Table.HeaderCell>
             <Table.HeaderCell className="tblPhoto">Photo</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
@@ -25,7 +24,6 @@ class coachTable extends Component {
               <Table.Cell>{coach.name}</Table.Cell>
               <Table.Cell>{coach.first_name}</Table.Cell>
               <Table.Cell>{coach.phone_number}</Table.Cell>
-              <Table.Cell>{coach.availabilities}</Table.Cell>
               <Table.Cell className="imgTable"><img src={coach.profile_image_url } width="75px" ></img></Table.Cell>
             
             </Table.Row>

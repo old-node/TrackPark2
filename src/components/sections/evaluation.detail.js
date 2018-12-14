@@ -20,8 +20,16 @@ class EvaluationDetail extends Component {
     this.state = {
       error: null,
       isLoaded: false,
-      evaluation: null
+      evaluation: null,
+      success: 0,
+      tries: 0,
     };
+
+    // Méthodes des boutons
+    this.addSuccess = this.addSuccess.bind(this);
+    this.addTries = this.addTries.bind(this);
+    this.isOver = this.isOver.bind(this);
+    this.isSuccess = this.isSuccess.bind(this);
   }
 
   async componentDidMount() {
@@ -47,6 +55,64 @@ class EvaluationDetail extends Component {
       ).catch((error) => this.setState({ error: error }));
   }
 
+  // Ajoute un succès
+  addSuccess = async function() {
+    if (this.state.evaluation.result_state !== ResultStates.TODO) {
+        return;
+    }
+    console.log("passed");
+    let newSuccess = this.state.success + 1;
+
+    await this.setState({
+        success: newSuccess
+    })
+
+    this.addTries()
+} 
+
+  // Ajoute un essai
+  addTries = async function() {
+      if (this.state.evaluation.result_state !== ResultStates.TODO) {
+          return;
+      }
+      let newTries = this.state.tries + 1;
+
+      await this.setState({
+          tries: newTries
+      });
+
+      // Update la DB
+      await EvaluationAPI.update(this.state.evaluation.id, {value: this.state.success});
+
+      // Vérifie si c'est le dernier essai avant la fin de l'exercice
+      if (this.isOver()) {
+          let newEval = this.state.evaluation;
+
+          if (this.isSuccess()) {
+            newEval.result_state = ResultStates.PASSED;
+          } else {
+            newEval.result_state = ResultStates.FAILEd;
+          }
+          
+          await this.setState({
+              evaluation: newEval     
+          }) 
+
+          // Update la DB
+          await EvaluationAPI.update(this.state.evaluation.id, {value: this.state.success, state: this.state.evaluation.result_state});
+      }
+  }
+
+  // Vérifie si l'exercice est terminé
+  isOver() {
+      return this.state.tries >= this.state.drill.allowed_tries;
+  }
+
+  // Vérifie si c'est un succès
+  isSuccess() {
+      return this.state.success >= this.state.drill.success_treshold;
+  }
+
   render() {
     const { error, isLoaded, athlete, coach, drill, evaluation } = this.state;
     if (error) {
@@ -60,15 +126,21 @@ class EvaluationDetail extends Component {
             Évaluation de {athlete.first_name} {athlete.name} -{" "}
             {evaluation.date}
           </h1>
-          <h2>Éxercice</h2>
-          <DrillTable drills={[drill]}></DrillTable>
 
           <h2>Résultat</h2>
           <ResultTable evaluations={[evaluation]}></ResultTable>
 
-          <h2>Coach</h2>
-          <CoachTable coachs={coach} />
-          <EvaluationButtons evaluation={evaluation} drill={drill} />
+          <h2>Éxercice</h2>
+          <DrillTable drills={[drill]}></DrillTable>
+
+          <EvaluationButtons evaluation={evaluation} 
+                            drill={drill} 
+                            addSuccess={this.addSuccess} 
+                            addTries={this.addTries} 
+                            isOver={this.isOver} 
+                            isSuccess={this.isSuccess}
+                            success={this.state.success}
+                            tries={this.state.tries} />
         </div>
       );
     }
