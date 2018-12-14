@@ -44,7 +44,6 @@ class GroupList extends Component {
           <h3>Groupes que vous évaluez</h3>
           <GroupTable groups={groups} />
         </div>
-        
       );
     }
   }
