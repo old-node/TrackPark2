@@ -36,12 +36,15 @@ class EvaluationDetail extends Component {
     //Querries to the API to get all the information needed
     let evaluationId = this.props.match.params.id;
 
-    EvaluationAPI.get(evaluationId)
-      .then(result => this.setState({ evaluation: result[0] }))
+    await EvaluationAPI.get(evaluationId)
+      .then(result => this.setState({ evaluation: result[0], 
+                                      success: result[0].numerical_value,
+      }))
       .then(() =>
         Promise.all([
           DrillAPI.get(this.state.evaluation.drill).then(
-            result => this.setState({ drill: result[0] })
+            result => this.setState({ drill: result[0],
+                                      tries: result[0].allowed_tries})
           ),
           AthleteAPI.get(this.state.evaluation.athlete).then(
             result => this.setState({ athlete: result[0] })
@@ -53,6 +56,10 @@ class EvaluationDetail extends Component {
           this.setState({ isLoaded: true });
         })
       ).catch((error) => this.setState({ error: error }));
+
+      if (this.state.evaluation.result_state === ResultStates.TODO) {
+        this.setState({tries: 0})
+      }
   }
 
   // Ajoute un succès
@@ -114,7 +121,7 @@ class EvaluationDetail extends Component {
   }
 
   render() {
-    const { error, isLoaded, athlete, coach, drill, evaluation } = this.state;
+    const { error, isLoaded, athlete, drill, evaluation } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -128,19 +135,17 @@ class EvaluationDetail extends Component {
           </h1>
 
           <h2>Résultat</h2>
-          <ResultTable evaluations={[evaluation]}></ResultTable>
+          <ResultTable evaluations={[this.state.evaluation]}></ResultTable>
 
           <h2>Éxercice</h2>
           <DrillTable drills={[drill]}></DrillTable>
 
-          <EvaluationButtons evaluation={evaluation} 
-                            drill={drill} 
-                            addSuccess={this.addSuccess} 
-                            addTries={this.addTries} 
-                            isOver={this.isOver} 
-                            isSuccess={this.isSuccess}
-                            success={this.state.success}
-                            tries={this.state.tries} />
+          <EvaluationButtons addSuccess={this.addSuccess} 
+                             addTries={this.addTries} 
+                             isOver={this.isOver} 
+                             isSuccess={this.isSuccess}
+                             success={this.state.success}
+                             tries={this.state.tries} />
         </div>
       );
     }
