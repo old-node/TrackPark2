@@ -9,6 +9,7 @@ import AthleteInfo from "./info/athlete.info";
 import GroupAPI from "../../api/group";
 import AthleteAPI from "../../api/athlete";
 import EvaluationAPI from "../../api/evaluation";
+import ResultStates from "../../api/ResultStates";
 
 /**
  * Informations sur l'athlète, les groupes dont il fait partie et ses évaluations
@@ -60,7 +61,7 @@ class AthleteDetail extends Component {
           <GroupTable groups={groups} />
 
           <h3>Évaluations</h3>
-          <EvaluationTable evaluations={evaluations} />
+          <EvaluationTable evaluations={evaluations} status={ResultStates.TODO} />
         </div>
       );
     }

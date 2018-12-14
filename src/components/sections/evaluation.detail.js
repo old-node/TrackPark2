@@ -129,15 +129,12 @@ class EvaluationDetail extends Component {
     } else {
       return (
         <div>
-          <h1>
-            Évaluation de {athlete.first_name} {athlete.name} -{" "}
-            {evaluation.date}
-          </h1>
+          <h3> Évaluation de {athlete.first_name} {athlete.name} <br/> {evaluation.date} </h3>
 
-          <h2>Résultat</h2>
+          <h3>Résultat</h3>
           <ResultTable evaluations={[this.state.evaluation]}></ResultTable>
 
-          <h2>Éxercice</h2>
+          <h3>Exercice</h3>
           <DrillTable drills={[drill]}></DrillTable>
 
           <EvaluationButtons addSuccess={this.addSuccess} 
