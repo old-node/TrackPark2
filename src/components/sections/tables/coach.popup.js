@@ -36,7 +36,7 @@ class CoachPopUp extends React.Component {
     return (
       <div>
         <div class="dropdown">
-      <Dropdown  placeholder='Select Country' fluid search selection options={options}
+      <Dropdown  placeholder='Choisir un Coach' fluid search selection options={options}
       onChange={this.exposedCampaignOnChange} />
 </div>
 <div class="btnDropDown">
