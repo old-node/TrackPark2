@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 import ParcTable from "./tables/parc";
 
 import ParcAPI from "../../api/parc";
-// import AuthManager from "../../auth/AuthManager";
+import AuthManager from "../../auth/AuthManager";
 
 class ParcList extends Component {
   constructor(props) {

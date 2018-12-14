@@ -6,16 +6,12 @@ import { withRouter } from "react-router-dom";
  * Tableau d'information sur une liste d'parc
  */
 class ParcTable extends Component {
-  openParc(id) {
-    
-  }
-
   render() {
     const parcs = this.props.parcs;
 
     
     return (
-      <Table celled id="parc-table" className="clickableTable">
+      <Table celled id="parc-table" className="clickableTable unstackable">
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>Nom</Table.HeaderCell>

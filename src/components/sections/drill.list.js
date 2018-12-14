@@ -1,28 +1,26 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 
-import AthleteTable from "./tables/athlete";
+import DrillTable from "./tables/drill"
+import DrillAPI from "../../api/drill"
 
-import AthleteAPI from "../../api/athlete";
-import AuthManager from "../../auth/AuthManager";
-
-class AthleteList extends Component {
+class DrillList extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       error: null,
       isLoaded: false,
-      athletes: []
+      drills: []
     };
   }
 
   async componentDidMount() {
-    AthleteAPI.withCoach(AuthManager.getCoachId()).then(
+    DrillAPI.all().then(
       result => {
         this.setState({
           isLoaded: true,
-          athletes: result
+          drills: result
         });
       },
       error => {
@@ -35,21 +33,17 @@ class AthleteList extends Component {
   }
 
   render() {
-    const { error, isLoaded, athletes } = this.state;
+    const { error, isLoaded, drills } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
       return (
-        <div>
-          <h3>Athlètes que vous évaluez</h3>
-          <AthleteTable athletes={athletes} />
-        </div>
-        
+        <DrillTable drills={drills} />
       );
     }
   }
 }
 
-export default withRouter(AthleteList);
+export default withRouter(DrillList);

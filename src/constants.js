@@ -159,16 +159,6 @@ export const parkgroup = {
 export const sections_group = [
   // Ajouter une balise pour nomer les éléments comme dans sessions?
   {
-    id: 58,
-    name: "Carte des parcs",
-    component: parkgroup,
-    className: "parkgroup",
-    exact: true,
-    href: "../parkgroup",
-    path: "/s/parkgroup",
-    tableName: "",
-  },
-  {
     id: 52,
     name: "Athlètes",
     component: null,
@@ -185,8 +175,8 @@ export const sections_group = [
     component: null, //TODO
     className: "group",
     exact: true,
-    href: "../group",
-    path: "/s/group",
+    href: "drill",
+    path: "/s/drill",
     tableName: "",
   },
   {
@@ -230,15 +220,15 @@ export const sections_group = [
     tableName: "",
   },
   {
-    id: 57,
-    name: "Casquettes",
-    component: null, //External
-    className: "cap",
+    id: 58,
+    name: "Carte des parcs",
+    component: parkgroup,
+    className: "parkgroup",
     exact: true,
-    href: "http://localhost/manageCap.php",
-    path: "/s/cap",
+    href: "../parkgroup",
+    path: "/s/parkgroup",
     tableName: "",
-  },
+  }
 ]
 
 

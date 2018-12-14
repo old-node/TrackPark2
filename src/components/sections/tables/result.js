@@ -10,7 +10,7 @@ class ResultTable extends Component {
   render() {
     const evaluations = this.props.evaluations;
     return (
-      <Table celled id="result-table">
+      <Table celled id="result-table" className="unstackable">
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>État</Table.HeaderCell>

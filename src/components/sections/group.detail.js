@@ -48,12 +48,13 @@ class GroupDetail extends Component {
         <div>
           <h1>{group.name}</h1>
           <h2>{group.description}</h2>
-
-          <h3>Évaluateurs</h3>
-          <CoachTable coachs={coachs} />
+          
 
           <h3>Athletes</h3>
           <AthleteTable athletes={athletes} />
+
+            <h3>Évaluateurs</h3>
+          <CoachTable coachs={coachs} />
         </div>
       );
     }

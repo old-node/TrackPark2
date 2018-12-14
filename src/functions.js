@@ -21,7 +21,7 @@ export function makeMenuLink(section, active, setActive) {
 }
 
 export function makeInfoLink(section, number) {
-  return (<li key={section.id}><Link to={section.href + number}>{section.name}</Link></li>);
+  return (<li key={section.id} onClick={toggleMenu}><Link to={section.href + number}>{section.name}</Link></li>);
 }
 
 export function makeRoute(section) {
@@ -33,5 +33,21 @@ export function makeRoute(section) {
   } else {
     return (<Route path={section.path} component={section.component} />)
   }
+}
+
+export function toggleMenu() {
+  let topnav = document.getElementById("myTopnav");
+    if (topnav.className === "topnav") {
+      topnav.className += " responsive";
+    } else {
+      topnav.className = "topnav";
+    }
+
+    let menuTitle = document.getElementById("menuTitle");
+    if (menuTitle.className === "menuTitle") {
+      menuTitle.className += " hidden";
+    } else {
+      menuTitle.className = "menuTitle";
+    }
 }
 

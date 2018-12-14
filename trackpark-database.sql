@@ -1,4 +1,4 @@
-DROP DATABASE IF NOT EXISTS `trackpark`;
+DROP DATABASE IF EXISTS `trackpark`;
 CREATE DATABASE `trackpark`;
 USE `trackpark`;
 
@@ -1009,4 +1009,39 @@ ALTER TABLE `loginlogs`
 
 ALTER TABLE `loginlogs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+COMMIT;
+
+CREATE TABLE `parc` (
+  `id` int(11) NOT NULL,
+  `name` varchar(250) NOT NULL,
+  `address` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `parc`
+--
+
+INSERT INTO `parc` (`id`, `name`, `address`) VALUES
+(1, 'Julien', '1671 Chemin Duplessis, Sherbrooke, QC J1H 0C2'),
+(2, 'Victoria', 'Rue du Cégep, Sherbrooke, QC J1E 3T6');
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `parc`
+--
+ALTER TABLE `parc`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `parc`
+--
+ALTER TABLE `parc`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;

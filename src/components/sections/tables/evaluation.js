@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Table } from "semantic-ui-react";
 import { withRouter } from "react-router-dom";
-
 import ResultStates from "../../../api/ResultStates";
+import { Link } from 'react-router-dom';
 
 /**
  * Tableau d'information sur une liste d'évaluation'
@@ -13,18 +13,30 @@ class evaluationTable extends Component {
   }
   render() {
     const evaluations = this.props.evaluations;
+    const status = this.props.status;
+    let filteredEvaluations = null;
+
+    if (status !== undefined) {
+      filteredEvaluations = evaluations.filter(evaluation => evaluation.result_state === status)
+    } else {
+      filteredEvaluations = evaluations.filter(evaluation => evaluation.result_state !== ResultStates.TODO);
+    }
+    
     return (
-      <Table className="clickableTable" celled id="evaluation-table">
+      <Table className="clickableTable unstackable" celled id="evaluation-table">
         <Table.Header>
           <Table.Row>
-            <Table.HeaderCell>Nom</Table.HeaderCell>
+            <Table.HeaderCell>Athlète</Table.HeaderCell>
+            <Table.HeaderCell className="tableCellMobile">Nom</Table.HeaderCell>
             <Table.HeaderCell>État</Table.HeaderCell>
-            <Table.HeaderCell>Note</Table.HeaderCell>
+            <Table.HeaderCell>Res.</Table.HeaderCell>
+            <Table.HeaderCell>Total</Table.HeaderCell>
+            <Table.HeaderCell>Seuil</Table.HeaderCell>
             <Table.HeaderCell>Date</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
         <Table.Body>
-          {evaluations.map(evaluation => (
+          {filteredEvaluations.map(evaluation => (
             <Table.Row
               className="clickableTable"
               onClick={() => this.openEvaluation(evaluation.id)}
@@ -32,7 +44,8 @@ class evaluationTable extends Component {
               negative={evaluation.result_state === ResultStates.FAILEd}
               positive={evaluation.result_state === ResultStates.PASSED}
             >
-              <Table.Cell>{evaluation.drill_name}</Table.Cell>
+              <Table.Cell><Link key={evaluation.id} className="" to={`/evaluation/${evaluation.id}`}>{evaluation.athlete_first_name + ' ' + evaluation.athlete_name}</Link></Table.Cell>
+              <Table.Cell className="tableCellMobile">{evaluation.drill_name}</Table.Cell>
               <Table.Cell>
                 {evaluation.result_state === ResultStates.FAILEd
                   ? "Raté"
@@ -40,7 +53,10 @@ class evaluationTable extends Component {
                     ? "À faire"
                     : "Passé"}
               </Table.Cell>
-              <Table.Cell>{evaluation.result_message}</Table.Cell>
+              <Table.Cell>{evaluation.numerical_value}</Table.Cell>
+              <Table.Cell>{evaluation.allowed_tries}</Table.Cell>
+              <Table.Cell>{evaluation.success_treshold}</Table.Cell>
+              
               <Table.Cell>{evaluation.date}</Table.Cell>
             </Table.Row>
           ))}
