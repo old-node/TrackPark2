@@ -10,12 +10,12 @@ export function makeMenuLink(section, active, setActive) {
   if (section.href.match("^(http|https)://")) {
     classActive += " phpLink"
     return (<li key={section.id}><a className={classActive}
-      onClick={setActive(section.name)}
+      onClick={() => {setActive(section.name)}}
       href={section.href}>{section.name}</a></li>)
   } else {
     classActive += " reactLink"
     return (<li key={section.id}><Link className={classActive}
-      onClick={setActive(section.name)}
+      onClick={() => {setActive(section.name)}}
       to={section.href}>{section.name}</Link></li>);
   }
 }
