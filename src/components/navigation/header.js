@@ -3,13 +3,21 @@ import '../../css/navigation/header.css';
 
 export default class Header extends Component {
   render(props) {
-    if (props === undefined) {
-      props = { title: "", button: null }
+    console.log(this.props)
+    let hClass = "topMenu col12 colt12 colm12 floatLeft"
+    if (this.props === undefined) {
+      this.props = { title: "" }
+    } else {
+    }
+    if (this.props.title === "") {
+      hClass += " header"
+    } else {
+      hClass += " headerWithText"
     }
 
     return (
-      <header id="header" className="header topMenu col12 colt12 colm12 floatLeft">
-        <h3>
+      <header id="header" className={hClass} >
+        <h3 className="blackHeader">
           {this.props.title}
         </h3>
       </header>

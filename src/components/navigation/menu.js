@@ -10,20 +10,20 @@ require('../../css/navigation/menu.css')
 export default class Menu extends Component {
   render(props) {
     //Si aucun onglet actif n'est défini
-    if (props === undefined) {
-      props = { active: "Accueil" }
+    if (this.props.active === undefined) {
+      this.props = { active: "Login" }
     }
 
     //Création des boutons vers les différentes sections
-    let buttonList = [];
+    let buttonList = []
     sections_group.forEach(element => {
-      buttonList.push(makeMenuLink(element, props.section));
-    });
+      buttonList.push(makeMenuLink(element, this.props.active, this.props.handler));
+    })
 
     return (
       <nav id="myTopnav" className="topnav">
         <Link to='/'><img className="logo" src={logo} alt="logo" /></Link>
-        <h3 id="menuTitle" className="menuTitle">{props.active}</h3>
+        <h3 id="menuTitle" className="menuTitle">{this.props.active}</h3>
         <ul className="noPaddingStart">
           {buttonList}
         </ul>

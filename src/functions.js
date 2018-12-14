@@ -2,17 +2,21 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 
-export function makeMenuLink(section, active) {
-
-  //External link
-  if (section.href.match("^(http|https)://")) {
-    return (<li><a className="" onClick={toggleMenu} href={section.href}>{section.name}</a></li>)
-  }
-
+export function makeMenuLink(section, active, setActive) {
+  let classActive = ""
   if (section.name === active) {
-    return (<li key={section.id} onClick={toggleMenu}><Link className="active" to={section.href}>{section.name}</Link></li>);
+    classActive = "active"
+  }
+  if (section.href.match("^(http|https)://")) {
+    classActive += " phpLink"
+    return (<li key={section.id}><a className={classActive}
+      onClick={() => {setActive(section.name)}}
+      href={section.href}>{section.name}</a></li>)
   } else {
-    return (<li key={section.id} onClick={toggleMenu}><Link key={section.id} className="" to={section.href}>{section.name}</Link></li>);
+    classActive += " reactLink"
+    return (<li key={section.id}><Link className={classActive}
+      onClick={() => {setActive(section.name)}}
+      to={section.href}>{section.name}</Link></li>);
   }
 }
 

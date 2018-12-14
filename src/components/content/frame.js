@@ -19,7 +19,6 @@ export default class Frame extends Component {
     return (
       <div id="frame" className="frame">
         <h3>
-          Frame Component
         </h3>
         <Switch>
           <Route exact path="/" component={home.component} />
@@ -36,7 +35,6 @@ export default class Frame extends Component {
           <Route exact path="/park" component={park.component} />
         </Switch>
       </div>
-
     );
   }
 }

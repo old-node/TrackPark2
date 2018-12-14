@@ -17,4 +17,5 @@ Date        Nom	                    Description
 
 session_start();
 session_destroy();
-header("Location: http://".$_SERVER['HTTP_HOST']."/trackpark/");
+//".$_SERVER['HTTP_HOST']."/trackpark/
+header("Location: http://localhost:3000");

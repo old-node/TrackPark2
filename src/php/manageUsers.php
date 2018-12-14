@@ -53,7 +53,7 @@ $users = User::getAllUsers();
 <body>
 
 <div>
-<?php include('sideMenu.html') ?>
+<?php include('sideMenu.php') ?>
 
     <div class="topMenu floatLeft col10 colt10 colm12">
         <div class="title col6 colt6 colm12 floatLeft">

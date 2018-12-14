@@ -169,13 +169,14 @@ export const sections_group = [
     tableName: "",
   },
   {
-    id: 53,
-    name: "Exercices",
-    component: null, //External
-    className: "drill",
+    /* TODO: Revoir la liste pour ajouter les groupes requis avec un id */
+    id: 55,
+    name: "Groupes",
+    component: null, //TODO
+    className: "group",
     exact: true,
-    href: "drill",
-    path: "/s/drill",
+    href: "../group",
+    path: "/s/group",
     tableName: "",
   },
   {
@@ -189,14 +190,23 @@ export const sections_group = [
     tableName: "",
   },
   {
-    /* TODO: Revoir la liste pour ajouter les groupes requis avec un id */
-    id: 55,
-    name: "Groupes",
-    component: null, //TODO
-    className: "group",
+    id: 51,
+    name: "Évaluateurs",
+    component: null, //External
+    className: "coach",
     exact: true,
-    href: "../group",
-    path: "/s/group",
+    href: "http://localhost/UIWCoachManager.php",
+    path: "/s/coach",
+    tableName: "",
+  },
+  {
+    id: 53,
+    name: "Exercices",
+    component: null, //External
+    className: "drill",
+    exact: true,
+    href: "../drill",
+    path: "/s/drill",
     tableName: "",
   },
   {
@@ -205,7 +215,7 @@ export const sections_group = [
     component: null, //External
     className: "course",
     exact: true,
-    href: "http://localhost/UIWCourseManager.php",
+    href: "../course",
     path: "/s/course",
     tableName: "",
   },

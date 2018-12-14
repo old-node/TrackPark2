@@ -8,11 +8,29 @@ import AuthCheckHack from "../auth/auth";
 //require('../css/app.css')
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.handler = this.handler.bind(this)
+    this.state = {
+      active: "Acceuil",
+      title: "",
+    }
+  }
+
+  handler = async function(value) {
+    this.setState({
+      active: value
+    })
+  }
+  //
   render() {
     return (
       <div>
         <AuthCheckHack />
-        <Navigation />
+        <Navigation
+          title={this.state.title}
+          active={this.state.active}
+          handler={this.handler} />
         <Content />
         <Footnote />
       </div>
