@@ -35,7 +35,7 @@ export function makeRoute(section) {
   }
 }
 
-export function toggleMenu() {
+export async function toggleMenu() {
   let topnav = document.getElementById("myTopnav");
     if (topnav.className === "topnav") {
       topnav.className += " responsive";

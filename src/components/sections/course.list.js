@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 
-import EvaluationTable from "./tables/evaluation";
+// import EvaluationTable from "./tables/evaluation";
 import AuthManager from "../../auth/AuthManager";
 import CourseAPI from "../../api/course";
 import DrillAPI from "../../api/drill";
-import drill from "./tables/drill";
-import drillList from "./drill.list";
+// import drill from "./tables/drill";
+// import drillList from "./drill.list";
 import DrillTable from "./tables/drill"
 
 class EvaluationList extends Component {

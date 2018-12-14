@@ -5,7 +5,7 @@ import Popup from './popup';
 import { Switch } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 
-import home from "../home";
+//import Home from "../home";
 import EvaluationList from "../sections/evaluation.list"
 import ParkGroup from '../sections/park.group';
 import AthleteList from '../sections/athlete.list';
@@ -13,9 +13,9 @@ import GroupList from '../sections/group.list';
 import GroupDetail from '../sections/group.detail';
 import Login from '../../auth/login';
 import AthleteDetail from '../sections/athlete.detail';
-import evaluationDetail from '../sections/evaluation.detail';
+import EvaluationDetail from '../sections/evaluation.detail';
 import ExerciceList from "../sections/drill.list";
-import courseList from '../sections/course.list';
+import CourseList from '../sections/course.list';
 import ExerciceDetail from "../sections/exercice.detail";
 
 /**
@@ -41,26 +41,42 @@ export default class Content extends Component {
 
         <Switch>
           <Route exact path="/athlete" component={AthleteList} />
-          <Route exact path="/athlete/:id" component={AthleteDetail} />
+          <Route exact path="/athlete/:id"
+            render={props => <AthleteDetail
+              setTitle={this.props.handler}
+            />}
+          />
         </Switch>
 
         <Switch>
           <Route exact path="/drill" component={ExerciceList} />
-          <Route exact path="/drill/:id" component={ExerciceDetail} />
+          <Route exact path="/drill/:id"
+            render={props => <ExerciceDetail
+              setTitle={this.props.handler}
+            />}
+          />
         </Switch>
 
         <Switch>
-          <Route exact path="/course" component={courseList} />
+          <Route exact path="/course" component={CourseList} />
         </Switch>
 
         <Switch>
-          <Route exact path="/group/:id" component={GroupDetail} />
           <Route exact path="/group" component={GroupList} />
+          <Route exact path="/group/:id"
+            render={props => <GroupDetail
+              setTitle={this.props.handler}
+            />}
+          />
         </Switch>
 
         <Switch>
-          <Route exact path="/evaluation/:id" component={evaluationDetail} />
           <Route exact path="/evaluation" component={EvaluationList} />
+          <Route exact path="/evaluation/:id"
+            render={props => <EvaluationDetail
+              setTitle={this.props.handler}
+            />}
+          />
         </Switch>
 
         <Switch>

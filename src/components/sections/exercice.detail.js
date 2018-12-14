@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { List } from 'semantic-ui-react'
 
-import GroupTable from "./tables/groups";
+/*import GroupTable from "./tables/groups";
 import EvaluationTable from "./tables/evaluation";
 
 import AthleteInfo from "./info/athlete.info";
 
 import GroupAPI from "../../api/group";
 import AthleteAPI from "../../api/athlete";
-import EvaluationAPI from "../../api/evaluation";
+import EvaluationAPI from "../../api/evaluation";*/
 import DrillAPI from "../../api/drill";
 
 /**
@@ -17,7 +17,8 @@ import DrillAPI from "../../api/drill";
  */
 class ExerciceDetail extends Component {
   constructor(props) {
-    super(props);
+    super(props)
+    this.props.setTitle("Exercices")
 
     this.state = {
       error: null,

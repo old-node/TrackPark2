@@ -27,7 +27,7 @@ export default class Menu extends Component {
         <ul className="noPaddingStart">
           {buttonList}
         </ul>
-        <a href="#" className="icon" onClick={toggleMenu}>
+        <a href="#/" className="icon" onClick={toggleMenu}>
           <i className="fa fa-bars"></i>
         </a>
       </nav>

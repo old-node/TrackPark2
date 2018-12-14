@@ -8,7 +8,7 @@ import { withRouter } from "react-router-dom";
 class AthleteInfo extends Component {
   render() {
     const athlete = this.props.athlete; //Informations de l'athlètes
-    //this.setState({state:{active:"Athlète"}})
+    //this.props.handler()
     return (
       <div className="col12 colt12 colm12 floatLeft">
         <Image

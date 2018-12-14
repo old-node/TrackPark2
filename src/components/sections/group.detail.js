@@ -11,7 +11,8 @@ import CoachAPI from "../../api/coach";
 
 class GroupDetail extends Component {
   constructor(props) {
-    super(props);
+    super(props)
+    this.props.setTitle("Groupes")
 
     this.state = {
       error: null,

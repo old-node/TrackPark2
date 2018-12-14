@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Table } from "semantic-ui-react";
+// import { Table } from "semantic-ui-react";
 import { withRouter } from "react-router-dom";
 
-import CoachTable from "./tables/coach";
+// import CoachTable from "./tables/coach";
 import DrillTable from "./tables/drill";
 import ResultTable from "./tables/result";
 
@@ -15,7 +15,8 @@ import EvaluationButtons from "./evaluation.buttons.js";
 
 class EvaluationDetail extends Component {
   constructor(props) {
-    super(props);
+    super(props)
+    this.props.setTitle("Évaluations")
 
     this.state = {
       error: null,

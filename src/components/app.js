@@ -18,13 +18,14 @@ class App extends Component {
     }
   }
 
-  handler = async function(value) {
-    console.log(value)
+  //
+  handler = (value) => {
     toggleMenu()
     this.setState({
       active: value
     })
   }
+
   //
   render() {
     return (

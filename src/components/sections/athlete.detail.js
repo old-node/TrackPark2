@@ -16,7 +16,8 @@ import ResultStates from "../../api/ResultStates";
  */
 class AthleteDetail extends Component {
   constructor(props) {
-    super(props);
+    super(props)
+    this.props.setTitle("Athlètes")
 
     this.state = {
       error: null,
@@ -25,7 +26,6 @@ class AthleteDetail extends Component {
   }
 
   async componentDidMount() {
-
     //Querries to the API to get all the data needed
     let athleteId = this.props.match.params.id;
 

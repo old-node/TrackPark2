@@ -28,7 +28,7 @@ class AthleteTable extends Component {
               <Table.Cell>{athlete.name}</Table.Cell>
               <Table.Cell>{athlete.first_name}</Table.Cell>
               <Table.Cell>{athlete.phone_number}</Table.Cell>
-            <Table.Cell className="imgTable"><img src={athlete.profile_image_url }width="75px"></img></Table.Cell>
+            <Table.Cell className="imgTable"><img src={athlete.profile_image_url} alt={athlete.firstname + ' ' + athlete.name} width="75px"></img></Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>

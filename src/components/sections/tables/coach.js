@@ -24,8 +24,8 @@ class coachTable extends Component {
               <Table.Cell>{coach.name}</Table.Cell>
               <Table.Cell>{coach.first_name}</Table.Cell>
               <Table.Cell>{coach.phone_number}</Table.Cell>
-              <Table.Cell className="imgTable"><img src={coach.profile_image_url } width="75px" ></img></Table.Cell>
-            
+              <Table.Cell className="imgTable"><img src={coach.profile_image_url }
+                alt={coach.firstname + ' ' + coach.name} width="75px" ></img></Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>
