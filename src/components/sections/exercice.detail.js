@@ -1,16 +1,9 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { List } from 'semantic-ui-react'
-
-import GroupTable from "./tables/groups";
 import EvaluationTable from "./tables/evaluation";
-
-import AthleteInfo from "./info/athlete.info";
-
-import GroupAPI from "../../api/group";
-import AthleteAPI from "../../api/athlete";
-import EvaluationAPI from "../../api/evaluation";
 import DrillAPI from "../../api/drill";
+import ResultStates from "../../api/ResultStates";
 
 /**
  * Informations sur l'athlète, les groupes dont il fait partie et ses évaluations
@@ -22,7 +15,8 @@ class ExerciceDetail extends Component {
     this.state = {
       error: null,
       isLoaded: false,
-      drill: null
+      drill: null,
+      evaluations: [],
     };
   }
 
@@ -75,12 +69,6 @@ class ExerciceDetail extends Component {
                       <List.Header>Nombre d'essaies permis: {drill.allowed_tries}</List.Header>
                     </List.Content>
                   </List.Item>
-                  <List.Item>
-                    <List.Icon name='clock' />
-                    <List.Content>
-                      <List.Header>Temps alloué: {drill.allowed_time} minutes</List.Header>
-                    </List.Content>
-                  </List.Item>
                 </List.List>
               </List.Content>
             </List.Item>
@@ -98,14 +86,13 @@ class ExerciceDetail extends Component {
                   <List.Item>
                     <List.Icon name='angle double up' />
                     <List.Content>
-                      <List.Header>Cap: {drill.cap}</List.Header>
+                      <List.Header>Casquette: {drill.cap}</List.Header>
                     </List.Content>
                   </List.Item>
                 </List.List>
               </List.Content>
             </List.Item>
           </List>
-
         </div>
       );
     }

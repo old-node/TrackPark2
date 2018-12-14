@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import EvaluationAPI from "../../api/evaluation";
-import ResultStates from "../../api/ResultStates";
 
 // Contient les boutons pour évaluer un athlète sur un exercice
 class EvaluationButtons extends Component {

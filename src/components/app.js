@@ -13,7 +13,7 @@ class App extends Component {
     super(props)
     this.handler = this.handler.bind(this)
     this.state = {
-      active: "Acceuil",
+      active: "Accueil",
       title: "",
     }
   }
@@ -24,7 +24,7 @@ class App extends Component {
       active: value
     })
   }
-  //
+  
   render() {
     return (
       <div>

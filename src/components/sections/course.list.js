@@ -1,12 +1,8 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-
-import EvaluationTable from "./tables/evaluation";
 import AuthManager from "../../auth/AuthManager";
 import CourseAPI from "../../api/course";
 import DrillAPI from "../../api/drill";
-import drill from "./tables/drill";
-import drillList from "./drill.list";
 import DrillTable from "./tables/drill"
 
 class EvaluationList extends Component {
@@ -59,14 +55,15 @@ class EvaluationList extends Component {
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
-      console.log(drills);
       return (
         <div>
           {drills.map((drill, index) => (
               <div>
+                <h3>Nom du parcours</h3>
               {drill.map((sub, index) => (
                 <div>
-                  <h1>{courses[index].name}</h1>
+                  <span className="drillInfo">{courses[index].name}</span>
+                  <h3>Exercices du parcours</h3>
                   <DrillTable drills={sub} />
                 </div>
               ))}

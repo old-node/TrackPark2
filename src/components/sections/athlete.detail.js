@@ -60,8 +60,11 @@ class AthleteDetail extends Component {
           <h3>Groupes</h3>
           <GroupTable groups={groups} />
 
-          <h3>Évaluations</h3>
+          <h3>Évaluations à faire</h3>
           <EvaluationTable evaluations={evaluations} status={ResultStates.TODO} />
+
+          <h3>Évaluations terminées</h3>
+          <EvaluationTable evaluations={evaluations} />
         </div>
       );
     }
