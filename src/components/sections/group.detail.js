@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 
 import AthleteTable from "./tables/athlete";
 import CoachTable from "./tables/coach";
-import coachPopUp from "./tables/coach.popup";
+import CoachPopUp from "./tables/coach.popup";
 
 import GroupAPI from "../../api/group";
 import AthleteAPI from "../../api/athlete";
@@ -61,7 +61,7 @@ class GroupDetail extends Component {
 
             <h3>Évaluateurs</h3>
           <CoachTable coachs={coachs} />
-          <coachPopUp coachs={coachs2} id={group.id} ></coachPopUp>
+          <CoachPopUp coachs={coachs2} id={group.id} ></CoachPopUp>
         </div>
             )
     }

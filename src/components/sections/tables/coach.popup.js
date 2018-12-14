@@ -5,7 +5,7 @@ import CoachAPI from "../../../api/coach";
 import '../../../css/tables.css';
 var selected = 0
 var id = 0
-class App extends React.Component {
+class CoachPopUp extends React.Component {
 
  
   constructor(props) {
@@ -40,11 +40,11 @@ class App extends React.Component {
       onChange={this.exposedCampaignOnChange} />
 </div>
 <div class="btnDropDown">
-      <Button onClick={this.showValue}> ajouter</Button>
+      <Button onClick={this.showValue}> Ajouter un coach</Button>
        </div>
        </div>
       )
   }
 }
 
-export default withRouter(App)
+export default withRouter(CoachPopUp)
