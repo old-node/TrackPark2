@@ -43,9 +43,10 @@ class EvaluationList extends Component {
     } else {
       return (
         <div>
-          <h3>Évaluations à faire</h3>
+          <h1>Évaluations</h1>
+          <h3>À faire</h3>
           <EvaluationTable evaluations={evaluations} status={ResultStates.TODO} />
-          <h3>Évaluations terminées</h3>
+          <h3>Terminées</h3>
           <EvaluationTable evaluations={evaluations} />
         </div>
         );

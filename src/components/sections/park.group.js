@@ -35,6 +35,7 @@ class ParcList extends Component {
   }
 
   render() {
+    //this.setState({state:{active:"Carte des parcs"}})
     const { error, isLoaded, parcs } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
@@ -42,8 +43,10 @@ class ParcList extends Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <ParcTable parcs={parcs} />
-       
+        <div>
+          <h1>Cartes des parcs</h1>
+          <ParcTable parcs={parcs} />
+        </div>
       );
       
     }

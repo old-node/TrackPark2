@@ -41,7 +41,7 @@ class GroupList extends Component {
     } else {
       return (
         <div>
-          <h3>Groupes que vous évaluez</h3>
+          <h1>Groupes que vous évaluez</h1>
           <GroupTable groups={groups} />
         </div>
       );

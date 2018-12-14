@@ -19,6 +19,7 @@ class App extends Component {
   }
 
   handler = async function(value) {
+    console.log(value)
     toggleMenu()
     this.setState({
       active: value
@@ -33,7 +34,7 @@ class App extends Component {
           title={this.state.title}
           active={this.state.active}
           handler={this.handler} />
-        <Content />
+        <Content handler={this.handler} />
         <Footnote />
       </div>
     );

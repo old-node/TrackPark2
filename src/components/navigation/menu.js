@@ -11,7 +11,7 @@ export default class Menu extends Component {
   render(props) {
     //Si aucun onglet actif n'est défini
     if (this.props.active === undefined) {
-      this.props = { active: "Login" }
+      this.props = { active: "Acceuil" }
     }
 
     //Création des boutons vers les différentes sections

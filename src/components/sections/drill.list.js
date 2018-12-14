@@ -40,7 +40,10 @@ class DrillList extends Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <DrillTable drills={drills} />
+        <div>
+          <h1>Exercices</h1>
+          <DrillTable drills={drills} />
+        </div>
       );
     }
   }

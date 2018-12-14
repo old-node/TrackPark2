@@ -122,8 +122,8 @@ export const home = {
   component: Home,
   className: "home",
   exact: true,
-  href: "../home",
-  path: "/",
+  href: "../parkgroup",
+  path: "/parkgroup",
 }
 
 export const section_switch = {

@@ -30,7 +30,9 @@ export default class Content extends Component {
         <Popup />
 
         <Switch>
-          <Route exact path="/" component={home}></Route>
+          <Route exact path="/"
+            render={props => <ParkGroup handler={this.props.handler} />}
+          ></Route>
         </Switch>
 
         <Switch>
