@@ -1,3 +1,17 @@
+/**************************************************************************************
+Fichier :       app.js
+Auteur :        Olivier Lemay Dostie
+Fonctionnalité : Fichier central de l'application TrackPark2.
+Date :          22 novembre 2018
+=======================================================================================
+Vérification :
+Date        Nom                     Approuvé
+=======================================================================================
+Historique de modification :
+Date        Nom                     Description
+2018-12-14	Olivier Lemay Dostie    Ajout des description
+**************************************************************************************/
+
 import React, { Component } from "react";
 import Navigation from "./navigation/navigation";
 import Content from "./content/content";

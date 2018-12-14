@@ -1,5 +1,20 @@
+/**************************************************************************************
+Fichier :       content.js
+Auteur :        Olivier Lemay Dostie
+Fonctionnalité : Affichage complet de la section section actuelle.
+Date :          22 novembre 2018
+=======================================================================================
+Vérification :
+Date        Nom                     Approuvé
+=======================================================================================
+Historique de modification :
+Date        Nom                     Description
+2018-12-14	Olivier Lemay Dostie    Ajout des description
+**************************************************************************************/
+
 import React, { Component } from 'react';
 import '../../css/content/content.css';
+// import Frame from './frame';
 import Info from './info';
 import Popup from './popup';
 import { Switch } from 'react-router-dom'
@@ -74,6 +89,7 @@ export default class Content extends Component {
         </Switch>
 
         {/* Aditionnal optionnal Component for future implementation */}
+        {/* <Frame /> */}
         <Info />
         <Popup />
       </main>

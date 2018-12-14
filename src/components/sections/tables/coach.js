@@ -1,3 +1,17 @@
+/**************************************************************************************
+Fichier :       coach.js
+Auteur :        Antoine Gagnon
+Fonctionnalité : Tableau contenant une liste d'évaluateur.
+Date :          22 novembre 2018
+=======================================================================================
+Vérification :
+Date        Nom                     Approuvé
+=======================================================================================
+Historique de modification :
+Date        Nom                     Description
+2018-12-14	Olivier Lemay Dostie    Ajout des description
+**************************************************************************************/
+
 import React, { Component } from "react";
 import { Table } from "semantic-ui-react";
 import { withRouter } from "react-router-dom";
