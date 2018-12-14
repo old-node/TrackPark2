@@ -1,7 +1,9 @@
 # TrackPark-P2
 
+Voir le répertoire "doc" pour tout l'information en rapport avec le projet.
+
 ## API
-[Documentation de l'API](API.md)
+[Documentation de l'API](./doc/API.md)
 
 ## About
 
