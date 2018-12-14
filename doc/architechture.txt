@@ -1,0 +1,17 @@
+Simple explication de l'architecture du projet
+
+La code PHP sert uniquement à faire du AJAX avec des GET/POST de JSON
+pour l'application React qui est uniquement client side.
+
+Le nouveau code PHP est dans le répertoire /src/php/api/v2/.
+
+Le reste de l'application React est 100% client side et tout ce qui est dans /src/ excepté le répertoire /src/php/
+
+src/
+  api/          --Gestionnaire de requetes à l'API
+  auth/         --Gestionnaire d'authentification
+  components/   --components React
+  css/          --Feuilles de styles css
+  images/       --Les images
+  js/
+  php/          --Code PHP executé côté serveur
