@@ -12,11 +12,12 @@ class GroupTable extends Component {
   render() {
     const groups = this.props.groups;
     return (
-      <Table className="clickableTable" celled id="group-table">
+      <Table className="clickableTable unstackable" celled id="group-table">
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>Nom</Table.HeaderCell>
             <Table.HeaderCell>Description</Table.HeaderCell>
+            <Table.HeaderCell>Nb At.</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
         <Table.Body>
@@ -24,6 +25,7 @@ class GroupTable extends Component {
             <Table.Row onClick={() => this.openGroup(group.id)} key={group.id}>
               <Table.Cell>{group.name}</Table.Cell>
               <Table.Cell>{group.description}</Table.Cell>
+              <Table.Cell>{group.nb_athletes}</Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>

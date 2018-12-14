@@ -14,7 +14,7 @@ class evaluationTable extends Component {
   render() {
     const evaluations = this.props.evaluations;
     return (
-      <Table className="clickableTable" celled id="evaluation-table">
+      <Table className="clickableTable unstackable" celled id="evaluation-table">
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>Nom</Table.HeaderCell>

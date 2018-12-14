@@ -15,7 +15,7 @@ class ParcTable extends Component {
 
     
     return (
-      <Table celled id="parc-table" className="clickableTable">
+      <Table celled id="parc-table" className="clickableTable unstackable">
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>Nom</Table.HeaderCell>

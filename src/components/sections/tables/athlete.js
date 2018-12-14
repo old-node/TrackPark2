@@ -13,13 +13,12 @@ class AthleteTable extends Component {
   render() {
     const athletes = this.props.athletes;
     return (
-      <Table celled id="athlete-table" className="clickableTable">
+      <Table celled id="athlete-table" className="clickableTable unstackable">
         <Table.Header>
           <Table.Row>
           <Table.HeaderCell className="tblNom">Nom</Table.HeaderCell>
             <Table.HeaderCell className="tblPrenom">Prenom</Table.HeaderCell>
             <Table.HeaderCell className="tblTel">Tel</Table.HeaderCell>
-            <Table.HeaderCell className="tblDispo">Disponibilité</Table.HeaderCell>
             <Table.HeaderCell className="tblPhoto">Photo</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
@@ -29,7 +28,6 @@ class AthleteTable extends Component {
               <Table.Cell>{athlete.name}</Table.Cell>
               <Table.Cell>{athlete.first_name}</Table.Cell>
               <Table.Cell>{athlete.phone_number}</Table.Cell>
-              <Table.Cell>{athlete.availabilities}</Table.Cell>
             <Table.Cell className="imgTable"><img src={athlete.profile_image_url }width="75px"></img></Table.Cell>
             </Table.Row>
           ))}
