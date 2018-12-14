@@ -9,14 +9,11 @@ var id = 0
 class CoachPopUp extends React.Component {
   exposedCampaignOnChange = (e, {value}) => {
     e.persist();
-    console.log(value);
     selected=value;
-    console.log(selected);
   };
 
   showValue() {
-    console.log(this.props)
-      CoachAPI.addGroup(selected, id)
+    CoachAPI.addGroup(selected, id)
   }
 
   render() {

@@ -34,9 +34,6 @@ class EvaluationList extends Component {
       const { courses } = this.state;
 
       let querries = []
-
-      console.log(courses);
-
       courses.forEach((course) => {
         querries.push(
           DrillAPI.forCourse(course.id).then((res) => {

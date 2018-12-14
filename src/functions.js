@@ -37,17 +37,17 @@ export function makeRoute(section) {
 
 export async function toggleMenu() {
   let topnav = document.getElementById("myTopnav");
-    if (topnav.className === "topnav") {
-      topnav.className += " responsive";
-    } else {
-      topnav.className = "topnav";
-    }
+  if (topnav && topnav.className === "topnav") {
+    topnav.className += " responsive";
+  } else {
+    topnav = {className: "topnav"}
+  }
 
-    let menuTitle = document.getElementById("menuTitle");
-    if (menuTitle.className === "menuTitle") {
-      menuTitle.className += " hidden";
-    } else {
-      menuTitle.className = "menuTitle";
-    }
+  let menuTitle = document.getElementById("menuTitle");
+  if (menuTitle && menuTitle.className === "menuTitle") {
+    menuTitle.className += " hidden";
+  } else {
+    menuTitle = {className: "menuTitle"}
+  }
 }
 

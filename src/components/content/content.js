@@ -5,6 +5,7 @@ import Popup from './popup';
 import { Switch } from 'react-router-dom'
 import { Route } from 'react-router-dom'
 
+// All components that can be routed to
 import Home from "../home";
 import EvaluationList from "../sections/evaluation.list"
 import ParkGroup from '../sections/park.group';
@@ -26,9 +27,6 @@ export default class Content extends Component {
   render(props) {
     return (
       <main id="content" className="content col10 colt10 colm12 floatLeft">
-        <Info />
-        <Popup />
-
         <Switch>
           <Route exact path="/" render={props =>
             <Home setTitle={this.props.handler} />}
@@ -74,6 +72,10 @@ export default class Content extends Component {
         <Switch>
           <Route exact path="/parkgroup" component={ParkGroup} />
         </Switch>
+
+        {/* Aditionnal optionnal Component for future implementation */}
+        <Info />
+        <Popup />
       </main>
     );
   }

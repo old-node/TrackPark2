@@ -10,11 +10,6 @@ import { park } from '../../constants';
 import { Route } from 'react-router-dom';
 
 export default class Frame extends Component {
-  constructor(props) {
-    super(props)
-    console.log("hello")
-  }
-
   render(props) {
     return (
       <div id="frame" className="frame">

@@ -40,7 +40,6 @@ class ExerciceDetail extends Component {
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
-      console.log(drill);
       return (
         <div>
           <h3>Nom</h3>

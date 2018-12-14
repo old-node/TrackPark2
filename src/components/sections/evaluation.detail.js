@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-// import { Table } from "semantic-ui-react";
 import { withRouter } from "react-router-dom";
 
-// import CoachTable from "./tables/coach";
 import DrillTable from "./tables/drill";
 import ResultTable from "./tables/result";
 
@@ -38,7 +36,7 @@ class EvaluationDetail extends Component {
     let evaluationId = this.props.match.params.id;
 
     await EvaluationAPI.get(evaluationId)
-      .then(result => this.setState({ evaluation: result[0], 
+      .then(result => this.setState({ evaluation: result[0],
                                       success: result[0].numerical_value,
       }))
       .then(() =>
@@ -68,7 +66,6 @@ class EvaluationDetail extends Component {
     if (this.state.evaluation.result_state !== ResultStates.TODO) {
         return;
     }
-    console.log("passed");
     let newSuccess = this.state.success + 1;
 
     await this.setState({
@@ -76,7 +73,7 @@ class EvaluationDetail extends Component {
     })
 
     this.addTries()
-} 
+  }
 
   // Ajoute un essai
   addTries = async function() {
@@ -101,10 +98,10 @@ class EvaluationDetail extends Component {
           } else {
             newEval.result_state = ResultStates.FAILEd;
           }
-          
+
           await this.setState({
-              evaluation: newEval     
-          }) 
+              evaluation: newEval
+          })
 
           // Update la DB
           await EvaluationAPI.update(this.state.evaluation.id, {value: this.state.success, state: this.state.evaluation.result_state});
