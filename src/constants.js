@@ -184,7 +184,7 @@ export const sections_group = [
     component: null, //External
     className: "drill",
     exact: true,
-    href: "http://localhost/UIWDrillManager.php",
+    href: "drill",
     path: "/s/drill",
     tableName: "",
   },
