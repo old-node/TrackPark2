@@ -25,7 +25,7 @@ class DrillTable extends Component {
         </Table.Header>
         <Table.Body>
           {drills.map(drill => (
-            <Table.Row key={drill.id}>
+            <Table.Row key={drill.id} onClick={() => this.openDrill(drill.id)}>
               <Table.Cell>{drill.name}</Table.Cell>
               <Table.Cell>{drill.goal}</Table.Cell>
               <Table.Cell>{drill.allowed_tries}</Table.Cell>

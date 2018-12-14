@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 
 import GroupAPI from "../../api/group";
 import GroupTable from "./tables/groups";
+import AuthManager from "../../auth/AuthManager"
 
 class GroupList extends Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class GroupList extends Component {
   }
 
   async componentDidMount() {
-    GroupAPI.all().then(
+    GroupAPI.ofCoach(AuthManager.getCoachId()).then(
       result => {
         this.setState({
           isLoaded: true,
