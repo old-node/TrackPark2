@@ -1,27 +1,28 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 
-import GroupAPI from "../../api/group";
-import GroupTable from "./tables/groups";
-import AuthManager from "../../auth/AuthManager"
+import AthleteTable from "./tables/athlete";
 
-class GroupList extends Component {
+import AthleteAPI from "../../api/athlete";
+import AuthManager from "../../auth/AuthManager";
+
+class AthleteList extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       error: null,
       isLoaded: false,
-      groups: []
+      athletes: []
     };
   }
 
   async componentDidMount() {
-    GroupAPI.ofCoach(AuthManager.getCoachId()).then(
+    AthleteAPI.withCoach(AuthManager.getCoachId()).then(
       result => {
         this.setState({
           isLoaded: true,
-          groups: result
+          athletes: result
         });
       },
       error => {
@@ -32,22 +33,19 @@ class GroupList extends Component {
       }
     );
   }
+
   render() {
-    const { error, isLoaded, groups } = this.state;
+    const { error, isLoaded, athletes } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
       return (
-        <div>
-          <h3>Groupes que vous évaluez</h3>
-          <GroupTable groups={groups} />
-        </div>
-        
+        <AthleteTable athletes={athletes} />
       );
     }
   }
 }
 
-export default withRouter(GroupList);
+export default withRouter(AthleteList);
