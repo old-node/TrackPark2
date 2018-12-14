@@ -43,6 +43,7 @@ class AthleteList extends Component {
     } else {
       return (
         <div>
+          <h3>Athlètes que vous évaluez</h3>
           <AthleteTable athletes={athletes} />
         </div>
         

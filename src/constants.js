@@ -159,16 +159,6 @@ export const parkgroup = {
 export const sections_group = [
   // Ajouter une balise pour nomer les éléments comme dans sessions?
   {
-    id: 51,
-    name: "Évaluateurs",
-    component: null, //External
-    className: "coach",
-    exact: true,
-    href: "http://localhost/UIWCoachManager.php",
-    path: "/s/coach",
-    tableName: "",
-  },
-  {
     id: 52,
     name: "Athlètes",
     component: null,
@@ -217,16 +207,6 @@ export const sections_group = [
     exact: true,
     href: "http://localhost/UIWCourseManager.php",
     path: "/s/course",
-    tableName: "",
-  },
-  {
-    id: 57,
-    name: "Casquettes",
-    component: null, //External
-    className: "cap",
-    exact: true,
-    href: "http://localhost/manageCap.php",
-    path: "/s/cap",
     tableName: "",
   },
   {

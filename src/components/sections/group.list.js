@@ -39,7 +39,11 @@ class GroupList extends Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <GroupTable groups={groups} />
+        <div>
+          <h3>Groupes que vous évaluez</h3>
+          <GroupTable groups={groups} />
+        </div>
+        
       );
     }
   }
