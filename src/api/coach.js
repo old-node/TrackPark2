@@ -24,10 +24,6 @@ const CoachAPI = {
    */
   forGroup: async function (id) {
     return APIRequestHandler.query(`${Endpoints.COACH}?group=${id}`);
-  },
-
-  addGroup: async function (idCoach,idGroup) {
-    return APIRequestHandler.query(`${Endpoints.COACH}?idCoach=${idCoach}&idGroup=${idGroup}`);
   }
 };
 

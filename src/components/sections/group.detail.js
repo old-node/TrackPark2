@@ -3,13 +3,10 @@ import { withRouter } from "react-router-dom";
 
 import AthleteTable from "./tables/athlete";
 import CoachTable from "./tables/coach";
-import coachPopUp from "./tables/coach.popup";
 
 import GroupAPI from "../../api/group";
 import AthleteAPI from "../../api/athlete";
 import CoachAPI from "../../api/coach";
-
-import { Dropdown } from 'semantic-ui-react'
 
 class GroupDetail extends Component {
   constructor(props) {
@@ -21,7 +18,7 @@ class GroupDetail extends Component {
       group: null
     };
   }
-  
+
   async componentDidMount() {
     let groupId = this.props.match.params.id;
 
@@ -34,9 +31,6 @@ class GroupDetail extends Component {
       ),
       CoachAPI.forGroup(groupId).then(
         result => this.setState({ coachs: result })
-      ),
-      CoachAPI.all().then(
-        result => this.setState({ coachs2: result })
       )
     ]).then(() => {
       this.setState({ isLoaded: true });
@@ -44,7 +38,7 @@ class GroupDetail extends Component {
   }
 
   render() {
-    const { error, isLoaded, group, athletes, coachs, coachs2 } = this.state;
+    const { error, isLoaded, group, athletes, coachs } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -54,16 +48,15 @@ class GroupDetail extends Component {
         <div>
           <h1>{group.name}</h1>
           <h2>{group.description}</h2>
-         
-        
+          
+
           <h3>Athletes</h3>
-          <AthleteTable athletes={athletes}  />
+          <AthleteTable athletes={athletes} />
 
             <h3>Évaluateurs</h3>
           <CoachTable coachs={coachs} />
-          <coachPopUp coachs={coachs2} id={group.id} ></coachPopUp>
         </div>
-            )
+      );
     }
   }
 }
