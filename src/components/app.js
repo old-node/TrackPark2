@@ -3,6 +3,7 @@ import Navigation from "./navigation/navigation";
 import Content from "./content/content";
 import Footnote from "./footnote/footnote";
 import AuthCheckHack from "../auth/auth";
+import { toggleMenu } from '../functions';
 
 //import logo from './logo.svg'
 //require('../css/app.css')
@@ -18,6 +19,7 @@ class App extends Component {
   }
 
   handler = async function(value) {
+    toggleMenu()
     this.setState({
       active: value
     })
