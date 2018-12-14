@@ -237,6 +237,10 @@ html,body {
 	transition: transform .2s;
 }
 
+.buttonContainer {
+	margin-left: 25%;
+}
+
 .buttonImport {
 	height: 50px;
 	margin-top: 25px;

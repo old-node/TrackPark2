@@ -13,13 +13,17 @@ class ResultTable extends Component {
       <Table celled id="result-table" className="unstackable">
         <Table.Header>
           <Table.Row>
+            <Table.HeaderCell>Réussite</Table.HeaderCell>
+            <Table.HeaderCell>Total</Table.HeaderCell>
             <Table.HeaderCell>État</Table.HeaderCell>
-            <Table.HeaderCell>Résultat</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
         <Table.Body>
           {evaluations.map(evaluation => (
               <Table.Row key={evaluation.id} negative={evaluation.result_state === ResultStates.FAILEd} positive={evaluation.result_state === ResultStates.PASSED} key={evaluation.id}>
+              
+              <Table.Cell>{this.props.success}</Table.Cell>
+              <Table.Cell>{this.props.tries}</Table.Cell>
               <Table.Cell>
                 {" "}
                 {evaluation.result_state === ResultStates.FAILEd
@@ -28,7 +32,6 @@ class ResultTable extends Component {
                     ? "À faire"
                     : "Passé"}
               </Table.Cell>
-              <Table.Cell>{evaluation.numerical_value}</Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>

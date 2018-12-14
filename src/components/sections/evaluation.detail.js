@@ -131,11 +131,11 @@ class EvaluationDetail extends Component {
         <div>
           <h3> Évaluation de {athlete.first_name} {athlete.name} <br/> {evaluation.date} </h3>
 
-          <h3>Résultat</h3>
-          <ResultTable evaluations={[this.state.evaluation]}></ResultTable>
-
           <h3>Exercice</h3>
           <DrillTable drills={[drill]}></DrillTable>
+
+          <h3>Résultat</h3>
+          <ResultTable evaluations={[this.state.evaluation]} success={this.state.success} tries={this.state.tries}></ResultTable>
 
           <EvaluationButtons addSuccess={this.addSuccess} 
                              addTries={this.addTries} 
