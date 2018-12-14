@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Table } from "semantic-ui-react";
 import { withRouter } from "react-router-dom";
-
 import ResultStates from "../../../api/ResultStates";
+import { Link } from 'react-router-dom';
 
 /**
  * Tableau d'information sur une liste d'évaluation'
@@ -44,7 +44,7 @@ class evaluationTable extends Component {
               negative={evaluation.result_state === ResultStates.FAILEd}
               positive={evaluation.result_state === ResultStates.PASSED}
             >
-              <Table.Cell>{evaluation.athlete_first_name + ' ' + evaluation.athlete_name}</Table.Cell>
+              <Table.Cell><Link key={evaluation.id} className="" to={`/evaluation/${evaluation.id}`}>{evaluation.athlete_first_name + ' ' + evaluation.athlete_name}</Link></Table.Cell>
               <Table.Cell className="tableCellMobile">{evaluation.drill_name}</Table.Cell>
               <Table.Cell>
                 {evaluation.result_state === ResultStates.FAILEd

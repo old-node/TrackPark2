@@ -3,31 +3,11 @@ import logo from '../../images/logo.png'
 import { sections_group } from '../../constants'
 import { makeMenuLink } from '../../functions'
 import { Link } from 'react-router-dom'
+import { toggleMenu } from '../../functions'
 require('../../css/stylesheet.css')
 require('../../css/navigation/menu.css')
 
 export default class Menu extends Component {
-  constructor(props) {
-    super(props);
-    this.openMenu = this.openMenu.bind(this);
-  }
-
-  openMenu = function() {
-    let topnav = document.getElementById("myTopnav");
-    if (topnav.className === "topnav") {
-      topnav.className += " responsive";
-    } else {
-      topnav.className = "topnav";
-    }
-
-    let menuTitle = document.getElementById("menuTitle");
-    if (menuTitle.className === "menuTitle") {
-      menuTitle.className += " hidden";
-    } else {
-      menuTitle.className = "menuTitle";
-    }
-  }
-
   render(props) {
     //Si aucun onglet actif n'est défini
     if (props === undefined) {
@@ -47,7 +27,7 @@ export default class Menu extends Component {
         <ul className="noPaddingStart">
           {buttonList}
         </ul>
-        <a href="#" className="icon" onClick={this.openMenu}>
+        <a href="#" className="icon" onClick={toggleMenu}>
           <i className="fa fa-bars"></i>
         </a>
       </nav>
