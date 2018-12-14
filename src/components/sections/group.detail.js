@@ -32,6 +32,9 @@ class GroupDetail extends Component {
       ),
       CoachAPI.forGroup(groupId).then(
         result => this.setState({ coachs: result })
+      ),
+      CoachAPI.all().then(
+        result => this.setState({ allCoachs: result })
       )
     ]).then(() => {
       this.setState({ isLoaded: true });
@@ -39,7 +42,7 @@ class GroupDetail extends Component {
   }
 
   render() {
-    const { error, isLoaded, group, athletes, coachs } = this.state;
+    const { error, isLoaded, group, athletes, coachs,allCoachs } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -56,7 +59,7 @@ class GroupDetail extends Component {
 
             <h3>Évaluateurs</h3>
           <CoachTable coachs={coachs} />
-          <CoachPopUp coachs={coachs2} id={group.id} ></CoachPopUp>
+          <CoachPopUp coachs={allCoachs} id={group.id} ></CoachPopUp>
         </div>
       );
     }
