@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import { Dropdown, Button, /*Form, Icon */}from "semantic-ui-react";
+import { Dropdown, Button }from "semantic-ui-react";
 import CoachAPI from "../../../api/coach";
 import '../../../css/tables.css';
 var selected = 0
@@ -14,11 +14,11 @@ class CoachPopUp extends React.Component {
     console.log(selected);
   };
 
-  showValue()
-  {
+  showValue() {
     console.log(this.props)
       CoachAPI.addGroup(selected, id)
   }
+
   render() {
     const coachs = this.props.coachs;
     id = this.props.id
@@ -26,14 +26,14 @@ class CoachPopUp extends React.Component {
 
     return (
       <div>
-        <div class="dropdown">
-      <Dropdown  placeholder='Choisir un Coach' fluid search selection options={options}
-      onChange={this.exposedCampaignOnChange} />
-</div>
-<div class="btnDropDown">
-      <Button onClick={this.showValue}> Ajouter un coach</Button>
-       </div>
-       </div>
+        <div className="dropdown">
+          <Dropdown  placeholder='Choisir un Coach' fluid search selection options={options}
+                      onChange={this.exposedCampaignOnChange} />
+        </div>
+        <div className="btnDropDown">
+          <Button onClick={this.showValue}> Ajouter un coach</Button>
+        </div>
+      </div>
       )
   }
 }

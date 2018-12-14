@@ -5,8 +5,6 @@ import Menu from './menu';
 
 export default class Navigation extends Component {
   render(props) {
-    //this.props.handler("Test1")
-    //console.log(this.props.handler)
     return (
       <div id="navigation" className="navigation">
         <Menu

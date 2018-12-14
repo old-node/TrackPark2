@@ -13,8 +13,8 @@ class coachTable extends Component {
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell className="tblNom">Nom</Table.HeaderCell>
-            <Table.HeaderCell className="tblPrenom">Prenom</Table.HeaderCell>
-            <Table.HeaderCell className="tblTel">Tel</Table.HeaderCell>
+            <Table.HeaderCell className="tblPrenom">Prénom</Table.HeaderCell>
+            <Table.HeaderCell className="tblTel">Téléphone</Table.HeaderCell>
             <Table.HeaderCell className="tblPhoto">Photo</Table.HeaderCell>
           </Table.Row>
         </Table.Header>

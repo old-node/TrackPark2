@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-/*import EvaluationAPI from "../../api/evaluation";
-import ResultStates from "../../api/ResultStates";*/
 
 // Contient les boutons pour évaluer un athlète sur un exercice
 class EvaluationButtons extends Component {
@@ -18,11 +16,9 @@ class EvaluationButtons extends Component {
     // Affichage des boutons
     render() {
         return (
-            <div>
-                <span id='success'>Succès : {this.props.success}</span>
-                <span id='total'>Essais : {this.props.tries}</span>
-                <button className='ui button' onClick={this.props.addSuccess}>Succès</button>
-                <button className='ui button' onClick={this.props.addTries}>Raté</button>
+            <div className="buttonContainer">
+                <button className='ui button positive basic floatLeft' onClick={this.props.addSuccess}>Réussite</button>
+                <button className='ui button negative basic floatLeft' onClick={this.props.addTries}>Échec</button>
             </div>
         )
     }

@@ -1,15 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { List } from 'semantic-ui-react'
-
-/*import GroupTable from "./tables/groups";
-import EvaluationTable from "./tables/evaluation";
-
-import AthleteInfo from "./info/athlete.info";
-
-import GroupAPI from "../../api/group";
-import AthleteAPI from "../../api/athlete";
-import EvaluationAPI from "../../api/evaluation";*/
 import DrillAPI from "../../api/drill";
 
 /**
@@ -23,7 +14,8 @@ class ExerciceDetail extends Component {
     this.state = {
       error: null,
       isLoaded: false,
-      drill: null
+      drill: null,
+      evaluations: [],
     };
   }
 
@@ -51,8 +43,12 @@ class ExerciceDetail extends Component {
       console.log(drill);
       return (
         <div>
-          <h1>{drill.name}</h1>
-          <h2>{drill.goal}</h2>
+          <h3>Nom</h3>
+          <span className="drillInfo">{drill.name}</span>
+          <h3>Description</h3>
+          <span className="drillInfo">{drill.goal}</span>
+
+          <h3>Informations</h3>
 
           <List>
             <List.Item>
@@ -72,12 +68,6 @@ class ExerciceDetail extends Component {
                       <List.Header>Nombre d'essaies permis: {drill.allowed_tries}</List.Header>
                     </List.Content>
                   </List.Item>
-                  <List.Item>
-                    <List.Icon name='clock' />
-                    <List.Content>
-                      <List.Header>Temps alloué: {drill.allowed_time} minutes</List.Header>
-                    </List.Content>
-                  </List.Item>
                 </List.List>
               </List.Content>
             </List.Item>
@@ -95,14 +85,13 @@ class ExerciceDetail extends Component {
                   <List.Item>
                     <List.Icon name='angle double up' />
                     <List.Content>
-                      <List.Header>Cap: {drill.cap}</List.Header>
+                      <List.Header>Casquette: {drill.cap}</List.Header>
                     </List.Content>
                   </List.Item>
                 </List.List>
               </List.Content>
             </List.Item>
           </List>
-
         </div>
       );
     }

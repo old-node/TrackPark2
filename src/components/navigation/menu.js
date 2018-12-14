@@ -22,7 +22,7 @@ export default class Menu extends Component {
 
     return (
       <nav id="myTopnav" className="topnav">
-        <Link to='/'><img className="logo" src={logo} alt="logo" /></Link>
+        <Link to='/'><img className="logo" onClick={toggleMenu} src={logo} alt="logo" /></Link>
         <h3 id="menuTitle" className="menuTitle">{this.props.active}</h3>
         <ul className="noPaddingStart">
           {buttonList}

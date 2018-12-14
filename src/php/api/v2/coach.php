@@ -18,6 +18,8 @@ if (isset($_GET['id'])) {
     $stm->bind_param("i", $_GET['group']);
 } else if(isset($_GET['idCoach'])) {
     $stm = $conn->prepare("INSERT INTO `ta_group_coach` (`access_type`, `athlete_group`, `coach`, `start_date`, `end_date`) VALUES ('2',".$_GET['idGroup'].",".$_GET['idCoach'].", NULL, NULL);");
+    
+$stm->execute();
     header('Content-Type: application/json');
     echo '"success" : true';
     return;

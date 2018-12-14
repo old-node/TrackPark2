@@ -118,7 +118,7 @@ export const sessions = [
 
 export const home = {
   id: 10,
-  name: "Acceuil TrackPark2",
+  name: "Accueil TrackPark2",
   component: Home,
   className: "home",
   exact: true,
@@ -221,7 +221,6 @@ export const sections_group = [
   }
 ]
 
-
 export const sections_group_admin = [
   {
     id: 60,
@@ -298,7 +297,7 @@ export const sections = [
   },
   {
     id: 76,
-    name: "Parcour ",
+    name: "Parcours ",
     component: null, //External
     className: "course",
     exact: false,
