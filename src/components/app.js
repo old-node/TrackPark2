@@ -11,27 +11,25 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.handler = this.handler.bind(this)
-    this.header = {
+    this.state = {
       active: "Acceuil",
       title: "",
     }
   }
 
-  handler(value) {
-    this.setActive({
+  handler = async function(value) {
+    this.setState({
       active: value
     })
-    this.setTitle({
-      title: value
-    })
   }
-
+  //
   render() {
     return (
       <div>
         <AuthCheckHack />
         <Navigation
-          header={this.header}
+          title={this.state.title}
+          active={this.state.active}
           handler={this.handler} />
         <Content />
         <Footnote />

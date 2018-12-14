@@ -37,7 +37,7 @@ export default class Menu extends Component {
     //Création des boutons vers les différentes sections
     let buttonList = []
     sections_group.forEach(element => {
-      buttonList.push(makeMenuLink(element, this.props.active, this.props.handler.setActive));
+      buttonList.push(makeMenuLink(element, this.props.active, this.props.handler));
     })
 
     return (
