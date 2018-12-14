@@ -16,6 +16,10 @@ const DrillAPI = {
    */
   get: async function (id) {
     return APIRequestHandler.query(`${Endpoints.DRILL}?id=${id}`);
+  },
+
+  forCourse: async function(id) {
+    return APIRequestHandler.query(`${Endpoints.DRILL}?course=${id}`)
   }
 };
 

@@ -16,6 +16,14 @@ const CourseAPI = {
    */
   get: async function (id) {
     return APIRequestHandler.query(`${Endpoints.COURSE}?id=${id}`);
+  },
+
+  /**
+   * Get a specific course by its id
+   * @param {int} id
+   */
+  forCoach: async function (coach) {
+    return APIRequestHandler.query(`${Endpoints.COURSE}?coach=${coach}`);
   }
 };
 
