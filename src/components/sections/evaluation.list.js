@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import EvaluationAPI from "../../api/evaluation";
 import EvaluationTable from "./tables/evaluation";
 import AuthManager from "../../auth/AuthManager";
+import ResultStates from "../../api/ResultStates";
 
 class EvaluationList extends Component {
   constructor(props) {
@@ -39,7 +40,14 @@ class EvaluationList extends Component {
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
-      return <EvaluationTable evaluations={evaluations} />;
+      return (
+        <div>
+          <h3>Évaluations à faire</h3>
+          <EvaluationTable evaluations={evaluations} status={ResultStates.TODO} />
+          <h3>Évaluations terminées</h3>
+          <EvaluationTable evaluations={evaluations} />
+        </div>
+        );
     }
   }
 }

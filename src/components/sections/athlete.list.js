@@ -42,7 +42,10 @@ class AthleteList extends Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <AthleteTable athletes={athletes} />
+        <div>
+          <AthleteTable athletes={athletes} />
+        </div>
+        
       );
     }
   }

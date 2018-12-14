@@ -13,10 +13,22 @@ class evaluationTable extends Component {
   }
   render() {
     const evaluations = this.props.evaluations;
+    const status = this.props.status;
+    let filteredEvaluations = null;
+
+    console.log(evaluations)
+
+    if (status !== undefined) {
+      filteredEvaluations = evaluations.filter(evaluation => evaluation.result_state === status)
+    } else {
+      filteredEvaluations = evaluations.filter(evaluation => evaluation.result_state !== ResultStates.TODO);
+    }
+    
     return (
       <Table className="clickableTable" celled id="evaluation-table">
         <Table.Header>
           <Table.Row>
+            <Table.HeaderCell>Athlète</Table.HeaderCell>
             <Table.HeaderCell>Nom</Table.HeaderCell>
             <Table.HeaderCell>État</Table.HeaderCell>
             <Table.HeaderCell>Note</Table.HeaderCell>
@@ -24,7 +36,7 @@ class evaluationTable extends Component {
           </Table.Row>
         </Table.Header>
         <Table.Body>
-          {evaluations.map(evaluation => (
+          {filteredEvaluations.map(evaluation => (
             <Table.Row
               className="clickableTable"
               onClick={() => this.openEvaluation(evaluation.id)}
@@ -32,6 +44,7 @@ class evaluationTable extends Component {
               negative={evaluation.result_state === ResultStates.FAILEd}
               positive={evaluation.result_state === ResultStates.PASSED}
             >
+              <Table.Cell>{evaluation.athlete_first_name + ' ' + evaluation.athlete_name}</Table.Cell>
               <Table.Cell>{evaluation.drill_name}</Table.Cell>
               <Table.Cell>
                 {evaluation.result_state === ResultStates.FAILEd

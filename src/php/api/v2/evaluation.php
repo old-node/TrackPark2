@@ -10,7 +10,7 @@ if(!verifyToken()) {
 }
 
 $conn = SQLConnector::createConn();
-$query = "SELECT evaluation.*, d.name AS 'drill_name' FROM evaluation JOIN drill d ON evaluation.drill = d.id";
+$query = "SELECT evaluation.*, d.name AS 'drill_name', a.first_name AS 'athlete_first_name', a.name AS 'athlete_name'  FROM evaluation JOIN drill d ON evaluation.drill = d.id JOIN athlete a ON evaluation.athlete = a.id";
 if (isGet()) {
 
     if (isset($_GET['id'])) {
