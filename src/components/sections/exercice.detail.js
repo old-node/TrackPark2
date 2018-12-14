@@ -50,8 +50,12 @@ class ExerciceDetail extends Component {
       console.log(drill);
       return (
         <div>
-          <h1>{drill.name}</h1>
-          <h2>{drill.goal}</h2>
+          <h3>Nom</h3>
+          <span className="drillInfo">{drill.name}</span>
+          <h3>Description</h3>
+          <span className="drillInfo">{drill.goal}</span>
+
+          <h3>Informations</h3>
 
           <List>
             <List.Item>

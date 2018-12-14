@@ -370,10 +370,20 @@ input, select {
 	margin: auto;
 }
 
+h2 {
+	color: #2ECC71;
+	font-weight: bold;
+}
+
 h3 {
 	color: #2ECC71;
 	font-weight: bold;
 	font-size: 20px;
+}
+
+.drillInfo {
+	font-size: 16px;
+	font-weight: bold;
 }
 
 /*************
