@@ -16,8 +16,6 @@ class evaluationTable extends Component {
     const status = this.props.status;
     let filteredEvaluations = null;
 
-    console.log(evaluations)
-
     if (status !== undefined) {
       filteredEvaluations = evaluations.filter(evaluation => evaluation.result_state === status)
     } else {
@@ -25,13 +23,15 @@ class evaluationTable extends Component {
     }
     
     return (
-      <Table className="clickableTable" celled id="evaluation-table">
+      <Table className="clickableTable unstackable" celled id="evaluation-table">
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>Athlète</Table.HeaderCell>
-            <Table.HeaderCell>Nom</Table.HeaderCell>
+            <Table.HeaderCell className="tableCellMobile">Nom</Table.HeaderCell>
             <Table.HeaderCell>État</Table.HeaderCell>
-            <Table.HeaderCell>Note</Table.HeaderCell>
+            <Table.HeaderCell>Res.</Table.HeaderCell>
+            <Table.HeaderCell>Total</Table.HeaderCell>
+            <Table.HeaderCell>Seuil</Table.HeaderCell>
             <Table.HeaderCell>Date</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
@@ -45,7 +45,7 @@ class evaluationTable extends Component {
               positive={evaluation.result_state === ResultStates.PASSED}
             >
               <Table.Cell>{evaluation.athlete_first_name + ' ' + evaluation.athlete_name}</Table.Cell>
-              <Table.Cell>{evaluation.drill_name}</Table.Cell>
+              <Table.Cell className="tableCellMobile">{evaluation.drill_name}</Table.Cell>
               <Table.Cell>
                 {evaluation.result_state === ResultStates.FAILEd
                   ? "Raté"
@@ -53,7 +53,10 @@ class evaluationTable extends Component {
                     ? "À faire"
                     : "Passé"}
               </Table.Cell>
-              <Table.Cell>{evaluation.result_message}</Table.Cell>
+              <Table.Cell>{evaluation.numerical_value}</Table.Cell>
+              <Table.Cell>{evaluation.allowed_tries}</Table.Cell>
+              <Table.Cell>{evaluation.success_treshold}</Table.Cell>
+              
               <Table.Cell>{evaluation.date}</Table.Cell>
             </Table.Row>
           ))}
