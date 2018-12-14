@@ -13,7 +13,7 @@ export default class Menu extends Component {
   }
 
   openMenu = function() {
-    var topnav = document.getElementById("myTopnav");
+    let topnav = document.getElementById("myTopnav");
     if (topnav.className === "topnav") {
       topnav.className += " responsive";
     } else {
