@@ -190,16 +190,6 @@ export const sections_group = [
     tableName: "",
   },
   {
-    id: 51,
-    name: "Évaluateurs",
-    component: null, //External
-    className: "coach",
-    exact: true,
-    href: "http://localhost/UIWCoachManager.php",
-    path: "/s/coach",
-    tableName: "",
-  },
-  {
     id: 53,
     name: "Exercices",
     component: null, //External

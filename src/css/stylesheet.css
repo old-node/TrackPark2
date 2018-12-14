@@ -187,7 +187,7 @@ table {
 
 .activeMenu {
 	background-position:left bottom;
-	color: #fafafa;
+	color: #2ECC71;
 }
 
 .title {
@@ -486,7 +486,7 @@ h3 {
 }
 
 .active {
-	background-color: #4CAF50;
+	background-color: #2ECC71;
 	color: white !important;
 }
 

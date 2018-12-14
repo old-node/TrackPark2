@@ -5,10 +5,7 @@ export default class Header extends Component {
   render(props) {
     console.log(this.props)
     let hClass = "topMenu col12 colt12 colm12 floatLeft"
-    if (this.props === undefined) {
-      this.props = { title: "" }
-    } else {
-    }
+    this.props = { title: "" }
     if (this.props.title === "") {
       hClass += " header"
     } else {
