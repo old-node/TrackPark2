@@ -14,6 +14,7 @@ import GroupDetail from '../sections/group.detail';
 import Login from '../../auth/login';
 import AthleteDetail from '../sections/athlete.detail';
 import evaluationDetail from '../sections/evaluation.detail';
+import ExerciceList from "../sections/drill.list";
 
 /**
  * The main "window" of the app
@@ -37,6 +38,11 @@ export default class Content extends Component {
         <Switch>
           <Route exact path="/athlete" component={AthleteList} />
           <Route exact path="/athlete/:id" component={AthleteDetail} />
+        </Switch>
+
+        <Switch>
+          <Route exact path="/drill" component={ExerciceList} />
+          <Route exact path="/drill/:id" component={AthleteDetail} />
         </Switch>
 
         <Switch>
