@@ -35,3 +35,31 @@ th {
     background-color: #4CAF50;
     color: white;
 }
+
+.imgTable {
+    height: -webkit-fill-available;
+    }
+
+
+    .tblNom{
+    width: 15%
+    }
+
+    .tblPrenom{
+    width: 15%
+    }
+
+    .tblTel{
+    width: 15%
+    }
+
+    .tblDispo{
+     width: 40%
+     }
+
+    .tblPhoto{
+    width: 15%
+     }
+.btnPartageCoach{
+    float: right
+}
