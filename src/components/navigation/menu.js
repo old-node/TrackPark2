@@ -8,42 +8,42 @@ require('../../css/navigation/menu.css')
 
 export default class Menu extends Component {
   constructor(props) {
-    super(props);
-    this.openMenu = this.openMenu.bind(this);
+    super(props)
+    this.openMenu = this.openMenu.bind(this)
   }
 
   openMenu = function() {
-    let topnav = document.getElementById("myTopnav");
+    let topnav = document.getElementById("myTopnav")
     if (topnav.className === "topnav") {
-      topnav.className += " responsive";
+      topnav.className += " responsive"
     } else {
-      topnav.className = "topnav";
+      topnav.className = "topnav"
     }
 
     let menuTitle = document.getElementById("menuTitle");
     if (menuTitle.className === "menuTitle") {
-      menuTitle.className += " hidden";
+      menuTitle.className += " hidden"
     } else {
-      menuTitle.className = "menuTitle";
+      menuTitle.className = "menuTitle"
     }
   }
 
   render(props) {
     //Si aucun onglet actif n'est défini
-    if (props === undefined) {
-      props = { active: "Accueil" }
+    if (this.props.active === undefined) {
+      this.props = { active: "Login" }
     }
 
     //Création des boutons vers les différentes sections
-    let buttonList = [];
+    let buttonList = []
     sections_group.forEach(element => {
-      buttonList.push(makeMenuLink(element, props.section));
-    });
+      buttonList.push(makeMenuLink(element, this.props.active, this.props.handler.setActive));
+    })
 
     return (
       <nav id="myTopnav" className="topnav">
         <Link to='/'><img className="logo" src={logo} alt="logo" /></Link>
-        <h3 id="menuTitle" className="menuTitle">{props.active}</h3>
+        <h3 id="menuTitle" className="menuTitle">{this.props.active}</h3>
         <ul className="noPaddingStart">
           {buttonList}
         </ul>

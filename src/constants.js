@@ -159,13 +159,13 @@ export const parkgroup = {
 export const sections_group = [
   // Ajouter une balise pour nomer les éléments comme dans sessions?
   {
-    id: 51,
-    name: "Évaluateurs",
-    component: null, //External
-    className: "coach",
+    id: 58,
+    name: "Carte des parcs",
+    component: parkgroup,
+    className: "parkgroup",
     exact: true,
-    href: "http://localhost/UIWCoachManager.php",
-    path: "/s/coach",
+    href: "../parkgroup",
+    path: "/s/parkgroup",
     tableName: "",
   },
   {
@@ -179,13 +179,14 @@ export const sections_group = [
     tableName: "",
   },
   {
-    id: 53,
-    name: "Exercices",
-    component: null, //External
-    className: "drill",
+    /* TODO: Revoir la liste pour ajouter les groupes requis avec un id */
+    id: 55,
+    name: "Groupes",
+    component: null, //TODO
+    className: "group",
     exact: true,
-    href: "http://localhost/UIWDrillManager.php",
-    path: "/s/drill",
+    href: "../group",
+    path: "/s/group",
     tableName: "",
   },
   {
@@ -199,14 +200,23 @@ export const sections_group = [
     tableName: "",
   },
   {
-    /* TODO: Revoir la liste pour ajouter les groupes requis avec un id */
-    id: 55,
-    name: "Groupes",
-    component: null, //TODO
-    className: "group",
+    id: 51,
+    name: "Évaluateurs",
+    component: null, //External
+    className: "coach",
     exact: true,
-    href: "../group",
-    path: "/s/group",
+    href: "http://localhost/UIWCoachManager.php",
+    path: "/s/coach",
+    tableName: "",
+  },
+  {
+    id: 53,
+    name: "Exercices",
+    component: null, //External
+    className: "drill",
+    exact: true,
+    href: "http://localhost/UIWDrillManager.php",
+    path: "/s/drill",
     tableName: "",
   },
   {
@@ -229,16 +239,6 @@ export const sections_group = [
     path: "/s/cap",
     tableName: "",
   },
-  {
-    id: 58,
-    name: "Carte des parcs",
-    component: parkgroup,
-    className: "parkgroup",
-    exact: true,
-    href: "../parkgroup",
-    path: "/s/parkgroup",
-    tableName: "",
-  }
 ]
 
 

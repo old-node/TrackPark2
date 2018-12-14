@@ -253,7 +253,7 @@ function updateCourse()
 
 <body>
     <div>
-    <?php include('sideMenu.html') ?>
+    <?php include('sideMenu.php') ?>
 
         <div class="topMenu col12 colt12 colm12 floatLeft">
             <div class="col2 colt2 colm12 floatLeft"> &nbsp; </div>

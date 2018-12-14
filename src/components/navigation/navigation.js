@@ -7,8 +7,11 @@ export default class Navigation extends Component {
   render(props) {
     return (
       <div id="navigation" className="navigation">
-        <Menu />
-        <Header />
+        <Menu
+          active={this.props.header.active}
+          handler={this.props.handler} />
+        <Header
+          title={this.props.header.title}/>
       </div>
     );
   }

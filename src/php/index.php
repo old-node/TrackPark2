@@ -23,7 +23,7 @@ Date		    Nom						        Description
 </head>
 <body>
 
-<?php include('sideMenu.html') ?>
+<?php include('sideMenu.php') ?>
 
 
 </body>

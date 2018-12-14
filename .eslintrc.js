@@ -1,6 +1,12 @@
 module.exports = {
-    extends: "google",
+    extends: [
+        "google",
+        "es2015",
+        "react",
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
     rules: {
-        "indent": ["error", 2]
-    }
+        "indent": ["error", 2],
+    },
 };

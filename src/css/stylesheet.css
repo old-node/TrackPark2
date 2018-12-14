@@ -446,6 +446,16 @@ h3 {
     height: 10px;
 }
 
+.headerWithText {
+	padding-left: 30px;
+    max-height: 30px;
+	height: 30px;
+}
+
+.blackHeader {
+	color: black;
+}
+
 .menuTitle {
 	float: left;
 }
@@ -477,7 +487,7 @@ h3 {
 
 .active {
 	background-color: #4CAF50;
-	color: white;
+	color: white !important;
 }
 
 .topnav .icon {

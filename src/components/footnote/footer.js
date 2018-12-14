@@ -6,7 +6,6 @@ export default class Footer extends Component {
     return (
       <footer id="footer" className="footer">
         <h3>
-          Footer Component
         </h3>
       </footer>
     );

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Table } from "semantic-ui-react";
+// import { Table } from "semantic-ui-react";
 import { withRouter } from "react-router-dom";
 
 import CoachTable from "./tables/coach";
@@ -10,7 +10,7 @@ import AthleteAPI from "../../api/athlete";
 import CoachAPI from "../../api/coach";
 import EvaluationAPI from "../../api/evaluation";
 import DrillAPI from "../../api/drill";
-import ResultStates from "../../api/ResultStates";
+// import ResultStates from "../../api/ResultStates";
 import EvaluationButtons from "./evaluation.buttons.js";
 
 class EvaluationDetail extends Component {
