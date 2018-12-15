@@ -31,6 +31,8 @@ class Login extends Component {
   loginClick() {
     let username = document.getElementById('username').value;
     let password = document.getElementById('password').value;
+
+    //Login and redirect to home page
     AuthManager.auth(username, password)
       .then(() => {
         window.location.replace('/')
@@ -38,6 +40,7 @@ class Login extends Component {
   }
 
   handleKeyPress(event) {
+    //Fire login when enter is pressed
     if (event.key === 'Enter') {
       this.loginClick();
     }

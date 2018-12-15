@@ -38,18 +38,31 @@ class AuthManager {
       });
   }
 
+  /**
+   * Indicate if the current user is logged in or not
+   * @returns {boolean}
+   */
   isLoggedIn() {
     return sessionStorage.getItem("token") !== null;
   }
 
+  /**
+   * Get the logged in user id
+   */
   getUserId() {
     return sessionStorage.getItem("user_id");
   }
 
+  /**
+   * Get the logged in coach id
+   */
   getCoachId() {
     return sessionStorage.getItem("coach_id");
   }
 
+  /**
+   * Get the logged in user token
+   */
   getToken() {
     return sessionStorage.getItem("token");
   }

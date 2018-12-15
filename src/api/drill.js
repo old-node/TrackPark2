@@ -32,6 +32,10 @@ const DrillAPI = {
     return APIRequestHandler.query(`${Endpoints.DRILL}?id=${id}`);
   },
 
+  /**
+   * Get the drills in a course
+   * @param {int} id 
+   */
   forCourse: async function(id) {
     return APIRequestHandler.query(`${Endpoints.DRILL}?course=${id}`)
   }

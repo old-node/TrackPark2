@@ -32,7 +32,7 @@ class App extends Component {
     }
   }
 
-  //
+  //Handler pour le changement de page dans l'application
   handler = (value) => {
     toggleMenu()
     this.setState({
